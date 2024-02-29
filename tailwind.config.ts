@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-new-edge)'],
+        abc: ['var(--font-abc)']
       },
     },
   },

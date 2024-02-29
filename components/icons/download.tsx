@@ -7,9 +7,6 @@ export default function Download() {
       id="Ebene_1"
       x={0}
       y={0}
-      style={{
-        enableBackground: "new 0 0 13.1 21.3",
-      }}
       viewBox="0 0 13.1 21.3"
       height={25}
     >

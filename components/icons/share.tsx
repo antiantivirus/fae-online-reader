@@ -7,9 +7,6 @@ export default function Share() {
       id="Ebene_1"
       x={0}
       y={0}
-      style={{
-        enableBackground: "new 0 0 15.1 22.8",
-      }}
       viewBox="0 0 15.1 22.8"
       height={25}
     >

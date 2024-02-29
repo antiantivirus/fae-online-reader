@@ -7,9 +7,6 @@ export default function Search() {
       id="Ebene_1"
       x={0}
       y={0}
-      style={{
-        enableBackground: "new 0 0 21 20.9",
-      }}
       viewBox="0 0 21 20.9"
       height={25}
     >

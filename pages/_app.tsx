@@ -18,13 +18,13 @@ const newEdge = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div
+      className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
+    >
       <Header />
-      <main
-        className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
-      >
+      <main>
         <Component {...pageProps} />
       </main>
-    </>
+    </div>
   );
 }
