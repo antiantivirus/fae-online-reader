@@ -22,9 +22,9 @@ h1 {
 }
 
 details {
-  @apply inline cursor-pointer rounded-full border border-black/50 px-2 open:rounded-lg;
+  @apply inline cursor-pointer rounded-full border border-black/50 px-2 open:rounded-lg open:bg-black open:text-white hover:bg-black hover:text-white;
 }
 
 .footnote-button {
-  @apply mb-2 inline-block cursor-pointer rounded-full border border-black px-2 align-middle text-[0.6rem];
+  @apply mb-2 inline-block cursor-pointer rounded-full border border-black px-2 align-middle text-[0.6rem] hover:bg-black hover:text-white;
 }
