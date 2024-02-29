@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
+import Header from "@/components/header";
 
 const abc = localFont({
   src: "../public/fonts/ABCDiatype-Regular.woff2",
@@ -17,10 +18,13 @@ const newEdge = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main
-      className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
-    >
-      <Component {...pageProps} />
-    </main>
+    <>
+      <Header />
+      <main
+        className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
+      >
+        <Component {...pageProps} />
+      </main>
+    </>
   );
 }

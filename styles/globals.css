@@ -18,6 +18,13 @@ li {
 }
 
 h1 {
-  @apply font-serif;
   font-size: 2rem;
+}
+
+details {
+  @apply inline cursor-pointer rounded-full border border-black/50 px-2 open:rounded-lg;
+}
+
+.footnote-button {
+  @apply mb-2 inline-block cursor-pointer rounded-full border border-black px-2 align-middle text-[0.6rem];
 }
