@@ -371,6 +371,7 @@ export default function Home() {
         </div>
       </div>
       <div className="h-96"></div>
+      <div className="h-96"></div>
     </article>
   );
 }
