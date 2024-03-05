@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useState } from "react";
+import ChapterImage from "@/components/chapterImage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,12 @@ export default function Home() {
   return (
     <article className="prose">
       <div>
-        <div className="sticky top-12 z-10 mb-4 bg-white p-4 pb-0">
+        <div className="sticky top-12 z-20 mb-4 bg-white p-4 pb-0">
           <div className="border-b border-black md:mx-auto md:max-w-xl">
             <h1>Where to start</h1>
           </div>
         </div>
+        <ChapterImage />
         <div className="w-screen overflow-hidden px-4">
           <div
             className={`flex gap-10 transition-all md:justify-center ${
