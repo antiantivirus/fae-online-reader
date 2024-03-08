@@ -18,7 +18,13 @@ li {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 720px) {
+  h1 {
+    font-size: 3.5rem;
+  }
 }
 
 details {

@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
       className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
     >
       <Header />
-      <main>
+      <main className="m-3">
         <Component {...pageProps} />
       </main>
     </div>
