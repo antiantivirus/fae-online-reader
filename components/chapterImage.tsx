@@ -41,6 +41,7 @@ export default function ChapterImage() {
       width={500}
       muted
       playsInline={true}
+      preload="auto"
     >
       <source src="/crosslucid_short.mp4" type="video/mp4" />
     </video>
