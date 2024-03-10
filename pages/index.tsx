@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChapterImage from "@/components/chapterImage";
-
+import React, { useRef } from 'react';
+import Footnote from "@/components/footnote";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
           <ChapterImage />
         </div>
 
-        <div className="mx-auto rounded-lg bg-white p-2 shadow-md md:max-w-3xl md:p-6">
+        <div className="mx-auto rounded-lg bg-white p-2 shadow-md md:max-w-3xl md:p-6 relative pr-6 md:pr-12">
           <p>
             An exposed operational surface allowing internal and external users
             to interact with an organisation's internal functionalities could
@@ -28,10 +29,10 @@ export default function Home() {
             of exposed application surfaces include public technical platforms
             such as Transport for London's open data Q API, or organisational
             knowledge bases such as wikis.
-            <sup>1</sup>
-            <sup>2</sup> The UK government's Contracts Finder interface is
+            <Footnote no="1"/>
+            <Footnote no="2"/> The UK government's Contracts Finder interface is
             another example of an exposed organisational surface for well-
-            defined procurement needs.<sup>3</sup> Whether as a partnership
+            defined procurement needs.<Footnote no="3"/> Whether as a partnership
             approach or a public resource, interfaces that enable as-vet-unknown
             users to plug in to an organisation's backend functionalities allow
             more bottom-up and permissionless forms of ecosvstemic innovation
@@ -41,7 +42,7 @@ export default function Home() {
             example, Uber makes use of Transport for London data even as it
             thwarts regulatory oversight, while many of the most important
             open-source ✐ projects are managed by Google and Meta.
-            <sup>4</sup>
+            <Footnote no="4"/>
             In order to maintain a balance between openness ✐ and risk, a
             traceable decentralised protocol between service users and
             providers, along with 117 flexible licensing arrangements, would

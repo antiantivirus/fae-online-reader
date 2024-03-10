@@ -10,7 +10,11 @@ export default function ChapterImage() {
       yPercent: -50,
       opacity: 0,
       duration: 2,
+      // transformOrigin: "top left",
+      // transformPerspective: 200,
+      // transformStyle: "preserve-3d"
     });
+
     gsap.to("#chapter-image", {
       yPercent: 0,
       opacity: 1,
@@ -23,14 +27,15 @@ export default function ChapterImage() {
       scrollTrigger: {
         trigger: "body",
         start: "top top",
-        end: "+=450",
+        end: "+=550",
         scrub: true,
       },
     });
     tl.to("#chapter-image", {
       yPercent: -100,
+      // rotationX: -50,
       opacity: 0.5,
-      currentTime: 10,
+      currentTime: 0,
     });
   });
   return (
@@ -42,6 +47,7 @@ export default function ChapterImage() {
       muted
       playsInline={true}
       preload="auto"
+      autoPlay={true}
     >
       <source src="/crosslucid_short.mp4" type="video/mp4" />
     </video>
