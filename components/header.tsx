@@ -1,8 +1,27 @@
 import Download from "./icons/download";
 import Share from "./icons/share";
 import Search from "./icons/search";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [fontSize, setFontSize] = useState(1)
+
+  const increaseFontSize = () => {
+    if (fontSize < 2){
+      setFontSize(fontSize + 0.2)
+    }
+  }
+
+  const decreaseFontSize = () => {
+    if (fontSize > 0.5){
+      setFontSize(fontSize - 0.2)
+    }
+  }
+
+  useEffect(() => {
+    document.documentElement.style.fontSize = `calc(1rem * ${fontSize}`;
+  }, [fontSize])
+
   return (
     <header className="sticky top-0 z-50 flex w-full justify-between p-4 pb-0">
       <div className="flex gap-2">
@@ -16,7 +35,11 @@ export default function Header() {
           <Download />
         </button>
       </div>
-      <div></div>
+      <div>
+        <span>A</span>
+        <button onClick={increaseFontSize}>+</button>
+        <button onClick={decreaseFontSize}>-</button>
+      </div>
     </header>
   );
 }
