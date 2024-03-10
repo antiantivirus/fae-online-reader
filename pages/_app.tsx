@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import Header from "@/components/header";
+import { ThemeProvider } from "next-themes";
 
 const abc = localFont({
   src: "../public/fonts/ABCDiatype-Regular.woff2",
@@ -18,13 +19,15 @@ const newEdge = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div
-      className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
-    >
-      <Header />
-      <main className="m-3">
-        <Component {...pageProps} />
-      </main>
-    </div>
+    <ThemeProvider themes={["light", "red", "dark"]} enableColorScheme>
+      <div
+        className={`${abc.variable} ${abcItalic.variable} ${newEdge.variable} font-sans`}
+      >
+        <Header />
+        <main className="m-3">
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }

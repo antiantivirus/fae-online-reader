@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --colour-primary: #ffffff;
+    --colour-secondary: #000000;
+    --colour-typography: #000000;
+  }
+  html[data-theme="dark"] {
+    --colour-primary: #000000;
+    --colour-secondary: #ffffff;
+    --colour-typography: #ffffff;
+  }
+  html[data-theme="red"] {
+    --colour-primary: #ff8e8e;
+    --colour-secondary: #ffffff;
+    --colour-typography: #000000;
+  }
+}
+
 body,
 html {
   padding: 0;
