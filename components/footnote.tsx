@@ -1,4 +1,4 @@
-export default function Footnote({no}) {
+export default function Footnote({no}:{no: string}) {
   return (
     <>
       <sup>2</sup>
