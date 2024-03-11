@@ -14,14 +14,12 @@ export default function ChapterHeading() {
     gsap.to("#chapter-sticky-heading", {
       scrollTrigger: {
         trigger: "#chapter-contents",
-        start: "top",
-        end: "top -200",
-        scrub: 0.5,
+        start: "top -50",
+        toggleActions: "restart none none reverse",
       },
       translateY: 0,
-      delay: 0.5,
       ease: "power4.out",
-      duration: 1,
+      duration: 0.5,
     });
 
     const tl = gsap.timeline({
