@@ -36,11 +36,11 @@ export default function ChapterHeading() {
     <div id="chapter-heading" className="relative mx-auto md:max-w-4xl">
       <div
         id="chapter-sticky-heading"
-        className="fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white md:max-w-4xl"
+        className="fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
       >
         <span>3. Proposals: Pathways to Interoperability</span>
       </div>
-      <div className="bg-background relative z-20 mb-24 w-full rounded-lg p-2 text-typography shadow-md md:p-6">
+      <div className="bg-background relative z-20 mb-24 w-full rounded-lg p-2 text-typography shadow md:p-6">
         <h1 className="flex gap-12">
           <span>3</span> <span>Proposals: Pathways to Interoperability</span>
         </h1>

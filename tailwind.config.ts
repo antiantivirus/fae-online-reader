@@ -25,6 +25,9 @@ const config: Config = {
         white: '#ffffff',
         red: '#ff8e8e'
       },
+      boxShadow: {
+        DEFAULT: '0 0px 5px 0 rgb(var(--colour-shadow) / .19)',
+      },
     },
   },
   plugins: [],

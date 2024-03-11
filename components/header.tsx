@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GlyphBackground from "./glyphBackground";
 import * as Portal from "@radix-ui/react-portal";
+import DownloadsDrawer from "./downloadsDrawer";
 
 export default function Header() {
   const [fontSize, setFontSize] = useState(1);
@@ -35,9 +36,7 @@ export default function Header() {
         <button className="rounded-2xl border-black/50 px-3 py-1">
           <Search />
         </button>
-        <button className="rounded-2xl border-black/50 px-4 py-1">
-          <Download />
-        </button>
+        <DownloadsDrawer />
       </div>
       <div className="flex items-center gap-2">
         <button
