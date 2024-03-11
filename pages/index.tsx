@@ -1,26 +1,15 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
-import ChapterImage from "@/components/chapterImage";
-import React, { useRef } from "react";
+import ChapterHeading from "@/components/chapterHeading";
 import Footnote from "@/components/footnote";
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <article className="prose">
       <div className="space-y-12">
-        <div id="chapter-heading" className="relative mx-auto md:max-w-3xl">
-          <div className="bg-primary text-typography relative z-20 mb-24 w-full rounded-lg p-2 shadow-md md:p-6">
-            <h1 className="flex gap-12">
-              <span>3</span>{" "}
-              <span>Proposals: Pathways to Interoperability</span>
-            </h1>
-          </div>
-          <ChapterImage />
-        </div>
-
-        <div className="bg-primary text-typography relative mx-auto rounded-lg p-2 pr-6 shadow-md md:max-w-3xl md:p-6 md:pr-12">
+        <ChapterHeading />
+        <div
+          id="chapter-contents"
+          className="bg-background relative mx-auto rounded-lg p-2 pr-6 text-typography shadow-md md:max-w-3xl md:p-6 md:pr-12"
+        >
           <p>
             An exposed operational surface allowing internal and external users
             to interact with an organisation's internal functionalities could

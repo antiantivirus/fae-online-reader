@@ -48,8 +48,9 @@ function FootnoteContainer() {
 
 function FootnoteContents() {
   return (
-    <div className="block w-max max-w-[80vw] border border-black bg-white p-2 lg:max-w-[16vw]">
-      <p>
+    <div className="block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-8 text-white xl:max-w-[18vw]">
+      <span className="absolute left-3 top-1">1</span>
+      <p className="mr-8">
         Footnote info goes in here. Footnote info goes in here. Footnote info
         goes in here. Footnote info goes in here. Footnote info goes in here
       </p>

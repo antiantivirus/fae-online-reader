@@ -4,19 +4,31 @@
 
 @layer base {
   :root {
-    --colour-primary: #ffffff;
-    --colour-secondary: #000000;
+    --colour-background: #ffffff;
+    --colour-primary: #4b0012;
     --colour-typography: #000000;
   }
   html[data-theme="dark"] {
-    --colour-primary: #000000;
-    --colour-secondary: #ffffff;
+    --colour-background: #4b0012;
+    --colour-primary: #4b0012;
     --colour-typography: #ffffff;
   }
   html[data-theme="red"] {
-    --colour-primary: #ff8e8e;
-    --colour-secondary: #ffffff;
+    --colour-background: #ff8e8e;
+    --colour-primary: #4b0012;
     --colour-typography: #000000;
+  }
+
+  html,
+  body {
+    @apply font-sans;
+  }
+
+  @font-face {
+    font-family: "New Edge";
+    font-weight: 300;
+    font-style: normal;
+    src: url("/fonts/NewEdgeSoftPower4-LightRounded.woff2") format("woff2");
   }
 }
 
