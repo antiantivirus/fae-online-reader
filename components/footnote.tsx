@@ -1,7 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
-import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { Drawer } from "vaul";
 
 export default function Footnote({ no }: { no: string }) {
   return (
@@ -30,17 +30,17 @@ function FootnoteContainer() {
           </Popover.Portal>
         </Popover.Root>
       ) : (
-        <Dialog.Root open={open} onOpenChange={setOpen}>
-          <Dialog.Trigger asChild>
+        <Drawer.Root open={open} onOpenChange={setOpen}>
+          <Drawer.Trigger asChild>
             <button className="absolute right-2 h-4 w-4 rounded-full bg-red/10 md:right-4"></button>
-          </Dialog.Trigger>
-          <Dialog.Portal>
-            <Dialog.Overlay />
-            <Dialog.Content className="fixed bottom-2 right-2">
+          </Drawer.Trigger>
+          <Drawer.Portal>
+            <Drawer.Overlay />
+            <Drawer.Content className="fixed bottom-2 right-2">
               <FootnoteContents />
-            </Dialog.Content>
-          </Dialog.Portal>
-        </Dialog.Root>
+            </Drawer.Content>
+          </Drawer.Portal>
+        </Drawer.Root>
       )}
     </>
   );
