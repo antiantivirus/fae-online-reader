@@ -3,6 +3,8 @@ import Share from "./icons/share";
 import Search from "./icons/search";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import GlyphBackground from "./glyphBackground";
+import * as Portal from "@radix-ui/react-portal";
 
 export default function Header() {
   const [fontSize, setFontSize] = useState(1);
@@ -62,6 +64,9 @@ export default function Header() {
           <button onClick={decreaseFontSize}>-</button>
         </div>
       </div>
+      <Portal.Root>
+        <GlyphBackground />
+      </Portal.Root>
     </header>
   );
 }

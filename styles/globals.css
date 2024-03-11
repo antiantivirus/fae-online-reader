@@ -10,7 +10,7 @@
   }
   html[data-theme="dark"] {
     --colour-background: #4b0012;
-    --colour-primary: #4b0012;
+    --colour-primary: #ffffff;
     --colour-typography: #ffffff;
   }
   html[data-theme="red"] {
