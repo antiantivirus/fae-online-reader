@@ -24,9 +24,9 @@ export default function ChapterImage() {
   return (
     <video
       id="chapter-image"
-      className="absolute left-1/2 top-[120%] z-10 w-10/12 -translate-x-1/2 transform"
+      className="absolute left-1/2 top-[120%] z-10 w-8/12 -translate-x-1/2 transform"
       height={300}
-      width={500}
+      width={400}
       muted
       playsInline={true}
       preload="auto"

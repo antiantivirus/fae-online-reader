@@ -15,6 +15,7 @@ export default function ChapterHeading() {
       scrollTrigger: {
         trigger: "#chapter-contents",
         start: "top -50",
+        end: "top -50",
         toggleActions: "restart none none reverse",
       },
       translateY: 0,
@@ -32,10 +33,10 @@ export default function ChapterHeading() {
     });
   });
   return (
-    <div id="chapter-heading" className="relative mx-auto md:max-w-3xl">
+    <div id="chapter-heading" className="relative mx-auto md:max-w-4xl">
       <div
         id="chapter-sticky-heading"
-        className="fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white md:max-w-3xl"
+        className="fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white md:max-w-4xl"
       >
         <span>3. Proposals: Pathways to Interoperability</span>
       </div>
