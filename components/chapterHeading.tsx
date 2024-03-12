@@ -15,8 +15,8 @@ export default function ChapterHeading() {
       scrollTrigger: {
         trigger: "#chapter-contents",
         start: "top -50",
-        end: "top -50",
-        toggleActions: "restart none none reverse",
+        end: "top -150",
+        scrub: true,
       },
       translateY: 0,
       ease: "power4.out",
@@ -40,7 +40,7 @@ export default function ChapterHeading() {
       >
         <span>3. Proposals: Pathways to Interoperability</span>
       </div>
-      <div className="bg-background relative z-20 mb-24 w-full rounded-lg p-2 text-typography shadow md:p-6">
+      <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-6">
         <h1 className="flex gap-12">
           <span>3</span> <span>Proposals: Pathways to Interoperability</span>
         </h1>
