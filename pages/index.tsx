@@ -8,7 +8,7 @@ export default function Home() {
         <ChapterHeading />
         <div
           id="chapter-contents"
-          className="bg-background relative mx-auto rounded-lg p-2 pr-6 text-typography shadow md:max-w-[74ch] md:p-6 md:pr-12"
+          className="relative mx-auto rounded-lg bg-background p-2 pr-6 text-typography shadow md:max-w-[74ch] md:p-6 md:pr-12"
         >
           <p>
             An exposed operational surface allowing internal and external users
