@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 export default function ChapterImage() {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  // pause video on load to bypass autoplay video requirements for mobile
   const pauseVideo = () => {
-    videoRef.current.pause();
-    console.log("video loaded, pausing it now!");
+    videoRef.current?.pause();
   };
 
   useGSAP(() => {
