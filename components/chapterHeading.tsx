@@ -8,6 +8,7 @@ export default function ChapterHeading() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set("#chapter-sticky-heading", {
       translateY: -100,
+      autoAlpha: 1,
       ease: "power4.out",
     });
 
@@ -36,7 +37,7 @@ export default function ChapterHeading() {
     <div id="chapter-heading" className="relative mx-auto md:max-w-4xl">
       <div
         id="chapter-sticky-heading"
-        className="fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
+        className="invisible fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
       >
         <span>3. Proposals: Pathways to Interoperability</span>
       </div>
