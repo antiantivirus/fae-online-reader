@@ -28,6 +28,9 @@ const config: Config = {
       boxShadow: {
         DEFAULT: '0 0px 5px 0 rgb(var(--colour-shadow) / .19)',
       },
+      borderRadius: {
+        DEFAULT: ''
+      }
     },
   },
   plugins: [],

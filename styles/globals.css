@@ -34,6 +34,36 @@
     font-style: normal;
     src: url("/fonts/NewEdgeSoftPower4-LightRounded.woff2") format("woff2");
   }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 1.75rem;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply mb-6;
+  }
+
+  p,
+  blockquote,
+  li {
+    font-size: 1rem;
+  }
+}
+
+@layer components {
+  .prose h2 {
+    @apply relative mx-auto rounded-lg bg-background p-5 text-typography shadow md:max-w-4xl md:p-6 md:pr-12;
+  }
 }
 
 body,

@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-export default function ChapterImage() {
+export default function ChapterImage({ video }: { video: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // pause video on load to bypass autoplay video requirements for mobile
@@ -39,7 +39,7 @@ export default function ChapterImage() {
       ref={videoRef}
       onLoadedData={pauseVideo}
     >
-      <source src="/crosslucid_short.mp4" type="video/mp4" />
+      <source src={video} type="video/mp4" />
     </video>
   );
 }

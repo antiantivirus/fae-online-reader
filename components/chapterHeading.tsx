@@ -3,7 +3,15 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChapterImage from "./chapterImage";
 
-export default function ChapterHeading() {
+export default function ChapterHeading({
+  no,
+  title,
+  video,
+}: {
+  no: string;
+  title: string;
+  video: string;
+}) {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set("#chapter-sticky-heading", {
@@ -39,14 +47,16 @@ export default function ChapterHeading() {
         id="chapter-sticky-heading"
         className="invisible fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
       >
-        <span>3. Proposals: Pathways to Interoperability</span>
+        <span>
+          {no}. {title}
+        </span>
       </div>
       <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-6">
         <h1 className="flex gap-12">
-          <span>3</span> <span>Proposals: Pathways to Interoperability</span>
+          <span>{no}</span> <span>{title}</span>
         </h1>
       </div>
-      <ChapterImage />
+      <ChapterImage video={video} />
     </div>
   );
 }
