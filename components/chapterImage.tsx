@@ -1,14 +1,18 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 export default function ChapterImage() {
+  const videoRef = useRef(null);
+
+  const pauseVideo = () => {
+    videoRef.current.pause();
+    console.log("video loaded, pausing it now!");
+  };
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap.set("#chapter-image", {
-      currentTime: 0,
-    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -32,6 +36,8 @@ export default function ChapterImage() {
       muted
       playsInline
       autoPlay
+      ref={videoRef}
+      onLoadedData={pauseVideo}
     >
       <source src="/crosslucid_short.mp4" type="video/mp4" />
     </video>
