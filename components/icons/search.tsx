@@ -1,10 +1,9 @@
-export default function Search() {
+export default function SearchIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"
-      id="Ebene_1"
       x={0}
       y={0}
       viewBox="0 0 21 20.9"

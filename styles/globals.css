@@ -64,6 +64,10 @@
   li {
     font-size: 1.34rem;
   }
+
+  .prose p {
+    @apply mb-2;
+  }
 }
 
 @layer components {

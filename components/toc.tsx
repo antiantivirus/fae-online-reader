@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Star from "./icons/star";
 import { useRouter } from "next/router";
+import AccordArrow from "./icons/accordArrow";
 
 const tableOfContents = [
   {
@@ -82,20 +83,22 @@ export default function TOC() {
   }, [asPath]);
 
   return (
-    <aside className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none">
+    <nav className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none">
       <Drawer.Root direction="left" open={tocOpen} onOpenChange={setTocOpen}>
         <ol className="flex h-full flex-col gap-4 lg:justify-between">
           {tableOfContents.map((chapter) => (
-            <li className="group">
+            <li key={chapter.title} className="group">
               {chapter.subChapters ? (
                 <Drawer.Trigger asChild>
                   <button
                     onClick={() => setAccordOpen(chapter.title)}
-                    className="relative flex items-center"
+                    className={`group relative flex items-center stroke-primary `}
                   >
-                    <Star />
+                    <Star active={asPath.includes(chapter.link)} />
                     {/* {asPath == chapter.link && <p>Active</p>} */}
-                    <span className="absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-focus-within:block lg:group-hover:block">
+                    <span
+                      className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "lg:block"}`}
+                    >
                       {chapter.title}
                     </span>
                   </button>
@@ -103,10 +106,12 @@ export default function TOC() {
               ) : (
                 <Link
                   href={chapter.link}
-                  className="relative flex items-center"
+                  className={`relative flex items-center stroke-primary ${asPath.includes(chapter.link) ? "fill-primary" : "fill-none"}`}
                 >
-                  <Star />
-                  <span className="absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-focus-within:block lg:group-hover:block">
+                  <Star active={asPath.includes(chapter.link)} />
+                  <span
+                    className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "lg:block"}`}
+                  >
                     {chapter.title}
                   </span>
                 </Link>
@@ -124,26 +129,28 @@ export default function TOC() {
               onValueChange={setAccordOpen}
             >
               {tableOfContents.map((chapter) => (
-                <>
+                <div key={chapter.title}>
                   {chapter.subChapters ? (
                     <Accordion.Item value={chapter.title}>
                       <Accordion.Header asChild>
                         <div className="flex items-center gap-2">
                           <Link
-                            className="flex items-center gap-2 text-xl"
+                            className="flex items-center gap-2 fill-none stroke-primary text-xl"
                             href={chapter.link}
                           >
-                            <Star />
+                            <Star active={asPath.includes(chapter.link)} />
                             {chapter.title}
                           </Link>
                           <Accordion.Trigger className="group">
-                            <div className="h-6 w-2 bg-black/50 transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180"></div>
+                            <div className="transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
+                              <AccordArrow />
+                            </div>
                           </Accordion.Trigger>
                         </div>
                       </Accordion.Header>
                       <Accordion.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp ml-8 overflow-hidden">
                         {chapter.subChapters.map((subChapter) => (
-                          <ol className="pb-2.5">
+                          <ol key={subChapter.title} className="pb-2.5">
                             <li>
                               <Link
                                 className="text-base"
@@ -162,6 +169,7 @@ export default function TOC() {
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
                                   <Link
+                                    key={subSubChapter.title}
                                     className="text-base"
                                     href={
                                       chapter.link +
@@ -185,16 +193,16 @@ export default function TOC() {
                       className="flex items-center gap-2 text-xl"
                       href={chapter.link}
                     >
-                      <Star />
+                      <Star active={asPath.includes(chapter.link)} />
                       {chapter.title}
                     </Link>
                   )}
-                </>
+                </div>
               ))}
             </Accordion.Root>
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
-    </aside>
+    </nav>
   );
 }
