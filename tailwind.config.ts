@@ -11,6 +11,11 @@ const config: Config = {
     fontFamily: {
       sans: ['New Edge'],
     },
+    fontSize: {
+      base: '1.34rem',
+      xl: '2.35rem',
+      '2xl': '4rem'
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -29,8 +34,22 @@ const config: Config = {
         DEFAULT: '0 0px 5px 0 rgb(var(--colour-shadow) / .19)',
       },
       borderRadius: {
-        DEFAULT: ''
-      }
+        DEFAULT: '10px'
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: '0px' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0px' },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+      },
     },
   },
   plugins: [],

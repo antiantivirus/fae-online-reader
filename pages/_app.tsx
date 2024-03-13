@@ -1,14 +1,15 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Header from "@/components/header";
-import GlyphBackground from "@/components/glyphBackground";
+import TOC from "@/components/toc";
 import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider themes={["light", "red", "dark"]} enableColorScheme>
       <Header />
-      <main className="m-3">
+      <TOC />
+      <main className="ml-10">
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
