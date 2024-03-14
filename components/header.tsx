@@ -69,7 +69,7 @@ export default function Header() {
     <header>
       <nav
         id="top-nav"
-        className="fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
+        className="invisible fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
       >
         <Search />
         <div className="flex items-center gap-4">
@@ -108,7 +108,7 @@ export default function Header() {
       </nav>
       <nav
         id="bottom-nav"
-        className="fixed bottom-2.5 left-2.5 flex items-center gap-2"
+        className="invisible fixed bottom-2.5 left-2.5 flex items-center gap-2"
       >
         <Link
           href="https://futureartecosystems.org/briefings/"

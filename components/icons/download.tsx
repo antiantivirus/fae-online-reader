@@ -41,12 +41,12 @@ export default function Download() {
         d="M6.6 6.6V.1"
         style={{
           fill: "none",
-          stroke: "#000",
           strokeWidth: 0.2,
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: 10,
         }}
+        className="stroke-primary"
       />
       <defs>
         <path
