@@ -22,7 +22,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search"
-        className={`fixed right-2.5 h-[30px] w-[calc(100vw-60px)] rounded-full bg-background px-3 text-typography shadow md:visible md:static md:w-full ${searchOpenMobile ? "visible" : "invisible"}`}
+        className={`fixed right-2.5 h-[30px] w-[calc(100vw-55px)] rounded-full bg-background px-3 text-typography shadow md:visible md:static md:w-full ${searchOpenMobile ? "visible" : "invisible"}`}
         onChange={() => setSearchinn(true)}
       />
       <Drawer.Root

@@ -69,7 +69,7 @@ export default function Header() {
     <header>
       <nav
         id="top-nav"
-        className="fixed top-0 z-50 flex w-full justify-between gap-4 p-1.5 lg:p-2.5"
+        className="fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
       >
         <Search />
         <div className="flex items-center gap-4">
