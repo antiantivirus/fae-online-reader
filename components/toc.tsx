@@ -253,7 +253,7 @@ export default function TOC() {
                             {subChapter.subChapters && (
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
-                                  <li>
+                                  <li key={subSubChapter.title}>
                                     <Link
                                       key={subSubChapter.title}
                                       className="text-base"
