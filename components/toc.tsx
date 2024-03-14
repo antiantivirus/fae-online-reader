@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Star from "./icons/star";
 import { useRouter } from "next/router";
 import AccordArrow from "./icons/accordArrow";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const tableOfContents = [
   {
@@ -155,8 +157,26 @@ export default function TOC() {
     setTocOpen(false);
   }, [asPath]);
 
+  // useGSAP(() => {
+  //   gsap.set("#toc", {
+  //     translateX: -300,
+  //     autoAlpha: 1,
+  //     ease: "power4.out",
+  //   });
+  //   gsap.to("#toc", {
+  //     translateX: 0,
+  //     autoAlpha: 1,
+  //     ease: "power4.out",
+  //     duration: 1,
+  //     delay: 0.5,
+  //   });
+  // });
+
   return (
-    <nav className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none">
+    <nav
+      id="toc"
+      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
+    >
       <Drawer.Root direction="left" open={tocOpen} onOpenChange={setTocOpen}>
         <ol className="flex h-full flex-col gap-4 lg:justify-between">
           {tableOfContents.map((chapter) => (

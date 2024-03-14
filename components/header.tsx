@@ -9,6 +9,8 @@ import Minus from "./icons/minus";
 import A from "./icons/a";
 import Back from "./icons/back";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Header() {
   const [fontSize, setFontSize] = useState(1);
@@ -33,9 +35,42 @@ export default function Header() {
     }
   }, [fontSize]);
 
+  useGSAP(() => {
+    gsap.set("#top-nav", {
+      translateY: -100,
+      autoAlpha: 1,
+      ease: "power4.out",
+    });
+
+    gsap.set("#bottom-nav", {
+      translateY: 100,
+      autoAlpha: 0,
+      ease: "power4.out",
+    });
+
+    gsap.to("#top-nav", {
+      translateY: 0,
+      autoAlpha: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to("#bottom-nav", {
+      translateY: 0,
+      autoAlpha: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.5,
+    });
+  });
+
   return (
     <header>
-      <nav className="fixed top-0 z-50 flex w-full justify-between gap-4 p-2.5">
+      <nav
+        id="top-nav"
+        className="fixed top-0 z-50 flex w-full justify-between gap-4 p-2.5"
+      >
         <Search />
         <div className="flex items-center gap-4">
           <GlyphBackground />
@@ -71,7 +106,10 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <nav className="fixed bottom-2.5 left-2.5 flex items-center gap-2">
+      <nav
+        id="bottom-nav"
+        className="fixed bottom-2.5 left-2.5 flex items-center gap-2"
+      >
         <Link
           href="https://futureartecosystems.org/briefings/"
           target="_blank"

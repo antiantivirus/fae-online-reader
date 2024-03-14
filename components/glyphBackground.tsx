@@ -16,13 +16,13 @@ export default function GlyphBackground() {
       >
         <GlyphIndicator />
       </button>
-      {show && (
+      {/* {show && (
         <Portal.Root>
           <div className="fixed left-0 top-0 -z-10 h-screen w-screen p-12">
             <Glyph3 />
           </div>
         </Portal.Root>
-      )}
+      )} */}
     </>
   );
 }
