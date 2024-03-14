@@ -29,7 +29,7 @@ const config: Config = {
         black: '#000000',
         white: '#ffffff',
         red: '#ff8e8e',
-        burgundy: '#4b0012',
+        burgundy: '#421629',
         grey: '#e5e5e5'
       },
       boxShadow: {
