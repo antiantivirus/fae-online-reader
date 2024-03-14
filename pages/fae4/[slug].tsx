@@ -6,6 +6,10 @@ import Head from "next/head";
 import Footnote from "@/components/footnote";
 import Box from "@/components/box";
 import ChapterHeading from "@/components/chapterHeading";
+import rehypeSlug from "rehype-slug";
+import Link from "next/link";
+import { ReactNode } from "react";
+
 export default function PostPage({
   source,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -26,6 +30,12 @@ export default function PostPage({
           components={{
             Footnote,
             Box,
+            h1: heading("h1"),
+            h2: heading("h2"),
+            h3: heading("h3"),
+            h4: heading("h4"),
+            h5: heading("h5"),
+            h6: heading("h6"),
           }}
         />
       </article>
@@ -50,7 +60,13 @@ export async function getStaticProps(
 
   // read the MDX serialized content along with the frontmatter
   // from the .mdx blog post file
-  const mdxSource = await serialize(chapterFile, { parseFrontmatter: true });
+  const mdxSource = await serialize(chapterFile, {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+      format: "mdx",
+    },
+    parseFrontmatter: true,
+  });
   return {
     props: {
       source: mdxSource,
@@ -59,3 +75,18 @@ export async function getStaticProps(
     revalidate: 60,
   };
 }
+
+type HeadingProps = {
+  id?: string;
+  children?: ReactNode;
+};
+
+const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
+  const Heading = ({ id, children }: HeadingProps) => (
+    <Link href={`#${id}`} className="group relative no-underline">
+      <As id={id}>{children}</As>
+    </Link>
+  );
+  Heading.displayName = As;
+  return Heading;
+};

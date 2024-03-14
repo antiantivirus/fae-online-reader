@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import AccordArrow from "./icons/accordArrow";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import GithubSlugger from "github-slugger";
 
 const tableOfContents = [
   {
@@ -152,6 +153,7 @@ export default function TOC() {
   const [accordOpen, setAccordOpen] = useState<string>("");
   const { asPath } = useRouter();
   const [tocOpen, setTocOpen] = useState(false);
+  const slugger = new GithubSlugger();
 
   useEffect(() => {
     setTocOpen(false);
@@ -242,9 +244,7 @@ export default function TOC() {
                                 href={
                                   chapter.link +
                                   "#" +
-                                  subChapter.title
-                                    .replaceAll(" ", "-")
-                                    .toLowerCase()
+                                  slugger.slug(subChapter.title)
                                 }
                               >
                                 {subChapter.title}
@@ -260,9 +260,7 @@ export default function TOC() {
                                       href={
                                         chapter.link +
                                         "#" +
-                                        subSubChapter.title
-                                          .replaceAll(" ", "-")
-                                          .toLowerCase()
+                                        slugger.slug(subSubChapter.title)
                                       }
                                     >
                                       {subSubChapter.title}
