@@ -16,9 +16,8 @@ export default function ChapterHeading({
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set("#chapter-sticky-heading", {
-      translateY: -100,
+      translateY: -120,
       autoAlpha: 1,
-      ease: "power4.out",
     });
 
     gsap.to("#chapter-sticky-heading", {
@@ -29,7 +28,6 @@ export default function ChapterHeading({
         scrub: true,
       },
       translateY: 0,
-      ease: "power4.out",
       duration: 0.5,
     });
 
@@ -53,10 +51,10 @@ export default function ChapterHeading({
           {title}
         </span>
       </div>
-      <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-6">
-        <h1 className="flex gap-12">
-          {no && <span>{no}</span>}
-          <span>{title}</span>
+      <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-5">
+        <h1 className="grid grid-cols-6 gap-2.5">
+          {no && <span className="col-span-1">{no}</span>}
+          <span className="col-span-4">{title}</span>
         </h1>
       </div>
       <ChapterImage video={video} />
