@@ -8,7 +8,8 @@ export default function Share() {
       x={0}
       y={0}
       viewBox="0 0 15.1 22.8"
-      height={25}
+      height={20}
+      className="fill-primary"
     >
       <style>
         {

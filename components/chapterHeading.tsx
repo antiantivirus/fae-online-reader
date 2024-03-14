@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChapterImage from "./chapterImage";
+import Box from "./box";
 
 export default function ChapterHeading({
   no,
@@ -34,7 +35,7 @@ export default function ChapterHeading({
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "body",
+        trigger: "main",
         start: "top top",
         end: "+=550",
         scrub: true,
@@ -42,18 +43,20 @@ export default function ChapterHeading({
     });
   });
   return (
-    <div id="chapter-heading" className="relative mx-auto md:max-w-4xl">
+    <div id="chapter-heading" className="relative mx-auto md:max-w-3xl">
       <div
         id="chapter-sticky-heading"
-        className="invisible fixed top-12 z-50 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
+        className="invisible fixed left-11 top-12 z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-lg bg-primary px-4 py-2 text-background shadow md:left-auto md:w-full md:max-w-3xl"
       >
         <span>
-          {no}. {title}
+          {no && <>{no}. </>}
+          {title}
         </span>
       </div>
       <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-6">
         <h1 className="flex gap-12">
-          <span>{no}</span> <span>{title}</span>
+          {no && <span>{no}</span>}
+          <span>{title}</span>
         </h1>
       </div>
       <ChapterImage video={video} />

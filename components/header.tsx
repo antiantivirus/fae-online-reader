@@ -1,71 +1,128 @@
-import Download from "./icons/download";
-import Share from "./icons/share";
-import Search from "./icons/search";
+import Search from "./search";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GlyphBackground from "./glyphBackground";
-import * as Portal from "@radix-ui/react-portal";
+import Share from "./icons/share";
 import DownloadsDrawer from "./downloadsDrawer";
+import Plus from "./icons/plus";
+import Minus from "./icons/minus";
+import A from "./icons/a";
+import Back from "./icons/back";
+import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Header() {
   const [fontSize, setFontSize] = useState(1);
   const { theme, setTheme } = useTheme();
 
   const increaseFontSize = () => {
-    if (fontSize < 2) {
-      setFontSize(fontSize + 0.2);
+    if (fontSize < 1.5) {
+      setFontSize(fontSize + 0.1);
     }
   };
 
   const decreaseFontSize = () => {
-    if (fontSize > 0.5) {
-      setFontSize(fontSize - 0.2);
+    if (fontSize > 0.75) {
+      setFontSize(fontSize - 0.1);
     }
   };
 
   useEffect(() => {
-    document.documentElement.style.fontSize = `calc(1rem * ${fontSize}`;
+    const article = document.getElementById("chapter-contents");
+    if (article) {
+      article.style.fontSize = `calc(1rem * ${fontSize})`;
+    }
   }, [fontSize]);
 
+  useGSAP(() => {
+    gsap.set("#top-nav", {
+      translateY: -100,
+      autoAlpha: 1,
+      ease: "power4.out",
+    });
+
+    gsap.set("#bottom-nav", {
+      translateY: 100,
+      autoAlpha: 0,
+      ease: "power4.out",
+    });
+
+    gsap.to("#top-nav", {
+      translateY: 0,
+      autoAlpha: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to("#bottom-nav", {
+      translateY: 0,
+      autoAlpha: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.5,
+    });
+  });
+
   return (
-    <header className="sticky top-0 z-50 flex w-full justify-between p-4 pb-0">
-      <div className="flex gap-2">
-        <button className="rounded-2xl border-black/50 px-3 py-1">
+    <header>
+      <nav
+        id="top-nav"
+        className="invisible fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
+      >
+        <Search />
+        <div className="flex items-center gap-4">
+          <GlyphBackground />
+          <div className="flex items-center gap-2">
+            <button
+              className="aspect-square h-[30px] w-[30px] rounded-full bg-white shadow"
+              onClick={() => setTheme("light")}
+            >
+              <span className="sr-only">Light</span>
+            </button>
+            <button
+              className="bg-grey aspect-square h-[30px] w-[30px] rounded-full shadow"
+              onClick={() => setTheme("grey")}
+            >
+              <span className="sr-only">Grey</span>
+            </button>
+            <button
+              className="bg-burgundy aspect-square h-[30px] w-[30px] rounded-full border-white shadow"
+              onClick={() => setTheme("dark")}
+            >
+              <span className="sr-only">Dark</span>
+            </button>
+          </div>
+
+          <div className="hidden items-center gap-2 md:flex">
+            <A />
+            <button onClick={increaseFontSize}>
+              <Plus />
+            </button>
+            <button onClick={decreaseFontSize}>
+              <Minus />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <nav
+        id="bottom-nav"
+        className="invisible fixed bottom-2.5 left-2.5 flex items-center gap-2"
+      >
+        <Link
+          href="https://futureartecosystems.org/briefings/"
+          target="_blank"
+          className="hidden lg:block"
+        >
+          <Back />
+          <span className="sr-only">Back to FAE platform</span>
+        </Link>
+        <button className="hidden rounded-2xl border-black/50 px-3 py-1 lg:block">
           <Share />
         </button>
-        <button className="rounded-2xl border-black/50 px-3 py-1">
-          <Search />
-        </button>
         <DownloadsDrawer />
-      </div>
-      <div className="flex items-center gap-2">
-        <button
-          className="h-8 w-8 rounded-full bg-white shadow"
-          onClick={() => setTheme("light")}
-        >
-          <span className="sr-only">Light</span>
-        </button>
-        <button
-          className="h-8 w-8 rounded-full bg-red shadow"
-          onClick={() => setTheme("red")}
-        >
-          <span className="sr-only">Red</span>
-        </button>
-        <button
-          className="h-8 w-8 rounded-full border-white bg-black shadow"
-          onClick={() => setTheme("dark")}
-        >
-          <span className="sr-only">Dark</span>
-        </button>
-        <div>
-          <span>A</span>
-          <button onClick={increaseFontSize}>+</button>
-          <button onClick={decreaseFontSize}>-</button>
-        </div>
-      </div>
-      <Portal.Root>
-        <GlyphBackground />
-      </Portal.Root>
+      </nav>
     </header>
   );
 }

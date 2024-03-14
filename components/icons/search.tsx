@@ -1,20 +1,14 @@
-export default function Search() {
+export default function SearchIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"
-      id="Ebene_1"
       x={0}
       y={0}
       viewBox="0 0 21 20.9"
-      height={25}
+      height={20}
     >
-      <style>
-        {
-          ".st0{clip-path:url(#SVGID_00000027605188736577119630000005564543587024154045_)}.st1,.st2{clip-path:url(#SVGID_00000006671081692591773360000005087982491983915913_)}.st2{fill:none;stroke:#000;stroke-width:.4;stroke-miterlimit:10}.st3{clip-path:url(#SVGID_00000105422550615776492020000009876813797478920359_)}.st4,.st5{fill:none;stroke:#000}.st4{stroke-width:.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st5{clip-path:url(#SVGID_00000035493794524419812280000005390943186994637493_);stroke-width:.4}"
-        }
-      </style>
       <defs>
         <path
           id="SVGID_00000170244614604810919560000012770422412955411352_"
@@ -31,6 +25,7 @@ export default function Search() {
       </clipPath>
       <path
         d="m14.9 10.4-.2.2c-.7 1.8-2.2 3.3-3.9 4l-.2.2c2.8-1 5.1 1 10.4 6.1-5.2-5.4-7.2-7.6-6.1-10.5"
+        className="fill-primary"
         style={{
           clipPath:
             "url(#SVGID_00000114036108853877431620000017456679479793324687_)",
@@ -38,12 +33,12 @@ export default function Search() {
       />
       <path
         d="M15.3 7.7c0 4.2-3.4 7.5-7.5 7.5-4.2 0-7.5-3.4-7.5-7.5S3.7.2 7.8.2s7.5 3.4 7.5 7.5z"
+        className="stroke-primary"
         style={{
           clipPath:
             "url(#SVGID_00000114036108853877431620000017456679479793324687_)",
           fill: "none",
-          stroke: "#000",
-          strokeWidth: 0.4,
+          strokeWidth: 0.5,
           strokeMiterlimit: 10,
         }}
       />

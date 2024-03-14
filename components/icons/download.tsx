@@ -8,7 +8,8 @@ export default function Download() {
       x={0}
       y={0}
       viewBox="0 0 13.1 21.3"
-      height={25}
+      height={20}
+      className="fill-primary"
     >
       <style>
         {
@@ -40,12 +41,12 @@ export default function Download() {
         d="M6.6 6.6V.1"
         style={{
           fill: "none",
-          stroke: "#000",
           strokeWidth: 0.2,
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: 10,
         }}
+        className="stroke-primary"
       />
       <defs>
         <path
@@ -63,11 +64,11 @@ export default function Download() {
       </clipPath>
       <path
         d="M13.1 21.1H0"
+        className="stroke-primary"
         style={{
           clipPath:
             "url(#SVGID_00000000210298597452158430000017546629595931276968_)",
           fill: "none",
-          stroke: "#000",
           strokeWidth: 0.4,
         }}
       />
