@@ -1,9 +1,17 @@
 import { ReactNode } from "react";
 
-export default function Box({ children }: { children: ReactNode }) {
+export default function Box({
+  children,
+  wide,
+}: {
+  children: ReactNode;
+  wide: boolean;
+}) {
   return (
-    <section className="relative mx-auto rounded-lg bg-background p-2 pr-6 text-typography shadow md:max-w-[74ch] md:p-6 md:pr-12">
+    <div
+      className={`relative mx-auto rounded-lg bg-background p-2 pr-6 text-typography shadow  md:p-6 md:pr-12 ${wide ? "md:max-w-3xl" : "md:max-w-2xl"}`}
+    >
       {children}
-    </section>
+    </div>
   );
 }

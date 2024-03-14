@@ -16,10 +16,31 @@ const tableOfContents = [
     link: "/fae4/chapter-0",
     subChapters: [
       {
-        title: "Sub chapter",
+        title: "A Framework for Public Claims on Resources",
+      },
+      {
+        title: "AI Tech Stack",
         subChapters: [
           {
-            title: "Sub sub chapter",
+            title: "Application layer",
+          },
+          {
+            title: "Network protocols layer",
+          },
+          {
+            title: "Model layer",
+          },
+          {
+            title: "Data layer",
+          },
+          {
+            title: "Compute layer",
+          },
+          {
+            title: "Server networks layer",
+          },
+          {
+            title: "Natural resources layer",
           },
         ],
       },
@@ -30,10 +51,62 @@ const tableOfContents = [
     link: "/fae4/chapter-1",
     subChapters: [
       {
-        title: "Sub chapter",
+        title: "DATA: Civic Orgs as Dormant Data Keepers",
         subChapters: [
           {
-            title: "Sub sub chapter",
+            title: "The Dawn of Organisational Self-Knowledge",
+          },
+          {
+            title: "Latent Data Troves",
+          },
+          {
+            title: "Data Is Relational",
+          },
+          {
+            title: "Trusted Data Stewards",
+          },
+          {
+            title: "Soft Power Diplomacy",
+          },
+        ],
+      },
+      {
+        title: "MODEL: Culture Shaping Model Shaping Culture",
+        subChapters: [
+          {
+            title: "The Dawn of Organisational Self-Knowledge",
+          },
+          {
+            title: "Latent Data Troves",
+          },
+          {
+            title: "Data Is Relational",
+          },
+          {
+            title: "Trusted Data Stewards",
+          },
+          {
+            title: "Soft Power Diplomacy",
+          },
+        ],
+      },
+      {
+        title: "COMPUTE: High Barriers to Cultural Entry",
+        subChapters: [
+          {
+            title: "The Dawn of Organisational Self-Knowledge",
+          },
+          {
+            title: "Latent Data Troves",
+          },
+          {
+            title: "Data Is Relational",
+          },
+          {
+            title: "Trusted Data Stewards",
+          },
+          {
+            title: "Soft Power Diplomacy",
           },
         ],
       },
@@ -107,9 +180,10 @@ export default function TOC() {
         </ol>
 
         <Drawer.Portal>
-          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background p-5 pl-2.5 text-primary shadow">
+          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-5 pl-2.5 text-primary shadow">
             <Drawer.Title className="sr-only">Table of Contents</Drawer.Title>
             <Accordion.Root
+              className="h-full overflow-auto py-5"
               type="single"
               value={accordOpen}
               onValueChange={setAccordOpen}
@@ -136,7 +210,7 @@ export default function TOC() {
                       </Accordion.Header>
                       <Accordion.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp ml-10 overflow-hidden">
                         {chapter.subChapters.map((subChapter) => (
-                          <ol key={subChapter.title} className="pb-2.5">
+                          <ol key={subChapter.title} className="mb-2.5">
                             <li>
                               <Link
                                 className="text-base"
@@ -154,19 +228,21 @@ export default function TOC() {
                             {subChapter.subChapters && (
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
-                                  <Link
-                                    key={subSubChapter.title}
-                                    className="text-base"
-                                    href={
-                                      chapter.link +
-                                      "#" +
-                                      subSubChapter.title
-                                        .replaceAll(" ", "-")
-                                        .toLowerCase()
-                                    }
-                                  >
-                                    {subSubChapter.title}
-                                  </Link>
+                                  <li>
+                                    <Link
+                                      key={subSubChapter.title}
+                                      className="text-base"
+                                      href={
+                                        chapter.link +
+                                        "#" +
+                                        subSubChapter.title
+                                          .replaceAll(" ", "-")
+                                          .toLowerCase()
+                                      }
+                                    >
+                                      {subSubChapter.title}
+                                    </Link>
+                                  </li>
                                 ))}
                               </ol>
                             )}
