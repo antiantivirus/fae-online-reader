@@ -48,13 +48,6 @@
     font-size: 1.75rem;
   }
 
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply mb-6;
-  }
-
   p,
   blockquote,
   li {

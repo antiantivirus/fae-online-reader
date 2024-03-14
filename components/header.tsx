@@ -63,9 +63,9 @@ export default function Header() {
           <button onClick={decreaseFontSize}>-</button>
         </div>
       </div>
-      <Portal.Root>
+      {/* <Portal.Root>
         <GlyphBackground />
-      </Portal.Root>
+      </Portal.Root> */}
     </header>
   );
 }

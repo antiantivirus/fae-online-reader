@@ -7,8 +7,8 @@ import { ThemeProvider } from "next-themes";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider themes={["light", "red", "dark"]} enableColorScheme>
-      <Header />
-      <main className="m-3">
+      {/* <Header /> */}
+      <main>
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
