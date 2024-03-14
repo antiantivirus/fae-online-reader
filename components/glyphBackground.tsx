@@ -12,17 +12,17 @@ export default function GlyphBackground() {
     <>
       <button
         onClick={() => setShow(!show)}
-        className="flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-full bg-background shadow"
+        className={`flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-full bg-background shadow ${show && "bg-primary"}`}
       >
-        <GlyphIndicator />
+        <GlyphIndicator active={show} />
       </button>
-      {/* {show && (
+      {show && (
         <Portal.Root>
-          <div className="fixed left-0 top-0 -z-10 h-screen w-screen p-12">
+          <div className="fixed left-0 top-0 -z-10 h-screen w-screen lg:p-12">
             <Glyph3 />
           </div>
         </Portal.Root>
-      )} */}
+      )}
     </>
   );
 }

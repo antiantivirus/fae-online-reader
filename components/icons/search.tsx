@@ -25,6 +25,7 @@ export default function SearchIcon() {
       </clipPath>
       <path
         d="m14.9 10.4-.2.2c-.7 1.8-2.2 3.3-3.9 4l-.2.2c2.8-1 5.1 1 10.4 6.1-5.2-5.4-7.2-7.6-6.1-10.5"
+        className="fill-primary"
         style={{
           clipPath:
             "url(#SVGID_00000114036108853877431620000017456679479793324687_)",
@@ -32,12 +33,12 @@ export default function SearchIcon() {
       />
       <path
         d="M15.3 7.7c0 4.2-3.4 7.5-7.5 7.5-4.2 0-7.5-3.4-7.5-7.5S3.7.2 7.8.2s7.5 3.4 7.5 7.5z"
+        className="stroke-primary"
         style={{
           clipPath:
             "url(#SVGID_00000114036108853877431620000017456679479793324687_)",
           fill: "none",
-          stroke: "#000",
-          strokeWidth: 0.4,
+          strokeWidth: 0.5,
           strokeMiterlimit: 10,
         }}
       />

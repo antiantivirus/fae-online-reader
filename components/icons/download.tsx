@@ -9,6 +9,7 @@ export default function Download() {
       y={0}
       viewBox="0 0 13.1 21.3"
       height={20}
+      className="fill-primary"
     >
       <style>
         {
@@ -63,11 +64,11 @@ export default function Download() {
       </clipPath>
       <path
         d="M13.1 21.1H0"
+        className="stroke-primary"
         style={{
           clipPath:
             "url(#SVGID_00000000210298597452158430000017546629595931276968_)",
           fill: "none",
-          stroke: "#000",
           strokeWidth: 0.4,
         }}
       />

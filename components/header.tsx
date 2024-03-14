@@ -69,7 +69,7 @@ export default function Header() {
     <header>
       <nav
         id="top-nav"
-        className="fixed top-0 z-50 flex w-full justify-between gap-4 p-2.5"
+        className="fixed top-0 z-50 flex w-full justify-between gap-4 p-1.5 lg:p-2.5"
       >
         <Search />
         <div className="flex items-center gap-4">
@@ -95,7 +95,7 @@ export default function Header() {
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 md:flex">
             <A />
             <button onClick={increaseFontSize}>
               <Plus />
