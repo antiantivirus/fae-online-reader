@@ -5,7 +5,7 @@ export default function Box({
   wide,
 }: {
   children: ReactNode;
-  wide: boolean;
+  wide?: boolean;
 }) {
   return (
     <div

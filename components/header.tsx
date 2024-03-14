@@ -35,41 +35,41 @@ export default function Header() {
     }
   }, [fontSize]);
 
-  useGSAP(() => {
-    gsap.set("#top-nav", {
-      translateY: -100,
-      autoAlpha: 1,
-      ease: "power4.out",
-    });
+  // useGSAP(() => {
+  //   gsap.set("#top-nav", {
+  //     translateY: -100,
+  //     autoAlpha: 1,
+  //     ease: "power4.out",
+  //   });
 
-    gsap.set("#bottom-nav", {
-      translateY: 100,
-      autoAlpha: 0,
-      ease: "power4.out",
-    });
+  //   gsap.set("#bottom-nav", {
+  //     translateY: 100,
+  //     autoAlpha: 0,
+  //     ease: "power4.out",
+  //   });
 
-    gsap.to("#top-nav", {
-      translateY: 0,
-      autoAlpha: 1,
-      ease: "power4.out",
-      duration: 1,
-      delay: 0.5,
-    });
+  //   gsap.to("#top-nav", {
+  //     translateY: 0,
+  //     autoAlpha: 1,
+  //     ease: "power4.out",
+  //     duration: 1,
+  //     delay: 0.5,
+  //   });
 
-    gsap.to("#bottom-nav", {
-      translateY: 0,
-      autoAlpha: 1,
-      ease: "power4.out",
-      duration: 1,
-      delay: 0.5,
-    });
-  });
+  //   gsap.to("#bottom-nav", {
+  //     translateY: 0,
+  //     autoAlpha: 1,
+  //     ease: "power4.out",
+  //     duration: 1,
+  //     delay: 0.5,
+  //   });
+  // });
 
   return (
     <header>
       <nav
         id="top-nav"
-        className="invisible fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
+        className="fixed top-0 z-50 flex w-full justify-between gap-4 py-1.5 pl-1.5 pr-2.5 lg:p-2.5"
       >
         <Search />
         <div className="flex items-center gap-4">
@@ -108,7 +108,7 @@ export default function Header() {
       </nav>
       <nav
         id="bottom-nav"
-        className="invisible fixed bottom-2.5 left-2.5 flex items-center gap-2"
+        className="fixed bottom-2.5 left-2.5 flex items-center gap-2"
       >
         <Link
           href="https://futureartecosystems.org/briefings/"

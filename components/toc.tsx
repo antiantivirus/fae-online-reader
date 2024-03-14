@@ -180,6 +180,7 @@ export default function TOC() {
       className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
       <Drawer.Root
+        modal={false}
         fixed={false}
         direction="left"
         open={tocOpen}

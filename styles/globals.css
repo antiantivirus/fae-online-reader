@@ -29,6 +29,11 @@
     margin: 0;
   }
 
+  /* adding space above anchors so they appear below the fixed header */
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+
   body {
     /* margin: 10px; */
   }
@@ -73,11 +78,23 @@
       font-size: 3em;
     }
   }
+
+  /* h2[id]::before {
+    content: "";
+    display: block;
+    height: 75px;
+    margin-top: -75px;
+    visibility: hidden;
+  } */
 }
 
 @layer components {
-  .prose h2 {
+  /* .prose h2 {
     @apply relative mx-auto rounded-lg bg-background p-5 text-typography shadow md:max-w-3xl md:p-6 md:pr-12;
+  } */
+
+  .prose h4 {
+    @apply mb-5;
   }
 
   .prose ol {
