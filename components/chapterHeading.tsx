@@ -48,12 +48,14 @@ export default function ChapterHeading({
         className="invisible fixed top-12 z-10 mb-0 w-full rounded-lg bg-primary px-4 py-2 text-white shadow md:max-w-4xl"
       >
         <span>
-          {no}. {title}
+          {no && <>{no}.</>}
+          {title}
         </span>
       </div>
       <div className="relative z-20 mb-24 w-full rounded-lg bg-background p-2 text-typography shadow md:p-6">
         <h1 className="flex gap-12">
-          <span>{no}</span> <span>{title}</span>
+          {no && <span>{no}</span>}
+          <span>{title}</span>
         </h1>
       </div>
       <ChapterImage video={video} />

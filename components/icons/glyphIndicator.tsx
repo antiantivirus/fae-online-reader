@@ -8,7 +8,6 @@ export default function GlyphIndicator() {
       viewBox="0 0 20 25"
       fill="current"
       stroke="current"
-      className="m-auto block"
     >
       <g clipPath="url(#a)">
         <path

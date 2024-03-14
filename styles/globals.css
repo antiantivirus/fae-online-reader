@@ -79,4 +79,8 @@
   .prose h2 {
     @apply relative mx-auto rounded-lg bg-background p-5 text-typography shadow md:max-w-4xl md:p-6 md:pr-12;
   }
+
+  .prose ol {
+    @apply my-5 ml-20 list-inside list-decimal;
+  }
 }

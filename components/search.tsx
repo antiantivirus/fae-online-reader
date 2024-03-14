@@ -7,7 +7,7 @@ export default function Search() {
 
   return (
     <div className="flex grow gap-2">
-      <div className="aspect-square h-[30px] w-[30px] rounded-full bg-background shadow">
+      <div className="flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-full bg-background shadow">
         <SearchIcon />
       </div>
       <input

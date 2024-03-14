@@ -2,13 +2,11 @@ import Search from "./search";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GlyphBackground from "./glyphBackground";
-import * as Portal from "@radix-ui/react-portal";
 import Share from "./icons/share";
 import DownloadsDrawer from "./downloadsDrawer";
 import Plus from "./icons/plus";
 import Minus from "./icons/minus";
 import A from "./icons/a";
-import GlyphIndicator from "./icons/glyphIndicator";
 import Back from "./icons/back";
 import Link from "next/link";
 
@@ -40,9 +38,7 @@ export default function Header() {
       <nav className="fixed top-0 z-50 flex w-full justify-between gap-4 p-2.5">
         <Search />
         <div className="flex items-center gap-4">
-          <button className="aspect-square h-[30px] w-[30px] rounded-full bg-background shadow">
-            <GlyphIndicator />
-          </button>
+          <GlyphBackground />
           <div className="flex items-center gap-2">
             <button
               className="aspect-square h-[30px] w-[30px] rounded-full bg-white shadow"
@@ -74,9 +70,6 @@ export default function Header() {
             </button>
           </div>
         </div>
-        {/* <Portal.Root>
-          <GlyphBackground />
-        </Portal.Root> */}
       </nav>
       <nav className="fixed bottom-2.5 left-2.5 flex items-center gap-2">
         <Link

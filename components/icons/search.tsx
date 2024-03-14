@@ -8,7 +8,6 @@ export default function SearchIcon() {
       y={0}
       viewBox="0 0 21 20.9"
       height={20}
-      className="ml-1 mt-1"
     >
       <defs>
         <path

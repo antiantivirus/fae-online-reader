@@ -14,7 +14,7 @@ export default function Star({ active }: { active?: boolean }) {
       <path
         d="M0 10.3c10.9-.2 11-.4 11.3-10.3.2 9.9.4 10 11.3 10.3-10.9.2-11 .4-11.3 10.3-.3-10-.4-10.1-11.3-10.3z"
         style={{
-          strokeWidth: 0.3,
+          strokeWidth: 0.6,
           strokeMiterlimit: 10,
         }}
       />
