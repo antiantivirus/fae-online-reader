@@ -88,40 +88,26 @@ export default function TOC() {
         <ol className="flex h-full flex-col gap-4 lg:justify-between">
           {tableOfContents.map((chapter) => (
             <li key={chapter.title} className="group">
-              {chapter.subChapters ? (
-                <Drawer.Trigger asChild>
-                  <button
-                    onClick={() => setAccordOpen(chapter.title)}
-                    className={`group relative flex items-center stroke-primary `}
-                  >
-                    <Star active={asPath.includes(chapter.link)} />
-                    {/* {asPath == chapter.link && <p>Active</p>} */}
-                    <span
-                      className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "lg:block"}`}
-                    >
-                      {chapter.title}
-                    </span>
-                  </button>
-                </Drawer.Trigger>
-              ) : (
-                <Link
-                  href={chapter.link}
-                  className={`relative flex items-center stroke-primary ${asPath.includes(chapter.link) ? "fill-primary" : "fill-none"}`}
+              <Drawer.Trigger asChild>
+                <button
+                  onClick={() => setAccordOpen(chapter.title)}
+                  className={`group relative flex items-center stroke-primary `}
                 >
                   <Star active={asPath.includes(chapter.link)} />
+                  {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "lg:block"}`}
+                    className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "font-black lg:block"}`}
                   >
                     {chapter.title}
                   </span>
-                </Link>
-              )}
+                </button>
+              </Drawer.Trigger>
             </li>
           ))}
         </ol>
 
         <Drawer.Portal>
-          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[500px] max-w-[90vw] flex-col rounded-tr bg-background p-5 text-primary shadow">
+          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background p-5 pl-2.5 text-primary shadow">
             <Drawer.Title className="sr-only">Table of Contents</Drawer.Title>
             <Accordion.Root
               type="single"
@@ -135,7 +121,7 @@ export default function TOC() {
                       <Accordion.Header asChild>
                         <div className="flex items-center gap-2">
                           <Link
-                            className="flex items-center gap-2 fill-none stroke-primary text-xl"
+                            className="group flex items-center gap-2 stroke-primary text-xl"
                             href={chapter.link}
                           >
                             <Star active={asPath.includes(chapter.link)} />
@@ -148,7 +134,7 @@ export default function TOC() {
                           </Accordion.Trigger>
                         </div>
                       </Accordion.Header>
-                      <Accordion.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp ml-8 overflow-hidden">
+                      <Accordion.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp ml-10 overflow-hidden">
                         {chapter.subChapters.map((subChapter) => (
                           <ol key={subChapter.title} className="pb-2.5">
                             <li>
@@ -190,7 +176,7 @@ export default function TOC() {
                     </Accordion.Item>
                   ) : (
                     <Link
-                      className="flex items-center gap-2 text-xl"
+                      className="group flex items-center gap-2 stroke-primary text-xl"
                       href={chapter.link}
                     >
                       <Star active={asPath.includes(chapter.link)} />

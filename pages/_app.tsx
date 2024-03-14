@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider themes={["light", "red", "dark"]} enableColorScheme>
       <Header />
       <TOC />
-      <main className="ml-10 mr-2.5 mt-20 lg:mx-0">
+      <main className="ml-11 mr-2.5 mt-20 lg:mx-0">
         <Component {...pageProps} />
       </main>
     </ThemeProvider>

@@ -28,7 +28,9 @@ const config: Config = {
         typography: 'var(--colour-typography)',
         black: '#000000',
         white: '#ffffff',
-        red: '#ff8e8e'
+        red: '#ff8e8e',
+        burgundy: '#4b0012',
+        grey: '#e5e5e5'
       },
       boxShadow: {
         DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',

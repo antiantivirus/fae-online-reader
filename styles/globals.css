@@ -15,11 +15,10 @@
     --colour-typography: #ffffff;
     --colour-shadow: 255 255 255;
   }
-  html[data-theme="red"] {
-    --colour-background: #ff8e8e;
+  html[data-theme="grey"] {
+    --colour-background: #e5e5e5;
     --colour-primary: #4b0012;
     --colour-typography: #000000;
-    --colour-primary: #ffffff;
     --colour-shadow: 75 0 18;
   }
 
