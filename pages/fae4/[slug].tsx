@@ -4,7 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
 import Footnote from "@/components/footnote";
-import Section from "@/components/section";
+import Box from "@/components/box";
 import ChapterHeading from "@/components/chapterHeading";
 export default function PostPage({
   source,
@@ -25,7 +25,7 @@ export default function PostPage({
           // specifying the custom MDX components
           components={{
             Footnote,
-            Section,
+            Box,
           }}
         />
       </article>

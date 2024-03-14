@@ -8,7 +8,7 @@ export default function Download() {
       x={0}
       y={0}
       viewBox="0 0 13.1 21.3"
-      height={25}
+      height={20}
     >
       <style>
         {

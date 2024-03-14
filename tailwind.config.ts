@@ -12,9 +12,9 @@ const config: Config = {
       sans: ['New Edge'],
     },
     fontSize: {
-      base: '1.34rem',
-      xl: '2.35rem',
-      '2xl': '4rem'
+      base: '1rem',
+      xl: '1.75rem',
+      '2xl': '3rem'
     },
     extend: {
       backgroundImage: {
@@ -31,7 +31,7 @@ const config: Config = {
         red: '#ff8e8e'
       },
       boxShadow: {
-        DEFAULT: '0 0px 5px 0 rgb(var(--colour-shadow) / .19)',
+        DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',
       },
       borderRadius: {
         DEFAULT: '10px'

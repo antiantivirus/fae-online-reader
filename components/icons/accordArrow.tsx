@@ -6,7 +6,7 @@ export default function AccordArrow() {
       id="Ebene_1"
       x={0}
       y={0}
-      height={25}
+      height={20}
       fill="current"
       stroke="current"
       viewBox="0 0 24.1 17"

@@ -5,7 +5,7 @@ export default function Star({ active }: { active?: boolean }) {
       xmlSpace="preserve"
       x={0}
       y={0}
-      height={25}
+      height={30}
       fill="current"
       stroke="current"
       viewBox="0 0 22.5 20.5"

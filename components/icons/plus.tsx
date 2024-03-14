@@ -2,7 +2,7 @@ export default function Plus() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height={25}
+      height={20}
       xmlSpace="preserve"
       viewBox="0 0 19 20"
       fill="current"

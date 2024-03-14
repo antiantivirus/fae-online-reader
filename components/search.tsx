@@ -7,13 +7,13 @@ export default function Search() {
 
   return (
     <div className="flex gap-2">
-      <div className="rounded-full shadow">
+      <div className="aspect-square h-[30px] w-[30px] rounded-full bg-background shadow">
         <SearchIcon />
       </div>
       <input
         type="text"
         placeholder="Search"
-        className="w-full rounded-full px-3 text-typography shadow"
+        className="h-[30px] w-full rounded-full px-3 text-typography shadow"
         onChange={() => setSearchOpen(true)}
       />
       <Drawer.Root

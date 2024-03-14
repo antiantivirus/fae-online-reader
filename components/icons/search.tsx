@@ -7,13 +7,9 @@ export default function SearchIcon() {
       x={0}
       y={0}
       viewBox="0 0 21 20.9"
-      height={25}
+      height={20}
+      className="ml-1 mt-1"
     >
-      <style>
-        {
-          ".st0{clip-path:url(#SVGID_00000027605188736577119630000005564543587024154045_)}.st1,.st2{clip-path:url(#SVGID_00000006671081692591773360000005087982491983915913_)}.st2{fill:none;stroke:#000;stroke-width:.4;stroke-miterlimit:10}.st3{clip-path:url(#SVGID_00000105422550615776492020000009876813797478920359_)}.st4,.st5{fill:none;stroke:#000}.st4{stroke-width:.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st5{clip-path:url(#SVGID_00000035493794524419812280000005390943186994637493_);stroke-width:.4}"
-        }
-      </style>
       <defs>
         <path
           id="SVGID_00000170244614604810919560000012770422412955411352_"
