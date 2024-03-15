@@ -45,6 +45,8 @@ export default function ChapterImage({ video }: { video: string }) {
       playsInline
       // autoPlay
       ref={videoRef}
+      onLoadedData={pauseVideo}
+      poster="/cross_lucid_test_poster.jpeg"
     >
       <source src={video} type="video/mp4" />
     </video>
