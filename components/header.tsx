@@ -20,12 +20,20 @@ export default function Header() {
     if (fontSize < 1.5) {
       setFontSize(fontSize + 0.1);
     }
+    document.getElementById("plus")?.classList.toggle("pulse");
+    setTimeout(() => {
+      document.getElementById("plus")?.classList.toggle("pulse");
+    }, 200);
   };
 
   const decreaseFontSize = () => {
     if (fontSize > 0.75) {
       setFontSize(fontSize - 0.1);
     }
+    document.getElementById("minus")?.classList.toggle("pulse");
+    setTimeout(() => {
+      document.getElementById("minus")?.classList.toggle("pulse");
+    }, 200);
   };
 
   useEffect(() => {

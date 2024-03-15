@@ -8,10 +8,20 @@ import FootnoteIcon from "./icons/footnote";
 export default function Footnote({ info }: { info: any }) {
   const [open, setOpen] = useState(false);
   const [footnoteContents, setFootnoteContents] = useState<TrustedHTML>("");
+  const [adjustFootnote, setAdjustFootnote] = useState<boolean>(false);
   const isDesktop = useMediaQuery("(min-width: 1280px)");
   const id = info.props.href;
   const no = innerText(info);
   useEffect(() => {
+    const prevFootnoteButton = document.getElementById(
+      "footnote-button-" + (Number(no) - 1),
+    );
+    const currentFootnoteButton = document.getElementById(
+      "footnote-button-" + no,
+    );
+    if (prevFootnoteButton) {
+      setAdjustFootnote(overlapping(prevFootnoteButton, currentFootnoteButton));
+    }
     const footnoteContents = document.querySelector(id)?.innerHTML;
     setFootnoteContents(footnoteContents);
   }, []);
@@ -23,7 +33,8 @@ export default function Footnote({ info }: { info: any }) {
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <button
-                className={`absolute right-0 -mt-8 flex h-10 w-10 items-center justify-center rounded-full stroke-primary text-xs  ${open ? "fill-primary text-background" : "fill-none"}`}
+                id={`footnote-button-${no}`}
+                className={`absolute right-0 flex h-10 w-10 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 <span>{no}</span>
@@ -39,7 +50,8 @@ export default function Footnote({ info }: { info: any }) {
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
               <button
-                className={`absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${open ? "fill-primary text-background" : "fill-none"}`}
+                id={`footnote-button-${no}`}
+                className={`absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 {no}
@@ -75,4 +87,22 @@ function FootnoteContents({
       ></div>
     </div>
   );
+}
+
+function overlapping(element1: HTMLElement, element2: HTMLElement) {
+  const rect1 = element1.getBoundingClientRect();
+  const rect2 = element2.getBoundingClientRect();
+
+  if (
+    !(
+      rect1.right < rect2.left ||
+      rect1.left > rect2.right ||
+      rect1.bottom < rect2.top ||
+      rect1.top > rect2.bottom
+    )
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }

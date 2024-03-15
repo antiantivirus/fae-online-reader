@@ -180,11 +180,14 @@ export default function TOC() {
       className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
       <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
+        {/* <Dialog.Trigger asChild> */}
+        {/* <button aria-label="Open table of contents" className="h-full"> */}
         <ol className="flex h-full flex-col gap-4 lg:justify-between">
           {tableOfContents.map((chapter) => (
             <li key={chapter.title} className="group">
               <Dialog.Trigger asChild>
                 <button
+                  aria-hidden
                   onClick={() => setAccordOpen(chapter.title)}
                   className={`group relative flex items-center stroke-primary `}
                 >
@@ -200,6 +203,8 @@ export default function TOC() {
             </li>
           ))}
         </ol>
+        {/* </button> */}
+        {/* </Dialog.Trigger> */}
 
         <Dialog.Portal>
           <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pl-2.5 text-primary shadow">
