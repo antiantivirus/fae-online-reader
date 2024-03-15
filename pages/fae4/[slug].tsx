@@ -46,7 +46,17 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
-  return { paths: [], fallback: "blocking" };
+  return {
+    paths: [
+      "introduction",
+      "chapter-0",
+      "chapter-1",
+      "chapter-2",
+      "chapter-3",
+      "postface",
+    ],
+    fallback: "blocking",
+  };
 }
 
 export async function getStaticProps(
