@@ -1,7 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
+import * as Dialog from "@radix-ui/react-dialog";
 import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { Drawer } from "vaul";
 import innerText from "react-innertext";
 import FootnoteIcon from "./icons/footnote";
 
@@ -26,7 +26,7 @@ export default function Footnote({ info }: { info: any }) {
                 className={`absolute right-0 -mt-8 flex h-10 w-10 items-center justify-center rounded-full stroke-primary text-xs  ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
-                <span className="bg-white">{no}</span>
+                <span>{no}</span>
               </button>
             </Popover.Trigger>
             <Popover.Portal>
@@ -36,22 +36,22 @@ export default function Footnote({ info }: { info: any }) {
             </Popover.Portal>
           </Popover.Root>
         ) : (
-          <Drawer.Root open={open} onOpenChange={setOpen}>
-            <Drawer.Trigger asChild>
+          <Dialog.Root open={open} onOpenChange={setOpen}>
+            <Dialog.Trigger asChild>
               <button
                 className={`absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 {no}
               </button>
-            </Drawer.Trigger>
-            <Drawer.Portal>
-              <Drawer.Overlay />
-              <Drawer.Content className="fixed bottom-2 right-2">
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay />
+              <Dialog.Content className="dialog-bottom fixed bottom-2 right-2">
                 <FootnoteContents no={no}>{footnoteContents}</FootnoteContents>
-              </Drawer.Content>
-            </Drawer.Portal>
-          </Drawer.Root>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         )}
       </>
       <slot />
