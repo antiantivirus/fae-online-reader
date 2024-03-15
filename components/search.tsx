@@ -27,7 +27,10 @@ export default function Search() {
       />
       <Dialog.Root modal={false} open={searchinn} onOpenChange={setSearchinn}>
         <Dialog.Portal>
-          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none">
+          <Dialog.Content
+            onPointerDownOutside={(e) => e.preventDefault()}
+            className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none"
+          >
             <p>Search results</p>
           </Dialog.Content>
           <Dialog.Overlay />

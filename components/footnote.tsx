@@ -22,13 +22,13 @@ export default function Footnote({ info }: { info: any }) {
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <button
-                className={`absolute right-2 flex h-6 w-6 items-center justify-center rounded-full text-xs md:right-4 ${open ? "bg-primary text-background" : "bg-black/20"}`}
+                className={`absolute right-3 flex h-6 w-6 items-center justify-center rounded-full text-xs ${open ? "bg-primary text-background" : "bg-black/20"}`}
               >
                 {no}
               </button>
             </Popover.Trigger>
             <Popover.Portal>
-              <Popover.Content side="right" sideOffset={24} align="start">
+              <Popover.Content side="right" sideOffset={30} align="start">
                 <FootnoteContents no={no}>{footnoteContents}</FootnoteContents>
               </Popover.Content>
             </Popover.Portal>
@@ -37,7 +37,7 @@ export default function Footnote({ info }: { info: any }) {
           <Drawer.Root open={open} onOpenChange={setOpen}>
             <Drawer.Trigger asChild>
               <button
-                className={`absolute right-2 flex h-6 w-6 items-center justify-center rounded-full text-xs md:right-4 ${open ? "bg-primary text-background" : "bg-black/20"}`}
+                className={`absolute right-1.5 flex h-6 w-6 items-center justify-center rounded-full text-xs ${open ? "bg-primary text-background" : "bg-black/20"}`}
               >
                 {no}
               </button>
@@ -64,7 +64,7 @@ function FootnoteContents({
   children: TrustedHTML;
 }) {
   return (
-    <div className="block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-7 text-white xl:max-w-[22vw]">
+    <div className="block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-7 text-white md:max-w-prose lg:max-w-xl xl:max-w-[22vw]">
       <span className="absolute left-2.5 top-1.5 text-xs">{no}</span>
       <div
         className="mr-8"
