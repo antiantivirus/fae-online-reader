@@ -89,7 +89,9 @@ function FootnoteContents({
   );
 }
 
-function overlapping(element1: HTMLElement, element2: HTMLElement) {
+function overlapping(element1: HTMLElement, element2: HTMLElement | null) {
+  if (!element2) return false;
+
   const rect1 = element1.getBoundingClientRect();
   const rect2 = element2.getBoundingClientRect();
 
