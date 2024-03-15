@@ -146,6 +146,11 @@
   display: none;
 }
 
+/* hide footnotes from page */
+.footnotes {
+  display: none;
+}
+
 @keyframes slideLeftOpen {
   from {
     transform: translateX(-100%);
