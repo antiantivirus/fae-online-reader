@@ -8,8 +8,7 @@ export default function Download() {
       x={0}
       y={0}
       viewBox="0 0 13.1 21.3"
-      height={20}
-      className="fill-primary"
+      className="h-[30px] fill-primary lg:h-5"
     >
       <style>
         {

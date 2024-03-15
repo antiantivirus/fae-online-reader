@@ -12,6 +12,7 @@ const config: Config = {
       sans: ['New Edge'],
     },
     fontSize: {
+      xs: '0.75rem',
       base: '1rem',
       xl: '1.75rem',
       '2xl': '3rem'
@@ -36,7 +37,7 @@ const config: Config = {
         DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',
       },
       borderRadius: {
-        DEFAULT: '10px'
+        DEFAULT: '15px'
       },
       keyframes: {
         slideDown: {

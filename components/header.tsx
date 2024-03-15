@@ -108,7 +108,7 @@ export default function Header() {
       </nav>
       <nav
         id="bottom-nav"
-        className="fixed bottom-2.5 left-2.5 flex items-center gap-2"
+        className="fixed bottom-2.5 left-3 flex items-center gap-2 lg:left-2.5"
       >
         <Link
           href="https://futureartecosystems.org/briefings/"

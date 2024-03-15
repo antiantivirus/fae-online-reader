@@ -7,6 +7,7 @@ import Footnote from "@/components/footnote";
 import Box from "@/components/box";
 import ChapterHeading from "@/components/chapterHeading";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -36,6 +37,7 @@ export default function PostPage({
             h4: heading("h4"),
             h5: heading("h5"),
             h6: heading("h6"),
+            sup: (props) => <Footnote info={props.children} />,
           }}
         />
       </article>
@@ -63,6 +65,7 @@ export async function getStaticProps(
   const mdxSource = await serialize(chapterFile, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
       format: "mdx",
     },
     parseFrontmatter: true,

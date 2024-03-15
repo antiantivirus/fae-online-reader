@@ -197,7 +197,7 @@ export default function TOC() {
                   <Star active={asPath.includes(chapter.link)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-6 hidden w-max rounded bg-background px-2 text-primary lg:group-hover:block ${asPath.includes(chapter.link) && "font-black lg:block"}`}
+                    className={`absolute left-6 top-1 hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-black xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -227,7 +227,7 @@ export default function TOC() {
                             href={chapter.link}
                           >
                             <Star active={asPath.includes(chapter.link)} />
-                            {chapter.title}
+                            <span className="mt-1.5">{chapter.title}</span>
                           </Link>
                           <Accordion.Trigger className="group">
                             <div className="transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
@@ -280,7 +280,7 @@ export default function TOC() {
                       href={chapter.link}
                     >
                       <Star active={asPath.includes(chapter.link)} />
-                      {chapter.title}
+                      <span className="mt-1.5">{chapter.title}</span>
                     </Link>
                   )}
                 </div>
