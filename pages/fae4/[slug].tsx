@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { readdirSync } from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -46,15 +46,12 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
+  const paths = readdirSync("content/fae4")
+    .map((path) => path.replace(/\.mdx?$/, ""))
+    .map((slug) => ({ params: { slug } }));
+
   return {
-    paths: [
-      "introduction",
-      "chapter-0",
-      "chapter-1",
-      "chapter-2",
-      "chapter-3",
-      "postface",
-    ],
+    paths,
     fallback: "blocking",
   };
 }
