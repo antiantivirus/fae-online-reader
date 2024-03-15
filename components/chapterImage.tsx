@@ -45,8 +45,6 @@ export default function ChapterImage({ video }: { video: string }) {
       playsInline
       // autoPlay
       ref={videoRef}
-      onLoad={() => alert("LOADED")}
-      onLoadedData={() => alert("LOADING")}
     >
       <source src={video} type="video/mp4" />
     </video>
