@@ -3,6 +3,7 @@ import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { Drawer } from "vaul";
 import innerText from "react-innertext";
+import FootnoteIcon from "./icons/footnote";
 
 export default function Footnote({ info }: { info: any }) {
   const [open, setOpen] = useState(false);
@@ -22,13 +23,14 @@ export default function Footnote({ info }: { info: any }) {
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <button
-                className={`absolute right-3 flex h-6 w-6 items-center justify-center rounded-full text-xs ${open ? "bg-primary text-background" : "bg-black/20"}`}
+                className={`absolute right-0 -mt-8 flex h-10 w-10 items-center justify-center rounded-full stroke-primary text-xs  ${open ? "fill-primary text-background" : "fill-none"}`}
               >
-                {no}
+                <FootnoteIcon />
+                <span className="bg-white">{no}</span>
               </button>
             </Popover.Trigger>
             <Popover.Portal>
-              <Popover.Content side="right" sideOffset={30} align="start">
+              <Popover.Content side="right" sideOffset={15} align="start">
                 <FootnoteContents no={no}>{footnoteContents}</FootnoteContents>
               </Popover.Content>
             </Popover.Portal>
@@ -37,8 +39,9 @@ export default function Footnote({ info }: { info: any }) {
           <Drawer.Root open={open} onOpenChange={setOpen}>
             <Drawer.Trigger asChild>
               <button
-                className={`absolute right-1.5 flex h-6 w-6 items-center justify-center rounded-full text-xs ${open ? "bg-primary text-background" : "bg-black/20"}`}
+                className={`absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${open ? "fill-primary text-background" : "fill-none"}`}
               >
+                <FootnoteIcon />
                 {no}
               </button>
             </Drawer.Trigger>
@@ -64,10 +67,10 @@ function FootnoteContents({
   children: TrustedHTML;
 }) {
   return (
-    <div className="block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-7 text-white md:max-w-prose lg:max-w-xl xl:max-w-[22vw]">
+    <div className=":max-w-[22vw] block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-7 text-white md:max-w-prose lg:max-w-xl xl:max-w-[20vw]">
       <span className="absolute left-2.5 top-1.5 text-xs">{no}</span>
       <div
-        className="mr-8"
+        className="text-xxs mr-8"
         dangerouslySetInnerHTML={{ __html: children }}
       ></div>
     </div>
