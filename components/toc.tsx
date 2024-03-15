@@ -16,7 +16,7 @@ const tableOfContents = [
   },
   {
     title: "Defining Public AI",
-    link: "/fae4/chapter-0",
+    link: "/fae4/defining-public-ai",
     subChapters: [
       {
         title: "A Framework for Public Claims on Resources",

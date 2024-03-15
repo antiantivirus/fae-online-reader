@@ -43,7 +43,7 @@ export default function ChapterImage({ video }: { video: string }) {
   return (
     <video
       id="chapter-image"
-      className="absolute left-1/2 top-[100%] z-10 w-11/12 -translate-x-1/2 transform  lg:top-[135%] lg:w-9/12"
+      className="absolute left-1/2 top-[100%] z-10 w-[93.66%]  -translate-x-1/2 transform lg:top-[calc(100%+50px)]"
       muted
       playsInline
       autoPlay={!isDesktop}
