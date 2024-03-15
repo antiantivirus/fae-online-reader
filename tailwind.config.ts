@@ -12,6 +12,7 @@ const config: Config = {
       sans: ['New Edge'],
     },
     fontSize: {
+      xs: '0.75rem',
       base: '1rem',
       xl: '1.75rem',
       '2xl': '3rem'
@@ -36,7 +37,7 @@ const config: Config = {
         DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',
       },
       borderRadius: {
-        DEFAULT: '10px'
+        DEFAULT: '15px'
       },
       keyframes: {
         slideDown: {
@@ -51,6 +52,8 @@ const config: Config = {
       animation: {
         slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideLeftOpen: 'slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideLeftClose: 'slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1)'
       },
     },
   },

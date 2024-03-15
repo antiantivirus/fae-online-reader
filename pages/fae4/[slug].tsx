@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { readdirSync } from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -6,6 +6,11 @@ import Head from "next/head";
 import Footnote from "@/components/footnote";
 import Box from "@/components/box";
 import ChapterHeading from "@/components/chapterHeading";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+import Link from "next/link";
+import { ReactNode } from "react";
+
 export default function PostPage({
   source,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -26,6 +31,13 @@ export default function PostPage({
           components={{
             Footnote,
             Box,
+            h1: heading("h1"),
+            h2: boxedHeading("h2"),
+            h3: boxedHeading("h3"),
+            h4: heading("h4"),
+            h5: heading("h5"),
+            h6: heading("h6"),
+            sup: (props) => <Footnote info={props.children} />,
           }}
         />
       </article>
@@ -34,7 +46,14 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
-  return { paths: [], fallback: "blocking" };
+  const paths = readdirSync("content/fae4")
+    .map((path) => path.replace(/\.mdx?$/, ""))
+    .map((slug) => ({ params: { slug } }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
 }
 
 export async function getStaticProps(
@@ -50,7 +69,14 @@ export async function getStaticProps(
 
   // read the MDX serialized content along with the frontmatter
   // from the .mdx blog post file
-  const mdxSource = await serialize(chapterFile, { parseFrontmatter: true });
+  const mdxSource = await serialize(chapterFile, {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
+      format: "mdx",
+    },
+    parseFrontmatter: true,
+  });
   return {
     props: {
       source: mdxSource,
@@ -59,3 +85,34 @@ export async function getStaticProps(
     revalidate: 60,
   };
 }
+
+type HeadingProps = {
+  id?: string;
+  children?: ReactNode;
+};
+
+const boxedHeading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
+  const Heading = ({ id, children }: HeadingProps) => (
+    <Box wide>
+      <Link href={`#${id}`} className="anchor group relative no-underline">
+        <As id={id}>{children}</As>
+      </Link>
+    </Box>
+  );
+  Heading.displayName = As;
+  return Heading;
+};
+
+const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
+  const Heading = ({ id, children }: HeadingProps) => (
+    <Link href={`#${id}`} className="anchor group relative no-underline">
+      <As id={id}>{children}</As>
+    </Link>
+  );
+  Heading.displayName = As;
+  return Heading;
+};
+
+// const footnote = ({ children }) => {
+//   <sup>{children}</sup>;
+// };

@@ -8,6 +8,7 @@ export default function ChapterImage({ video }: { video: string }) {
 
   // pause video on load to bypass autoplay video requirements for mobile
   const pauseVideo = () => {
+    console.log("pause the video");
     videoRef.current?.pause();
   };
 
@@ -42,9 +43,8 @@ export default function ChapterImage({ video }: { video: string }) {
       className="absolute left-1/2 top-[100%] z-10 w-11/12 -translate-x-1/2 transform  lg:top-[135%] lg:w-9/12"
       muted
       playsInline
-      autoPlay
+      // autoPlay
       ref={videoRef}
-      onLoadedData={pauseVideo}
     >
       <source src={video} type="video/mp4" />
     </video>
