@@ -1,5 +1,5 @@
-import { Drawer } from "vaul";
 import * as Accordion from "@radix-ui/react-accordion";
+import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Star from "./icons/star";
@@ -179,17 +179,11 @@ export default function TOC() {
       id="toc"
       className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
-      <Drawer.Root
-        modal={false}
-        fixed={false}
-        direction="left"
-        open={tocOpen}
-        onOpenChange={setTocOpen}
-      >
+      <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
         <ol className="flex h-full flex-col gap-4 lg:justify-between">
           {tableOfContents.map((chapter) => (
             <li key={chapter.title} className="group">
-              <Drawer.Trigger asChild>
+              <Dialog.Trigger asChild>
                 <button
                   onClick={() => setAccordOpen(chapter.title)}
                   className={`group relative flex items-center stroke-primary `}
@@ -202,14 +196,14 @@ export default function TOC() {
                     {chapter.title}
                   </span>
                 </button>
-              </Drawer.Trigger>
+              </Dialog.Trigger>
             </li>
           ))}
         </ol>
 
-        <Drawer.Portal>
-          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pr-6 text-primary shadow">
-            <Drawer.Title className="sr-only">Table of Contents</Drawer.Title>
+        <Dialog.Portal>
+          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pr-6 text-primary shadow">
+            <Dialog.Title className="sr-only">Table of Contents</Dialog.Title>
             <Accordion.Root
               className="h-full overflow-auto py-2.5"
               type="single"
@@ -286,9 +280,9 @@ export default function TOC() {
                 </div>
               ))}
             </Accordion.Root>
-          </Drawer.Content>
-        </Drawer.Portal>
-      </Drawer.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </nav>
   );
 }

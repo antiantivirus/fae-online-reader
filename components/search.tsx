@@ -1,6 +1,6 @@
 import SearchIcon from "./icons/search";
-import { Drawer } from "vaul";
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function Search() {
   const [searchinn, setSearchinn] = useState<boolean>(false);
@@ -25,19 +25,14 @@ export default function Search() {
         className={`fixed right-2.5 h-[30px] w-[calc(100vw-55px)] rounded-full bg-background px-3 text-typography shadow md:static md:block md:w-full ${searchOpenMobile ? "block" : "hidden"}`}
         onChange={() => setSearchinn(true)}
       />
-      <Drawer.Root
-        modal={false}
-        direction="left"
-        open={searchinn}
-        onOpenChange={setSearchinn}
-      >
-        <Drawer.Portal>
-          <Drawer.Content className="fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col rounded-tr bg-background p-5 text-primary shadow">
+      <Dialog.Root modal={false} open={searchinn} onOpenChange={setSearchinn}>
+        <Dialog.Portal>
+          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none">
             <p>Search results</p>
-          </Drawer.Content>
-          <Drawer.Overlay />
-        </Drawer.Portal>
-      </Drawer.Root>
+          </Dialog.Content>
+          <Dialog.Overlay />
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }
