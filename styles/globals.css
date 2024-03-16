@@ -84,6 +84,10 @@
     @apply box mx-auto my-[25px] rounded bg-background p-2.5 pr-7 italic text-typography shadow md:max-w-2xl md:p-5 md:pr-12;
   }
 
+  blockquote:last-of-type {
+    @apply mb-0;
+  }
+
   cite {
     font-style: normal;
   }
