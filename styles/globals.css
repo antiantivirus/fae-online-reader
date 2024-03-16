@@ -29,9 +29,12 @@
     margin: 0;
   }
 
-  /* adding space above anchors so they appear below the fixed header */
   html {
+    /* adding space above anchors so they appear below the fixed header */
     scroll-padding-top: 7.25rem;
+    /* fix font not looking crisp on safari */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
