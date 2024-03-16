@@ -51,7 +51,7 @@ export default function Footnote({ info }: { info: any }) {
             <Dialog.Trigger asChild>
               <button
                 id={`footnote-button-${no}`}
-                className={`absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
+                className={`group absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 {no}
@@ -79,7 +79,7 @@ function FootnoteContents({
   children: TrustedHTML;
 }) {
   return (
-    <div className=":max-w-[22vw] block w-max max-w-[80vw] rounded-lg border bg-primary p-2 pl-7 text-white md:max-w-prose lg:max-w-xl xl:max-w-[20vw]">
+    <div className=":max-w-[22vw] block w-max max-w-[80vw] rounded-lg bg-burgundy p-2 pl-7 text-white shadow md:max-w-prose lg:max-w-xl xl:max-w-[20vw]">
       <span className="absolute left-2.5 top-1.5 text-xs">{no}</span>
       <div
         className="mr-8 text-xxs"
