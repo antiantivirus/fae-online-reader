@@ -24,7 +24,7 @@ export default function PostPage({
         title={source.frontmatter.title as string}
         video={source.frontmatter.video as string}
       />
-      <article id="chapter-contents" className="prose space-y-12">
+      <article id="chapter-contents" className="prose space-y-[25px]">
         <MDXRemote
           {...source}
           // specifying the custom MDX components
@@ -93,11 +93,13 @@ type HeadingProps = {
 
 const boxedHeading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
   const Heading = ({ id, children }: HeadingProps) => (
-    <Box wide>
-      <Link href={`#${id}`} className="anchor group relative no-underline">
-        <As id={id}>{children}</As>
-      </Link>
-    </Box>
+    <div className="!mt-[50px]">
+      <Box wide>
+        <Link href={`#${id}`} className="anchor group relative no-underline">
+          <As id={id}>{children}</As>
+        </Link>
+      </Box>
+    </div>
   );
   Heading.displayName = As;
   return Heading;
