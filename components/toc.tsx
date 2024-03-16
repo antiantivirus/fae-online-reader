@@ -11,6 +11,14 @@ import GithubSlugger from "github-slugger";
 
 const tableOfContents = [
   {
+    title: "Credits",
+    link: "/fae4/credits",
+  },
+  {
+    title: "Preface",
+    link: "/fae4/preface",
+  },
+  {
     title: "Introduction",
     link: "/fae4/introduction",
   },
@@ -151,6 +159,14 @@ const tableOfContents = [
     title: "Postface",
     link: "/fae4/postface",
   },
+  {
+    title: "Biographies",
+    link: "/fae4/biographies",
+  },
+  {
+    title: "Contributors",
+    link: "/fae4/contributors",
+  },
 ];
 
 export default function TOC() {
@@ -181,7 +197,7 @@ export default function TOC() {
   return (
     <nav
       id="toc"
-      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
+      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-[80px] lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
       <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
         {/* <Dialog.Trigger asChild> */}
