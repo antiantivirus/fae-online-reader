@@ -11,10 +11,6 @@ import GithubSlugger from "github-slugger";
 
 const tableOfContents = [
   {
-    title: "Credits",
-    link: "/fae4/credits",
-  },
-  {
     title: "Preface",
     link: "/fae4/preface",
   },
@@ -158,14 +154,6 @@ const tableOfContents = [
   {
     title: "Postface",
     link: "/fae4/postface",
-  },
-  {
-    title: "Biographies",
-    link: "/fae4/biographies",
-  },
-  {
-    title: "Contributors",
-    link: "/fae4/contributors",
   },
 ];
 
