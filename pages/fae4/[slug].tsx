@@ -13,7 +13,9 @@ import { ReactNode } from "react";
 
 export default function PostPage({
   source,
+  slug,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const title = source.frontmatter.title as string;
   return (
     <div>
       <Head>
@@ -21,10 +23,13 @@ export default function PostPage({
       </Head>
       <ChapterHeading
         no={source.frontmatter.chapter_no as string}
-        title={source.frontmatter.title as string}
+        title={title}
         video={source.frontmatter.video as string}
       />
-      <article id="chapter-contents" className="prose space-y-[25px]">
+      <article
+        id="chapter-contents"
+        className={`prose space-y-[12.5px] ${slug}`}
+      >
         <MDXRemote
           {...source}
           // specifying the custom MDX components
@@ -32,8 +37,8 @@ export default function PostPage({
             Footnote,
             Box,
             h1: heading("h1"),
-            h2: boxedHeading("h2"),
-            h3: boxedHeading("h3"),
+            h2: heading("h2"),
+            h3: heading("h3"),
             h4: heading("h4"),
             h5: heading("h5"),
             h6: heading("h6"),
@@ -80,6 +85,7 @@ export async function getStaticProps(
   return {
     props: {
       source: mdxSource,
+      slug: slug,
     },
     // enable ISR
     revalidate: 60,

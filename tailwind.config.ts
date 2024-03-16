@@ -12,7 +12,7 @@ const config: Config = {
       sans: ['New Edge'],
     },
     fontSize: {
-      xxs: '0.7rem',
+      xxs: '0.75rem',
       xs: '0.75rem',
       base: '1rem',
       xl: '1.75rem',
