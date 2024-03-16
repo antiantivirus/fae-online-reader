@@ -13,6 +13,7 @@ import { ReactNode } from "react";
 
 export default function PostPage({
   source,
+  slug,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
@@ -25,7 +26,10 @@ export default function PostPage({
         title={title}
         video={source.frontmatter.video as string}
       />
-      <article id="chapter-contents" className="prose space-y-[12.5px]">
+      <article
+        id="chapter-contents"
+        className={`prose space-y-[12.5px] ${slug}`}
+      >
         <MDXRemote
           {...source}
           // specifying the custom MDX components
@@ -81,6 +85,7 @@ export async function getStaticProps(
   return {
     props: {
       source: mdxSource,
+      slug: slug,
     },
     // enable ISR
     revalidate: 60,
