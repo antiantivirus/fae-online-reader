@@ -194,7 +194,7 @@ export default function TOC() {
                   <Star active={asPath.includes(chapter.link)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-6 top-1 hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-black xl:block"}`}
+                    className={`absolute left-6 top-1 hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-semibold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -235,7 +235,7 @@ export default function TOC() {
                           </Accordion.Trigger>
                         </div>
                       </Accordion.Header>
-                      <Accordion.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp ml-10 overflow-hidden">
+                      <Accordion.Content className="ml-10 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
                         {chapter.subChapters.map((subChapter) => (
                           <ol key={subChapter.title} className="mb-2.5">
                             <li>
