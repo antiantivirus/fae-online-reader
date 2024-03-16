@@ -8,7 +8,8 @@ export default function Download() {
       x={0}
       y={0}
       viewBox="0 0 13.1 21.3"
-      className="h-[30px] fill-primary lg:h-5"
+      height={30}
+      className="fill-primary"
     >
       <style>
         {
@@ -40,7 +41,7 @@ export default function Download() {
         d="M6.6 6.6V.1"
         style={{
           fill: "none",
-          strokeWidth: 0.2,
+          strokeWidth: 0.4,
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: 10,
