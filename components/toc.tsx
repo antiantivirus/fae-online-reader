@@ -128,7 +128,7 @@ const tableOfContents = [
     link: "/fae4/chapter-2",
     subChapters: [
       {
-        title: "Sub chapter",
+        title: "To be added",
         subChapters: [
           {
             title: "Sub sub chapter",
@@ -142,7 +142,7 @@ const tableOfContents = [
     link: "/fae4/chapter-3",
     subChapters: [
       {
-        title: "Subchapter",
+        title: "To be added",
         subChapters: [
           {
             title: "Sub sub chapter",
