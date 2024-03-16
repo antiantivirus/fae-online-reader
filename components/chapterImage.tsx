@@ -43,7 +43,7 @@ export default function ChapterImage({ video }: { video: string }) {
         trigger: "main",
         start: "top +80",
         end: "+300",
-        scrub: 3,
+        scrub: 1,
       },
     });
   });
