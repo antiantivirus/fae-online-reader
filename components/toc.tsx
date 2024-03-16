@@ -77,19 +77,25 @@ const tableOfContents = [
         title: "MODEL: Culture Shaping Model Shaping Culture",
         subChapters: [
           {
-            title: "The Dawn of Organisational Self-Knowledge",
+            title: "Disambiguating Technical Opacity and Transparency",
           },
           {
-            title: "Latent Data Troves",
+            title: "Cultivating Trust and Verifiability",
           },
           {
-            title: "Data Is Relational",
+            title: "Models Offer a New Compression Technique",
           },
           {
-            title: "Trusted Data Stewards",
+            title: "New Public Mission Orgs for New Public Mechanisms",
           },
           {
-            title: "Soft Power Diplomacy",
+            title: "Alignment’s Shadow Negotiations",
+          },
+          {
+            title: "Ways of Seeing’ in the Latent Space",
+          },
+          {
+            title: "Minotaur vs Centaur Framework of AI Digital Transformation",
           },
         ],
       },
@@ -97,19 +103,17 @@ const tableOfContents = [
         title: "COMPUTE: High Barriers to Cultural Entry",
         subChapters: [
           {
-            title: "The Dawn of Organisational Self-Knowledge",
+            title: "Supply-chain Geopolitics",
           },
           {
-            title: "Latent Data Troves",
+            title: "IP Empire",
           },
           {
-            title: "Data Is Relational",
+            title: "State as a Broker of Compute Allocations",
           },
           {
-            title: "Trusted Data Stewards",
-          },
-          {
-            title: "Soft Power Diplomacy",
+            title:
+              "Experiments & Research for a Less Computationally Intensive AI Stack",
           },
         ],
       },
