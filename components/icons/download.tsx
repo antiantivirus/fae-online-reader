@@ -2,10 +2,10 @@ export default function Download() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height={30}
+      // height={30}
       xmlSpace="preserve"
       fill="none"
-      className="fill-primary"
+      className="h-auto w-[30px] fill-primary lg:h-[30px] lg:w-auto"
       viewBox="0 0 14 22"
     >
       <g clipPath="url(#a)">

@@ -95,6 +95,7 @@
   @media screen and (min-width: 720px) {
     h1 {
       font-size: 7.2em;
+      line-height: 1.1;
     }
   }
 
