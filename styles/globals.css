@@ -235,6 +235,45 @@
   display: none;
 }
 
+/* model viewer */
+.Hotspot {
+  @apply shadow;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--colour-background);
+  box-sizing: border-box;
+}
+
+.HotspotAnnotation {
+  @apply shadow;
+  width: max-content;
+  background-color: var(--colour-primary);
+  color: var(--colour-background);
+  position: absolute;
+  transform: translate(25px, -12px);
+  border-radius: 99px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 300ms ease;
+}
+
+.HotspotAnnotation:hover {
+  scale: 1.05;
+  transition: 300ms ease;
+}
+
+.HotspotAnnotationLeft {
+  transform: translate(-88px, -12px);
+}
+
+/* This keeps child nodes hidden while the element loads */
+:not(:defined) > * {
+  display: none;
+}
+
 @keyframes slideLeftOpen {
   from {
     transform: translateX(-100%);
