@@ -10,6 +10,7 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
+import Model from "@/components/model";
 
 export default function PostPage({
   source,
@@ -34,6 +35,7 @@ export default function PostPage({
           {...source}
           // specifying the custom MDX components
           components={{
+            Model,
             Footnote,
             Box,
             h1: heading("h1"),
