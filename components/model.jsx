@@ -1,30 +1,50 @@
 import { useEffect, useState } from "react";
 import Box from "./box";
 import Script from "next/script";
+import { useTheme } from "next-themes";
 
 export default function Model() {
+  const { theme, setTheme } = useTheme();
   const [active, setActive] = useState("");
+  const [modelLoaded, setModelLoaded] = useState(false);
 
   useEffect(() => {
     import("@google/model-viewer").catch(console.error);
-
-    // const modelViewer = document.querySelector("#model-viewer");
-    // const annotationClicked = (annotation) => {
-    //   let dataset = annotation.dataset;
-    //   modelViewer2.cameraTarget = dataset.target;
-    //   modelViewer2.cameraOrbit = '30deg 75deg 0.1m"';
-    //   modelViewer2.fieldOfView = "45deg";
-    // };
-
-    // modelViewer.querySelectorAll("button").forEach((hotspot) => {
-    //   hotspot.addEventListener("click", () => annotationClicked(hotspot));
-    // });
+    const model = document.querySelector("model-viewer");
+    model.addEventListener("load", () => {
+      setModelLoaded(true);
+      console.log("model loaded");
+      model.removeEventListener("load", () => {});
+    });
+    const onProgress = (event) => {
+      const progressBar = event.target.querySelector(".progress-bar");
+      const updatingBar = event.target.querySelector(".update-bar");
+      updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+      if (event.detail.totalProgress === 1) {
+        progressBar.classList.add("hide");
+        event.target.removeEventListener("progress", onProgress);
+      } else {
+        // progressBar.classList.remove("hide");
+      }
+    };
+    model.addEventListener("progress", onProgress);
   }, []);
+
+  useEffect(() => {
+    const model = document.querySelector("model-viewer");
+    const colorString = theme == "dark" ? "#ffffff" : "#421629";
+    console.log(theme);
+    if (modelLoaded) {
+      const material = model.model.materials[0];
+      material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+    }
+  }, [theme, modelLoaded]);
 
   return (
     <div className="box md:max-w-boxWide relative mx-auto aspect-square rounded bg-background text-typography shadow lg:aspect-video">
       {/* <input className="absolute left-2.5 top-2.5 z-50" type="checkbox" /> */}
       <model-viewer
+        onLoaded
         id="model-viewer"
         camera-orbit="30deg 75deg 0.2m"
         class=" h-full w-full"
@@ -212,7 +232,7 @@ export default function Model() {
         >
           <div class="HotspotAnnotation HotspotAnnotationLeft">Software</div>
         </button>
-        <div class="progress-bar hide" slot="progress-bar">
+        <div class="progress-bar" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
       </model-viewer>

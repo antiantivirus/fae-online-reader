@@ -250,8 +250,8 @@
 .HotspotAnnotation {
   @apply shadow;
   width: max-content;
-  background-color: var(--colour-primary);
-  color: var(--colour-background);
+  background-color: #421629;
+  color: #ffffff;
   position: absolute;
   transform: translate(25px, -12px);
   border-radius: 99px;
@@ -268,6 +268,37 @@
 
 .HotspotAnnotationLeft {
   transform: translate(-88px, -12px);
+}
+
+.progress-bar {
+  @apply z-50 shadow;
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 99px;
+  box-shadow:
+    0px 3px 10px 3px rgba(0, 0, 0, 0.5),
+    0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.update-bar {
+  background-color: var(--colour-primary);
+  width: 0%;
+  height: 100%;
+  border-radius: 99px;
+  float: left;
+  transition: width 0.3s ease;
 }
 
 /* This keeps child nodes hidden while the element loads */
