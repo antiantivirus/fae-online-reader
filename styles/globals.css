@@ -35,7 +35,7 @@
     /* fix font not looking crisp on safari */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    zoom: 115%;
+    zoom: 120%;
   }
 
   body {
