@@ -80,7 +80,7 @@ function FootnoteContents({
 }) {
   return (
     <div className=":max-w-[22vw] block w-max max-w-[80vw] rounded-lg bg-burgundy p-2 pl-7 text-white shadow md:max-w-prose lg:max-w-xl xl:max-w-[20vw]">
-      <span className="absolute left-2.5 top-1.5 text-xs">{no}</span>
+      <span className="absolute left-2.5 top-1.5 text-xxs">{no}</span>
       <div
         className="mr-8 text-xxs"
         dangerouslySetInnerHTML={{ __html: children }}

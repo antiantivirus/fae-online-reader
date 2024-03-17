@@ -2,7 +2,7 @@ export default function Minus() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height={20}
+      height={24}
       xmlSpace="preserve"
       viewBox="0 0 19 20"
       fill="current"
