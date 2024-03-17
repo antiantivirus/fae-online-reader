@@ -7,7 +7,9 @@ import FootnoteIcon from "./icons/footnote";
 
 export default function Footnote({ info }: { info: any }) {
   const [open, setOpen] = useState(false);
-  const [footnoteContents, setFootnoteContents] = useState<TrustedHTML>("");
+  const [footnoteContents, setFootnoteContents] = useState<
+    TrustedHTML | string
+  >("");
   const [adjustFootnote, setAdjustFootnote] = useState<boolean>(false);
   const isDesktop = useMediaQuery("(min-width: 1280px)");
   const id = info.props.href;
@@ -76,7 +78,7 @@ function FootnoteContents({
   children,
 }: {
   no: string;
-  children: TrustedHTML;
+  children: TrustedHTML | string;
 }) {
   return (
     <div className=":max-w-[22vw] block w-max max-w-[80vw] rounded-lg bg-burgundy p-2 pl-7 text-white shadow md:max-w-prose lg:max-w-xl xl:max-w-[20vw]">
