@@ -99,7 +99,7 @@ const stylesheet = {
     margin: 12,
     fontSize: 14,
     color: "#421629",
-    fontFamily: "New-Edge",
+    // fontFamily: "New-Edge",
   },
   li: {
     margin: 12,
