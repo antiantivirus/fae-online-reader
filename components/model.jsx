@@ -176,6 +176,40 @@ export default function Model() {
           className={`Hotspot ${active != "data" && active != "" && "opacity-25"}`}
         >
           <div class="HotspotAnnotation">Data</div>
+          {active == "data" && (
+            <>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(80px, -40px)" }}
+              >
+                Text
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(132px, -40px)" }}
+              >
+                Images
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(140px, 18px)" }}
+              >
+                Audio
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(80px, 18px)" }}
+              >
+                Video
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(100px, -12px)" }}
+              >
+                Sensors
+              </div>
+            </>
+          )}
         </button>
         <button
           slot="hotspot-7"
@@ -196,6 +230,28 @@ export default function Model() {
           className={`Hotspot ${active != "compute" && active != "" && "opacity-25"}`}
         >
           <div class="HotspotAnnotation">Compute</div>
+          {active == "compute" && (
+            <>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(90px, -40px)" }}
+              >
+                GPU
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(125px, -12px)" }}
+              >
+                CPU
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(90px, 20px)" }}
+              >
+                TPU
+              </div>
+            </>
+          )}
         </button>
         <button
           slot="hotspot-9"
@@ -207,6 +263,22 @@ export default function Model() {
           className={`Hotspot ${active != "server" && active != "" && "opacity-25"}`}
         >
           <div class="HotspotAnnotation">Server network</div>
+          {active == "server" && (
+            <>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(135px, -38px)" }}
+              >
+                Servers
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(135px, 15px)" }}
+              >
+                Cables
+              </div>
+            </>
+          )}
         </button>
         <button
           slot="hotspot-10"
@@ -223,6 +295,70 @@ export default function Model() {
           >
             Natural resources
           </div>
+          {active == "natural" && (
+            <>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(80px, -40px)" }}
+              >
+                Wind
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(180px, -12px)" }}
+              >
+                Water
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(172px, 20px)" }}
+              >
+                Solar
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(80px, 20px)" }}
+              >
+                Fossil fuels
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(138px, -40px)" }}
+              >
+                Uranium
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(244px, -12px)" }}
+              >
+                Palladium
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(292px, 20px)" }}
+              >
+                Silver
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(280px, -40px)" }}
+              >
+                Gold
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(228px, 20px)" }}
+              >
+                Silicon
+              </div>
+              <div
+                class="HotspotAnnotation text-xs"
+                style={{ transform: "translate(212px, -40px)" }}
+              >
+                Lithium
+              </div>
+            </>
+          )}
         </button>
         <button
           slot="hotspot-14"
