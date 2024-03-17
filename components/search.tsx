@@ -8,7 +8,7 @@ export default function Search() {
 
   return (
     <div className="flex grow gap-2">
-      <div className="flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-full bg-background shadow">
+      <div className="flex aspect-square h-9 w-9 items-center justify-center rounded-full bg-background shadow">
         <button
           className="md:hidden"
           onClick={() => setSearchOpenMobile(!searchOpenMobile)}
@@ -22,7 +22,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search"
-        className={`fixed right-2.5 h-[30px] w-[calc(100vw-55px)] rounded-full bg-background px-3 text-typography shadow md:static md:block md:w-full ${searchOpenMobile ? "block" : "hidden"}`}
+        className={`fixed right-2.5 h-9 w-[calc(100vw-55px)] rounded-full bg-background px-3 text-base text-typography shadow md:static md:block md:w-full ${searchOpenMobile ? "block" : "hidden"}`}
         onChange={() => setSearchinn(true)}
       />
       <Dialog.Root modal={false} open={searchinn} onOpenChange={setSearchinn}>

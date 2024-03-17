@@ -202,7 +202,7 @@ export default function TOC() {
                   <Star active={asPath.includes(chapter.link)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-6 top-1 hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-semibold xl:block"}`}
+                    className={`absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -215,7 +215,7 @@ export default function TOC() {
         {/* </Dialog.Trigger> */}
 
         <Dialog.Portal>
-          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pl-2.5 text-primary shadow">
+          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[480px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pl-2.5 text-primary shadow">
             <Dialog.Title className="sr-only">Table of Contents</Dialog.Title>
             <Accordion.Root
               className="h-full overflow-auto"

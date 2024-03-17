@@ -11,7 +11,7 @@ export default function Box({
 }) {
   return (
     <div
-      className={`box relative mx-auto rounded bg-background p-2.5 text-typography shadow md:p-5 ${wide ? "!mt-[50px] md:max-w-3xl" : "pr-7 md:max-w-2xl md:pr-12"}`}
+      className={`box relative mx-auto rounded bg-background p-2.5 text-typography shadow md:p-5 ${wide ? "md:max-w-boxWide !mt-[50px]" : "md:max-w-box pr-7 md:pr-12"}`}
     >
       {children}
     </div>

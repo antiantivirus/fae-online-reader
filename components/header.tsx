@@ -84,19 +84,19 @@ export default function Header() {
           <GlyphBackground />
           <div className="flex items-center gap-2">
             <button
-              className="aspect-square h-[30px] w-[30px] rounded-full bg-white shadow"
+              className="icon aspect-square rounded-full bg-white shadow"
               onClick={() => setTheme("light")}
             >
               <span className="sr-only">Light</span>
             </button>
             <button
-              className="bg-grey aspect-square h-[30px] w-[30px] rounded-full shadow"
+              className="icon aspect-square rounded-full bg-grey shadow"
               onClick={() => setTheme("grey")}
             >
               <span className="sr-only">Grey</span>
             </button>
             <button
-              className="bg-burgundy aspect-square h-[30px] w-[30px] rounded-full border-white shadow"
+              className="icon aspect-square rounded-full border-white bg-burgundy shadow"
               onClick={() => setTheme("dark")}
             >
               <span className="sr-only">Dark</span>
@@ -116,7 +116,7 @@ export default function Header() {
       </nav>
       <nav
         id="bottom-nav"
-        className="fixed bottom-2.5 left-3 flex items-center gap-2 lg:left-2.5"
+        className="fixed bottom-2.5 left-1.5 flex items-center gap-2 lg:left-2.5"
       >
         <Link
           href="https://futureartecosystems.org/briefings/"

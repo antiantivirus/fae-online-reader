@@ -12,7 +12,7 @@ export default function GlyphBackground() {
     <>
       <button
         onClick={() => setShow(!show)}
-        className={`flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-full bg-background shadow ${show && "bg-primary"}`}
+        className={`icon flex aspect-square items-center justify-center rounded-full bg-background shadow ${show && "bg-primary"}`}
       >
         <GlyphIndicator active={show} />
       </button>
