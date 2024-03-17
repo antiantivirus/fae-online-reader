@@ -190,19 +190,27 @@ export default function TOC() {
       <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
         {/* <Dialog.Trigger asChild> */}
         {/* <button aria-label="Open table of contents" className="h-full"> */}
-        <ol className="flex h-full flex-col gap-4 lg:justify-between">
+        <ol
+          onMouseEnter={() => {
+            setTocOpen(true);
+          }}
+          className="flex h-full flex-col gap-4 hover:cursor-pointer lg:justify-between"
+        >
           {tableOfContents.map((chapter) => (
             <li key={chapter.title} className="group">
               <Dialog.Trigger asChild>
                 <button
                   aria-hidden
-                  onClick={() => setAccordOpen(chapter.title)}
+                  // onMouseEnter={() => {
+                  //   setTocOpen(true);
+                  //   setAccordOpen(chapter.title);
+                  // }}
                   className={`group relative flex items-center stroke-primary `}
                 >
                   <Star active={asPath.includes(chapter.link)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
+                    className={`absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
