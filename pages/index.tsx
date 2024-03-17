@@ -54,16 +54,19 @@ export default function Home() {
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Postface</h3>
-                <p>Brief description of chapter goes here</p>
               </div>
-              <div className="aspect-video h-16 bg-black/20"></div>
             </div>
           </div>
           <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Chapter 3: Ecosystem</h3>
-                <p>Brief description of chapter goes here</p>
+                <p className="max-w-prose">
+                  The final chapter points to the AxAT ecosystem as a lab for
+                  public AI. It points to specific areas requiring
+                  infrastructural development and concludes with recommendations
+                  for AxAT and public AI experiments.
+                </p>
               </div>
               <div className="aspect-video h-16 bg-black/20"></div>
             </div>
@@ -72,7 +75,13 @@ export default function Home() {
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Chapter 2: Artist</h3>
-                <p>Brief description of chapter goes here</p>
+                <p className="max-w-prose">
+                  This chapter looks at artistic practices that work with
+                  different elements of the AI stack. It considers the
+                  reciprocal re-shaping of artistic work with AI tools and the
+                  expectations placed on artists in a context where AI tools
+                  allow users to generate endless media.
+                </p>
               </div>
               <div className="aspect-video h-16 bg-black/20"></div>
             </div>
@@ -81,7 +90,15 @@ export default function Home() {
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Chapter 1: Organisation</h3>
-                <p>Brief description of chapter goes here</p>
+                <p className="max-w-prose">
+                  This chapter considers how organisations are being transformed
+                  by AI, which requires large quantities of high quality
+                  training data, advanced algorithmic models and computational
+                  power. The chapter points to areas of likely high impact for
+                  cultural organisations and suggests proactive strategies to
+                  make consequential operational and strategic decisions in the
+                  sector.
+                </p>
               </div>
               <div className="aspect-video h-16 bg-black/20"></div>
             </div>
@@ -90,18 +107,23 @@ export default function Home() {
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Defining Public AI</h3>
-                <p>Brief description of chapter goes here</p>
               </div>
               <div className="aspect-video h-16 bg-black/20"></div>
             </div>
           </div>
-          <div className="download-drawer-pdf z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <div className="flex h-full w-full justify-between">
               <div>
                 <h3>Introduction</h3>
-                <p>Brief description of chapter goes here</p>
               </div>
               <div className="aspect-video h-16 bg-black/20"></div>
+            </div>
+          </div>
+          <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+            <div className="flex h-full w-full justify-between">
+              <div>
+                <h3>Preface</h3>
+              </div>
             </div>
           </div>
         </div>
