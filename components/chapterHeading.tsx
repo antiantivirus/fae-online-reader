@@ -31,6 +31,17 @@ export default function ChapterHeading({
       duration: 0.5,
     });
 
+    gsap.to("#image-credit", {
+      scrollTrigger: {
+        trigger: "#chapter-contents",
+        start: "top +25",
+        end: "top -50",
+        scrub: 1,
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "main",
@@ -41,10 +52,10 @@ export default function ChapterHeading({
     });
   });
   return (
-    <div id="chapter-heading" className="md:max-w-boxWide relative mx-auto">
+    <div id="chapter-heading" className="relative mx-auto md:max-w-boxWide">
       <div
         id="chapter-sticky-heading"
-        className="sticky-chapter-header md:max-w-boxWide invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-full bg-burgundy px-4 py-2 shadow md:left-auto md:w-full"
+        className="sticky-chapter-header invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-full bg-burgundy px-4 py-2 shadow md:left-auto md:w-full md:max-w-boxWide"
       >
         <span>
           {no && <>{no}. </>}
@@ -58,6 +69,12 @@ export default function ChapterHeading({
         </h1>
       </div>
       <ChapterImage video={video} />
+      <p
+        id="image-credit"
+        className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-primary xl:block"
+      >
+        © Crosslucid Image Credit
+      </p>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import * as Portal from "@radix-ui/react-portal";
 import { useState } from "react";
 
 export default function GlyphBackground() {
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(true);
   // to do: watch for url change and change background glyph
   return (
     <>
