@@ -71,7 +71,7 @@ export default function ChapterHeading({
       <ChapterImage video={video} />
       <p
         id="image-credit"
-        className="fixed bottom-2.5 right-2.5 z-50 hidden xl:block"
+        className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-primary xl:block"
       >
         © Crosslucid Image Credit
       </p>
