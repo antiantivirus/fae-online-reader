@@ -1,6 +1,5 @@
 import SearchIcon from "./icons/search";
 import { useState, useEffect } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
 import Back from "./icons/back";
 
@@ -71,11 +70,14 @@ export default function Search() {
         >
           <Back />
         </button>
-        <h3 className="mb-5 text-base">Search results for {query}</h3>
+        <h3 className="mb-5 w-10/12 text-base">
+          Search results for <b>{query}</b>
+        </h3>
         <div id="results">
-          {results.map((result, index) => (
-            <Result key={result.id} result={result} />
-          ))}
+          {results &&
+            results.map((result, index) => (
+              <Result key={result.id} result={result} />
+            ))}
         </div>
       </div>
     </div>
@@ -97,10 +99,9 @@ function Result({ result }) {
   if (!data) return null;
 
   const parseURL = (url) => {
-    // const path = url.match(/\/([^/]+)\.html$/);
-    // const correctUrl = "/fae4/" + path ? path[1] : "";
-    // return correctUrl;
-    return url;
+    const path = url.replace(".html", "").split("/").at(-1);
+    const correctUrl = "/fae4/" + path;
+    return correctUrl;
   };
 
   return (
@@ -109,8 +110,8 @@ function Result({ result }) {
       {data.sub_results.map((sub_result, index) => (
         <Link
           className="mb-5 block"
-          key={parseURL(sub_result.url)}
-          href={sub_result.url}
+          key={sub_result.url}
+          href={parseURL(sub_result.url)}
         >
           <h4 className="mb-1.5 text-base">{sub_result.title}</h4>
           <p

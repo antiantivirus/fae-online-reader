@@ -107,7 +107,7 @@
   }
 
   mark {
-    @apply rounded bg-background px-1.5 py-0.5 outline outline-primary;
+    @apply rounded bg-background px-1.5 py-0.5 text-typography outline outline-primary;
   }
 
   /* h2[id]::before {
