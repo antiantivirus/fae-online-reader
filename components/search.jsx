@@ -2,11 +2,13 @@ import SearchIcon from "./icons/search";
 import { useState, useEffect } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
+import Back from "./icons/back";
 
 export default function Search() {
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     async function loadPagefind() {
@@ -23,6 +25,12 @@ export default function Search() {
     }
     loadPagefind();
   }, []);
+
+  useEffect(() => {
+    console.log(query);
+    if (query !== "") setSearchOpen(true);
+    else setSearchOpen(false);
+  }, [query]);
 
   async function handleSearch(e) {
     e.preventDefault();
@@ -53,22 +61,23 @@ export default function Search() {
         onChange={(e) => setQuery(e.target.value)}
         onInput={handleSearch}
       />
-      <Dialog.Root modal={false} open={true}>
-        <Dialog.Portal>
-          <Dialog.Content
-            onPointerDownOutside={(e) => e.preventDefault()}
-            className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary text-primary shadow motion-reduce:transition-none"
-          >
-            <h3 className="mb-5 text-base">Search results for {query}</h3>
-            <div id="results">
-              {results.map((result, index) => (
-                <Result key={result.id} result={result} />
-              ))}
-            </div>
-          </Dialog.Content>
-          <Dialog.Overlay />
-        </Dialog.Portal>
-      </Dialog.Root>
+      <div
+        onPointerDownOutside={(e) => e.preventDefault()}
+        className={`${searchOpen ? "search-open" : "search-closed"} search-dialog fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none`}
+      >
+        <button
+          onClick={() => setSearchOpen(false)}
+          className="fixed right-2.5 top-5 bg-background"
+        >
+          <Back />
+        </button>
+        <h3 className="mb-5 text-base">Search results for {query}</h3>
+        <div id="results">
+          {results.map((result, index) => (
+            <Result key={result.id} result={result} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

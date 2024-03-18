@@ -18,7 +18,7 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <div>
+    <div data-pagefind-body>
       <Head>
         <title>{source.frontmatter.title as string}</title>
       </Head>

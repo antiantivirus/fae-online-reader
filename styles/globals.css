@@ -167,16 +167,23 @@
     @apply mb-0;
   }
 
-  .dialog-left {
+  .dialog-left,
+  .search-dialog {
     @apply transform motion-reduce:transition-none;
   }
 
-  .dialog-left[data-state="open"] {
-    animation: slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  .search-dialog {
+    @apply -translate-x-full;
   }
 
-  .dialog-left[data-state="closed"] {
-    animation: slideLeftClose 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  .dialog-left[data-state="open"],
+  .search-open {
+    animation: slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  }
+
+  .dialog-left[data-state="closed"],
+  .search-closed {
+    animation: slideLeftClose 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards;
   }
 
   .dialog-bottom {
