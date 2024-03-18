@@ -107,8 +107,7 @@
   }
 
   mark {
-    color: var(--colour-background);
-    background-color: var(--colour-primary);
+    @apply rounded bg-background px-1.5 py-0.5 outline outline-primary;
   }
 
   /* h2[id]::before {

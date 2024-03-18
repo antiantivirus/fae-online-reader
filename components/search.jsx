@@ -57,9 +57,9 @@ export default function Search() {
         <Dialog.Portal>
           <Dialog.Content
             onPointerDownOutside={(e) => e.preventDefault()}
-            className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none"
+            className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary text-primary shadow motion-reduce:transition-none"
           >
-            <p>Search results</p>
+            <h3 className="mb-5 text-base">Search results for {query}</h3>
             <div id="results">
               {results.map((result, index) => (
                 <Result key={result.id} result={result} />
@@ -75,16 +75,11 @@ export default function Search() {
 
 function Result({ result }) {
   const [data, setData] = useState(null);
-  const [url, setUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       const data = await result.data();
       setData(data);
-
-      const path = data.url.match(/\/([^/]+)\.html$/);
-      const url = "/fae4/" + path ? path[1] : "";
-      setUrl(url);
     }
 
     fetchData();
@@ -92,11 +87,29 @@ function Result({ result }) {
 
   if (!data) return null;
 
+  const parseURL = (url) => {
+    // const path = url.match(/\/([^/]+)\.html$/);
+    // const correctUrl = "/fae4/" + path ? path[1] : "";
+    // return correctUrl;
+    return url;
+  };
+
   return (
-    <Link href={url}>
-      <h3>{data.meta.title}</h3>
-      <p dangerouslySetInnerHTML={{ __html: data.excerpt }}></p>
-      <pre>{JSON.stringify(data.sub_results, null, 2)}</pre>
-    </Link>
+    <div>
+      <h4 className="mb-1.5">{data.meta.title}</h4>
+      {data.sub_results.map((sub_result, index) => (
+        <Link
+          className="mb-5 block"
+          key={parseURL(sub_result.url)}
+          href={sub_result.url}
+        >
+          <h4 className="mb-1.5 text-base">{sub_result.title}</h4>
+          <p
+            className="text-xs"
+            dangerouslySetInnerHTML={{ __html: sub_result.excerpt }}
+          ></p>
+        </Link>
+      ))}
+    </div>
   );
 }
