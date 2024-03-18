@@ -8,6 +8,7 @@ export default function Search() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadPagefind() {
@@ -26,7 +27,6 @@ export default function Search() {
   }, []);
 
   useEffect(() => {
-    console.log(query);
     if (query !== "") setSearchOpen(true);
     else setSearchOpen(false);
   }, [query]);
@@ -35,7 +35,9 @@ export default function Search() {
     e.preventDefault();
 
     if (window.pagefind) {
+      setLoading(true);
       const search = await window.pagefind.debouncedSearch(query);
+      setLoading(false);
       setResults(search.results);
     }
   }
@@ -64,20 +66,24 @@ export default function Search() {
         onPointerDownOutside={(e) => e.preventDefault()}
         className={`${searchOpen ? "search-open" : "search-closed"} search-dialog fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none`}
       >
-        <button
-          onClick={() => setSearchOpen(false)}
-          className="fixed right-2.5 top-5 bg-background"
-        >
-          <Back />
-        </button>
-        <h3 className="mb-5 w-10/12 text-base">
-          Search results for <b>{query}</b>
-        </h3>
-        <div id="results">
-          {results &&
-            results.map((result, index) => (
-              <Result key={result.id} result={result} />
-            ))}
+        <div>
+          <button
+            onClick={() => setSearchOpen(false)}
+            className="fixed right-2.5 top-5 bg-background"
+          >
+            <Back />
+          </button>
+          <h3 className="mb-5 w-10/12 text-base">
+            Search results for <b>{query}</b>
+          </h3>
+          <div id="results">
+            {/* to do: add loading state */}
+            {/* {loading && <p className="animate-pulse">Loading...</p>} */}
+            {results &&
+              results.map((result, index) => (
+                <Result key={result.id} result={result} />
+              ))}
+          </div>
         </div>
       </div>
     </div>
