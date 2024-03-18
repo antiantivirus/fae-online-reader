@@ -211,6 +211,10 @@
   .icon {
     @apply h-9 w-9;
   }
+
+  html[data-theme="dark"] .prose .diagram {
+    filter: invert(1) saturate(0);
+  }
 }
 
 /* fix h3 heading on chapter 0 */

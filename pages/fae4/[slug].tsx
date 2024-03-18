@@ -11,6 +11,7 @@ import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
 import Model from "@/components/model";
+import Image, { ImageProps } from "next/image";
 
 export default function PostPage({
   source,
@@ -45,6 +46,7 @@ export default function PostPage({
             h5: heading("h5"),
             h6: heading("h6"),
             sup: (props) => <Footnote info={props.children} />,
+            Image,
           }}
         />
       </article>
