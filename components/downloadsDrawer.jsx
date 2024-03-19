@@ -104,7 +104,7 @@ export default function DownloadsDialog() {
               >
                 <Image
                   className="w-46 aspect-video h-full  object-cover"
-                  src="https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_3D-Mockup.gif"
+                  src="https://futureartecosystems.org/wp-content/uploads/2024/03/fae4-gif-compressed.gif"
                   width="224"
                   height="100"
                   alt=""
