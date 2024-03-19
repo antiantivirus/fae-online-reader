@@ -24,7 +24,7 @@ export default function PostPage({
     <>
       <Header />
       <TOC />
-      <main className="ml-[3rem] mr-2.5 mt-20 lg:mx-0">
+      <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0">
         <Head>
           <title>{source.frontmatter.title as string}</title>
         </Head>
