@@ -54,7 +54,7 @@ export default function Home() {
         <div className="flex flex-col-reverse">
           <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/postface"
+              href="/briefing/fae4/postface"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/ecosystem"
+              href="/briefing/fae4/ecosystem"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/artist"
+              href="/briefing/fae4/artist"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/organisation"
+              href="/briefing/fae4/organisation"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -135,7 +135,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-diagrams peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/defining-public-ai"
+              href="/briefing/fae4/defining-public-ai"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/introduction"
+              href="/briefing/fae4/introduction"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -173,7 +173,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/preface"
+              href="/briefing/fae4/preface"
               className="flex h-full w-full justify-between"
             >
               <div>

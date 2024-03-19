@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/briefings/fae4",
+        destination: "/briefing/fae4",
         permanent: false,
       },
     ];

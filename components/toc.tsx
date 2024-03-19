@@ -9,7 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import GithubSlugger from "github-slugger";
 
-const path = "/briefings/fae4/";
+const path = "/briefing/fae4/";
 
 const tableOfContents = [
   {
@@ -162,8 +162,8 @@ const tableOfContents = [
     slug: "postface",
   },
   {
-    title: "Contributors + Biographies",
-    slug: "contributors-biographies",
+    title: "Contributors",
+    slug: "contributors",
   },
 ];
 
