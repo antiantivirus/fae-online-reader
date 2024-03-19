@@ -122,9 +122,9 @@ export default function Header() {
           <Back />
           <span className="sr-only">Back to FAE platform</span>
         </Link>
-        <button className="hidden rounded-2xl border-black/50 px-3 py-1 lg:block">
+        {/* <button className="hidden rounded-2xl border-black/50 px-3 py-1 lg:block">
           <Share />
-        </button>
+        </button> */}
         <DownloadsDrawer />
       </nav>
     </header>
