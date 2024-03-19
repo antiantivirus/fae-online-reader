@@ -69,7 +69,9 @@ export default function ChapterHeading({
           {title}
         </span>
       </div>
-      <div className="relative z-20 mb-[70px] w-full rounded-lg bg-background p-2 text-typography shadow md:p-5">
+      <div
+        className={`relative z-20 ${video ? "mb-[140px]" : "mb-[70px]"} w-full rounded-lg bg-background p-2 text-typography shadow md:p-5`}
+      >
         <h1 className="grid grid-cols-6 gap-2.5">
           {no && <span className="col-span-1">{no}</span>}
           <span className="col-span-5 md:col-span-4">{title}</span>
