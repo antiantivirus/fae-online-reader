@@ -28,6 +28,7 @@ export default function PostPage({
         no={source.frontmatter.chapter_no as string}
         title={title}
         video={source.frontmatter.video as string}
+        videoMobile={source.frontmatter.video_mobile as string}
         credit={source.frontmatter.video_credit as string}
       />
       <article

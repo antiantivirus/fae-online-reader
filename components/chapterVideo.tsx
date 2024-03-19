@@ -2,11 +2,14 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-export default function ChapterVideo({ video }: { video: string }) {
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
-
+export default function ChapterVideo({
+  video,
+  videoMobile,
+}: {
+  video?: string;
+  videoMobile?: string;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // pause video on load to bypass autoplay video requirements for mobile
@@ -28,6 +31,7 @@ export default function ChapterVideo({ video }: { video: string }) {
         scrub: 1,
       },
     });
+
     gsap.to("#chapter-image", {
       yPercent: -150,
       opacity: 0.5,
@@ -42,7 +46,7 @@ export default function ChapterVideo({ video }: { video: string }) {
     });
 
     gsap.to("#chapter-image-mobile", {
-      currentTime: 4,
+      // currentTime: 0,
       ease: "power3.out",
       scrollTrigger: {
         trigger: "main",
@@ -83,9 +87,9 @@ export default function ChapterVideo({ video }: { video: string }) {
         playsInline
         autoPlay
         ref={videoRef}
-        preload="auto"
+        preload="metadata"
       >
-        <source src={video} type="video/mp4" />
+        <source src={videoMobile} type="video/mp4" />
       </video>
     </>
   );

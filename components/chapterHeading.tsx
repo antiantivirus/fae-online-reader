@@ -8,11 +8,13 @@ export default function ChapterHeading({
   no,
   title,
   video,
+  videoMobile,
   credit,
 }: {
   no: string;
   title: string;
   video?: string;
+  videoMobile?: string;
   credit?: string;
 }) {
   useGSAP(() => {
@@ -73,7 +75,7 @@ export default function ChapterHeading({
           <span className="col-span-5 md:col-span-4">{title}</span>
         </h1>
       </div>
-      {video && <ChapterVideo video={video} />}
+      {video && <ChapterVideo video={video} videoMobile={videoMobile} />}
       {credit && (
         <p
           id="image-credit"
