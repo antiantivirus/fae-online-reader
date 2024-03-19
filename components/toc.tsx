@@ -42,8 +42,8 @@ const tableOfContents = [
     ],
   },
   {
-    title: "Chapter 1: Organisation",
-    slug: "chapter-1",
+    title: "1: Organisation",
+    slug: "organisation",
     subChapters: [
       {
         title: "DATA: Civic Orgs as Dormant Data Keepers",
@@ -79,8 +79,8 @@ const tableOfContents = [
     ],
   },
   {
-    title: "Chapter 2: Artist",
-    slug: "chapter-2",
+    title: "2: Artist",
+    slug: "artist",
     subChapters: [
       {
         title: "Training Data as Shadow Labour",
@@ -127,8 +127,8 @@ const tableOfContents = [
     ],
   },
   {
-    title: "Chapter 3: Ecosystem",
-    slug: "chapter-3",
+    title: "3: Ecosystem",
+    slug: "ecosystem",
     subChapters: [
       {
         title:

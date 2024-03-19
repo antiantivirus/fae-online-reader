@@ -71,7 +71,7 @@ export default function Home() {
             >
               <div>
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
-                  Chapter 3: Ecosystem
+                  3: Ecosystem
                 </h3>
                 <p className="">
                   The final chapter points to the AxAT ecosystem as a lab for
@@ -94,7 +94,7 @@ export default function Home() {
             >
               <div>
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
-                  Chapter 2: Artist
+                  2: Artist
                 </h3>
                 <p className="">
                   This chapter looks at artistic practices that work with
@@ -117,7 +117,7 @@ export default function Home() {
             >
               <div>
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
-                  Chapter 1: Organisation
+                  1: Organisation
                 </h3>
                 <p className="">
                   This chapter considers how organisations are being transformed
