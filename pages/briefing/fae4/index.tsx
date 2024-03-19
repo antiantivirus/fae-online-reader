@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Home() {
   return (
-    <main>
+    <main className="h-screen bg-white">
       <div className="absolute left-1/2 top-[5vh] max-h-[70vh] w-[80vw] max-w-lg -translate-x-1/2 transform md:top-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +50,9 @@ export default function Home() {
           />
         </svg>
       </div>
-      <div className="fixed bottom-0 left-0 z-50 w-full text-primary">
+      <div className="fixed bottom-0 left-0 z-50 w-full text-burgundy">
         <div className="flex flex-col-reverse">
-          <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery shadow-home peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/postface"
               className="flex h-full w-full justify-between"
@@ -64,7 +64,7 @@ export default function Home() {
               </div>
             </Link>
           </div>
-          <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery shadow-home peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/ecosystem"
               className="flex h-full w-full justify-between"
@@ -73,7 +73,7 @@ export default function Home() {
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
                   3: Ecosystem
                 </h3>
-                <p className="">
+                <p className="hidden md:block">
                   The final chapter points to the AxAT ecosystem as a lab for
                   public AI.
                 </p>
@@ -87,7 +87,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery shadow-home peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/artist"
               className="flex h-full w-full justify-between"
@@ -96,7 +96,7 @@ export default function Home() {
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
                   2: Artist
                 </h3>
-                <p className="">
+                <p className="hidden md:block">
                   This chapter looks at artistic practices that work with
                   different elements of the AI stack.
                 </p>
@@ -110,7 +110,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery shadow-home peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/organisation"
               className="flex h-full w-full justify-between"
@@ -119,7 +119,7 @@ export default function Home() {
                 <h3 className="text-homepage my-1 md:my-0 md:text-xl">
                   1: Organisation
                 </h3>
-                <p className="">
+                <p className="hidden md:block">
                   This chapter considers how organisations are being transformed
                   by AI.
                 </p>
@@ -133,7 +133,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-diagrams peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-diagrams shadow-home peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/defining-public-ai"
               className="flex h-full w-full justify-between"
@@ -152,7 +152,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-pdf shadow-home peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/introduction"
               className="flex h-full w-full justify-between"
@@ -171,7 +171,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
+          <div className="download-drawer-pdf shadow-home z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/preface"
               className="flex h-full w-full justify-between"

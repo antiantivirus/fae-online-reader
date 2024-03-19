@@ -37,6 +37,7 @@ const config: Config = {
       },
       boxShadow: {
         DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',
+        'home': '0 0px 6px 0 rgba(77, 0, 18, .19)',
         hover: '0 0px 10px 0 rgb(var(--colour-shadow) / .19)'
       },
       borderRadius: {

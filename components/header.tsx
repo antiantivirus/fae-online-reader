@@ -118,7 +118,7 @@ export default function Header() {
         id="bottom-nav"
         className="fixed bottom-2.5 left-2 flex items-center gap-2 lg:left-2.5"
       >
-        <Link href="/briefings/fae4" className="hidden lg:block">
+        <Link href="/briefing/fae4" className="hidden lg:block">
           <Back />
           <span className="sr-only">Back to FAE platform</span>
         </Link>
