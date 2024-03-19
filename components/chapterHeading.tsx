@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ChapterImage from "./chapterImage";
+import ChapterVideo from "./chapterVideo";
 import Box from "./box";
 
 export default function ChapterHeading({
@@ -73,7 +73,7 @@ export default function ChapterHeading({
           <span className="col-span-5 md:col-span-4">{title}</span>
         </h1>
       </div>
-      {video && <ChapterImage video={video} />}
+      {video && <ChapterVideo video={video} />}
       {credit && (
         <p
           id="image-credit"

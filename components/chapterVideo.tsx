@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-export default function ChapterImage({ video }: { video: string }) {
+export default function ChapterVideo({ video }: { video: string }) {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   const videoRef = useRef<HTMLVideoElement>(null);
