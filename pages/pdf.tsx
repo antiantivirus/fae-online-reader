@@ -23,7 +23,6 @@ import Box from "@/components/box";
 import { renderToString } from "react-dom/server";
 import { extractFrames } from "@/utils";
 import Plus from "@/components/icons/plus";
-
 // Default export is a4 paper, portrait, using millimeters for units
 // const doc = new jsPDF();
 
@@ -102,8 +101,8 @@ const stylesheet = {
     // fontFamily: "New-Edge",
   },
   li: {
-    margin: 12,
-    fontSize: 8,
+    margin: 0,
+    fontSize: 10,
     color: "#421629",
   },
   a: {
@@ -172,6 +171,7 @@ export default function PDF({
           // specifying the custom MDX components
           components={{
             Box,
+            Image,
             // p: ({ children }) => <Text style={styles.text}>{children}</Text>,
             // h2: ({ children }) => (
             //   <>
@@ -208,7 +208,7 @@ export default function PDF({
             })}
             <Text
               style={styles.pageNumber}
-              render={({ pageNumber }) => `${pageNumber}`}
+              render={({ pageNumber }) => `${pageNumber - 1}`}
               fixed
             />
           </Page>
@@ -233,10 +233,14 @@ export default function PDF({
 
 export async function getStaticProps() {
   const chapterFilePaths = [
+    "credits.mdx",
+    "preface.mdx",
     "defining-public-ai.mdx",
-    "chapter-1.mdx",
-    "chapter-2.mdx",
-    "chapter-3.mdx",
+    "organisation.mdx",
+    "artist.mdx",
+    "ecosystem.mdx",
+    "postface.mdx",
+    "contributors.mdx",
   ];
 
   const chapters = await Promise.all(
