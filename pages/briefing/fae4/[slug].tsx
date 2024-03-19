@@ -86,7 +86,7 @@ export async function getStaticProps(
 
   // retrieve the MDX blog post file associated
   // with the specified slug parameter
-  const chapterFile = fs.readFileSync(`content/fae4/preface.mdx`);
+  const chapterFile = fs.readFileSync(`content/fae4/${slug}.mdx`);
 
   // read the MDX serialized content along with the frontmatter
   // from the .mdx blog post file
