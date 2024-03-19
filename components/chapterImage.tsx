@@ -72,6 +72,7 @@ export default function ChapterImage({ video }: { video: string }) {
         muted
         playsInline
         ref={videoRef}
+        preload="auto"
       >
         <source src={video} type="video/mp4" />
       </video>
@@ -81,6 +82,7 @@ export default function ChapterImage({ video }: { video: string }) {
         muted
         playsInline
         ref={videoRef}
+        preload="auto"
       >
         <source src={video} type="video/mp4" />
       </video>
