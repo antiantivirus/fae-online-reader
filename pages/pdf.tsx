@@ -7,7 +7,6 @@ import {
   View,
   Document,
   StyleSheet,
-  Image,
   Font,
   Svg,
 } from "@react-pdf/renderer";
@@ -23,6 +22,7 @@ import Box from "@/components/box";
 import { renderToString } from "react-dom/server";
 import { extractFrames } from "@/utils";
 import Plus from "@/components/icons/plus";
+import Image from "next/image";
 // Default export is a4 paper, portrait, using millimeters for units
 // const doc = new jsPDF();
 
@@ -235,6 +235,7 @@ export async function getStaticProps() {
   const chapterFilePaths = [
     "credits.mdx",
     "preface.mdx",
+    "introduction.mdx",
     "defining-public-ai.mdx",
     "organisation.mdx",
     "artist.mdx",
