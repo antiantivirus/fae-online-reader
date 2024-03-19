@@ -12,6 +12,8 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import Model from "@/components/model";
 import Image, { ImageProps } from "next/image";
+import TOC from "@/components/toc";
+import Header from "@/components/header";
 
 export default function PostPage({
   source,
@@ -19,41 +21,45 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <div>
-      <Head>
-        <title>{source.frontmatter.title as string}</title>
-      </Head>
-      <ChapterHeading
-        key={source.frontmatter.title as string}
-        no={source.frontmatter.chapter_no as string}
-        title={title}
-        video={source.frontmatter.video as string}
-        videoMobile={source.frontmatter.video_mobile as string}
-        credit={source.frontmatter.video_credit as string}
-      />
-      <article
-        id="chapter-contents"
-        className={`prose space-y-[12.5px] ${slug}`}
-      >
-        <MDXRemote
-          {...source}
-          // specifying the custom MDX components
-          components={{
-            Model,
-            Footnote,
-            Box,
-            h1: heading("h1"),
-            h2: heading("h2"),
-            h3: heading("h3"),
-            h4: heading("h4"),
-            h5: heading("h5"),
-            h6: heading("h6"),
-            sup: (props) => <Footnote info={props.children} />,
-            Image,
-          }}
+    <>
+      <Header />
+      <TOC />
+      <main className="ml-[3rem] mr-2.5 mt-20 lg:mx-0">
+        <Head>
+          <title>{source.frontmatter.title as string}</title>
+        </Head>
+        <ChapterHeading
+          key={source.frontmatter.title as string}
+          no={source.frontmatter.chapter_no as string}
+          title={title}
+          video={source.frontmatter.video as string}
+          videoMobile={source.frontmatter.video_mobile as string}
+          credit={source.frontmatter.video_credit as string}
         />
-      </article>
-    </div>
+        <article
+          id="chapter-contents"
+          className={`prose space-y-[12.5px] ${slug}`}
+        >
+          <MDXRemote
+            {...source}
+            // specifying the custom MDX components
+            components={{
+              Model,
+              Footnote,
+              Box,
+              h1: heading("h1"),
+              h2: heading("h2"),
+              h3: heading("h3"),
+              h4: heading("h4"),
+              h5: heading("h5"),
+              h6: heading("h6"),
+              sup: (props) => <Footnote info={props.children} />,
+              Image,
+            }}
+          />
+        </article>
+      </main>
+    </>
   );
 }
 
