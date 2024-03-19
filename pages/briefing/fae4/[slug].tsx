@@ -22,12 +22,15 @@ export default function PostPage({
   const title = source.frontmatter.title as string;
   return (
     <>
+      <Head>
+        <title>
+          {source.frontmatter.title as string} - Future Art Ecosystems 4: Art x
+          Public AI
+        </title>
+      </Head>
       <Header />
       <TOC />
       <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0">
-        <Head>
-          <title>{source.frontmatter.title as string}</title>
-        </Head>
         <ChapterHeading
           key={source.frontmatter.title as string}
           no={source.frontmatter.chapter_no as string}
