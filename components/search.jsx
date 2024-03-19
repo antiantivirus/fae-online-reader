@@ -106,7 +106,7 @@ function Result({ result }) {
 
   const parseURL = (url) => {
     const path = url.replace(".html", "").split("/").at(-1);
-    const correctUrl = "/fae4/" + path;
+    const correctUrl = "briefing/fae4/" + path;
     return correctUrl;
   };
 
