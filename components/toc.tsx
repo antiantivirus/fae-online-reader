@@ -13,6 +13,10 @@ const path = "/briefings/fae4/";
 
 const tableOfContents = [
   {
+    title: "Credits",
+    slug: "credits",
+  },
+  {
     title: "Preface",
     slug: "preface",
   },
@@ -156,6 +160,10 @@ const tableOfContents = [
   {
     title: "Postface",
     slug: "postface",
+  },
+  {
+    title: "Contributors + Biographies",
+    slug: "contributors-biographies",
   },
 ];
 
