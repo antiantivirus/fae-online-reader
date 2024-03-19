@@ -2,6 +2,9 @@
 const nextConfig = {
   transpilePackages: ["gsap"],
   reactStrictMode: true,
+  images: {
+    domains: ["futureartecosystems.org"],
+  },
   async redirects() {
     return [
       {
