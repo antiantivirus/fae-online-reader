@@ -21,7 +21,7 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <>
+    <div data-pagefind-body>
       <Head>
         <title>
           {source.frontmatter.title as string} - Future Art Ecosystems 4: Art x
@@ -62,7 +62,7 @@ export default function PostPage({
           />
         </article>
       </main>
-    </>
+    </div>
   );
 }
 

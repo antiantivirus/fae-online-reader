@@ -65,7 +65,7 @@ export default function ChapterHeading({
         className="sticky-chapter-header invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-full bg-burgundy px-4 py-2 shadow md:left-auto md:w-full md:max-w-boxWide"
       >
         <span>
-          {no && <>{no}. </>}
+          {no && <>{no}.</>}
           {title}
         </span>
       </div>
@@ -73,7 +73,12 @@ export default function ChapterHeading({
         className={`relative z-20 ${video ? "mb-[140px]" : "mb-[70px]"} w-full rounded-lg bg-background p-2 text-typography shadow md:p-5`}
       >
         <h1 className="grid grid-cols-6 gap-2.5">
-          {no && <span className="col-span-1">{no}</span>}
+          {no && (
+            <span className="col-span-1">
+              {no}
+              <span className="hidden">: </span>
+            </span>
+          )}
           <span className="col-span-5 md:col-span-4">{title}</span>
         </h1>
       </div>
