@@ -316,7 +316,6 @@ export default function TOC() {
                 </div>
               ))}
             </Accordion.Root>
-            <Link href="/fae4/contributors">Contributors</Link>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
