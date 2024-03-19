@@ -9,18 +9,24 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import GithubSlugger from "github-slugger";
 
+const path = "/briefing/fae4/";
+
 const tableOfContents = [
   {
+    title: "Credits",
+    slug: "credits",
+  },
+  {
     title: "Preface",
-    link: "/fae4/preface",
+    slug: "preface",
   },
   {
     title: "Introduction",
-    link: "/fae4/introduction",
+    slug: "introduction",
   },
   {
     title: "Defining Public AI",
-    link: "/fae4/defining-public-ai",
+    slug: "defining-public-ai",
     subChapters: [
       {
         title: "A Framework for Public Claims on Resources",
@@ -28,132 +34,136 @@ const tableOfContents = [
       {
         title: "AI Tech Stack",
         subChapters: [
-          {
-            title: "Application layer",
-          },
-          {
-            title: "Network protocols layer",
-          },
-          {
-            title: "Model layer",
-          },
-          {
-            title: "Data layer",
-          },
-          {
-            title: "Compute layer",
-          },
-          {
-            title: "Server networks layer",
-          },
-          {
-            title: "Natural resources layer",
-          },
+          "Application layer",
+          "Network protocols layer",
+          "Model layer",
+          "Data layer",
+          "Compute layer",
+          "Server networks layer",
+          "Natural resources layer",
         ],
       },
     ],
   },
   {
-    title: "Chapter 1: Organisation",
-    link: "/fae4/chapter-1",
+    title: "1: Organisation",
+    slug: "organisation",
     subChapters: [
       {
         title: "DATA: Civic Orgs as Dormant Data Keepers",
         subChapters: [
-          {
-            title: "The Dawn of Organisational Self-Knowledge",
-          },
-          {
-            title: "Latent Data Troves",
-          },
-          {
-            title: "Data Is Relational",
-          },
-          {
-            title: "Trusted Data Stewards",
-          },
-          {
-            title: "Soft Power Diplomacy",
-          },
+          "The Dawn of Organisational Self-Knowledge",
+          "Latent Data Troves",
+          "Data Is Relational",
+          "Trusted Data Stewards",
+          "Soft Power Diplomacy",
         ],
       },
       {
         title: "MODEL: Culture Shaping Model Shaping Culture",
         subChapters: [
-          {
-            title: "Disambiguating Technical Opacity and Transparency",
-          },
-          {
-            title: "Cultivating Trust and Verifiability",
-          },
-          {
-            title: "Models Offer a New Compression Technique",
-          },
-          {
-            title: "New Public Mission Orgs for New Public Mechanisms",
-          },
-          {
-            title: "Alignment’s Shadow Negotiations",
-          },
-          {
-            title: "Ways of Seeing’ in the Latent Space",
-          },
-          {
-            title: "Minotaur vs Centaur Framework of AI Digital Transformation",
-          },
+          "Disambiguating Technical Opacity and Transparency",
+          "Cultivating Trust and Verifiability",
+          "Models Offer a New Compression Technique",
+          "New Public Mission Orgs for New Public Mechanisms",
+          "Alignment’s Shadow Negotiations",
+          "Ways of Seeing in the Latent Space",
+          "Minotaur vs Centaur Framework of AI Digital Transformation",
         ],
       },
       {
         title: "COMPUTE: High Barriers to Cultural Entry",
         subChapters: [
-          {
-            title: "Supply-chain Geopolitics",
-          },
-          {
-            title: "IP Empire",
-          },
-          {
-            title: "State as a Broker of Compute Allocations",
-          },
-          {
-            title:
-              "Experiments & Research for a Less Computationally Intensive AI Stack",
-          },
+          "Supply-chain Geopolitics",
+          "IP Empire",
+          "State as a Broker of Compute Allocations",
+          "Experiments & Research for a Less Computationally Intensive AI Stack",
         ],
       },
     ],
   },
   {
-    title: "Chapter 2: Artist",
-    link: "/fae4/chapter-2",
+    title: "2: Artist",
+    slug: "artist",
     subChapters: [
       {
-        title: "To be added",
+        title: "Training Data as Shadow Labour",
         subChapters: [
-          {
-            title: "Sub sub chapter",
-          },
+          "Leverage IP for Opt In Returns",
+          "Leverage Spawning for Opt Out Bargaining Power",
+          "Data Brokerage for a Networked Commons",
+          "Emerging Accountability Mechanisms",
+          "Synthetic Crafting",
+          "Iteration at the Core of Synthetic Crafting",
+          "Edging into Unchartered Territory",
+          "From Deskilling to Reskilling",
+          "From Model Querying to Seamless Intermediation",
+        ],
+      },
+      {
+        title: "Semi-Autonomous Aesthetics",
+        subChapters: [
+          "Convergence Engines",
+          "Style Capture",
+          "Recombinant Aesthetics in the New Weird",
+          "Cross-Pollinating Systems",
+          "Modalities for AI Tool Deployment",
+          "Model-Making as Meaning-Making",
+          "Systems Builders",
+        ],
+      },
+      {
+        title: "From Systems-Building to Worldbuilding",
+        subChapters: [
+          "Recombinant Bubble Worlds",
+          "Agent-training Arenas",
+          "Complex System Choreography",
+        ],
+      },
+      {
+        title: "A New Era of (Art) Tech Development",
+        subChapters: [
+          "Exploratory Use-Case Space",
+          "Artist as Influencer",
+          "Case for Institutional Brokerage and Intermediation",
         ],
       },
     ],
   },
   {
-    title: "Chapter 3: Ecosystem",
-    link: "/fae4/chapter-3",
+    title: "3: Ecosystem",
+    slug: "ecosystem",
     subChapters: [
       {
-        title: "To be added",
+        title:
+          "Investing into the Foundations of the AxAT Ecosystem with a Public Mission",
         subChapters: [
-          {
-            title: "Sub sub chapter",
-          },
+          "Advanced Production Capabilities",
+          "Protocols for Organisational Interoperability",
+          "New Ownership and Distribution Models",
+          "New Systems of Measurement",
+        ],
+      },
+      {
+        title:
+          "Recommendations for a Proactive AxAT Participation in Public AI",
+        subChapters: [
+          "Sandboxing of New Organisational Practices and Forms",
+          "Public Data Market Mechanisms",
+          "New IP Paradigms",
+          "Early cross-technological use-cases",
+          "Lobbying for deeper AI systems access and compute quotas on behalf of the cultural sector",
         ],
       },
     ],
   },
   {
     title: "Postface",
-    link: "/fae4/postface",
+    slug: "postface",
+  },
+  {
+    title: "Contributors",
+    slug: "contributors",
   },
 ];
 
@@ -208,10 +218,10 @@ export default function TOC() {
                   // }}
                   className={`group relative flex items-center stroke-primary `}
                 >
-                  <Star active={asPath.includes(chapter.link)} />
+                  <Star active={asPath.includes(chapter.slug)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
+                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.slug) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -243,9 +253,9 @@ export default function TOC() {
                         <div className="flex items-center gap-2">
                           <Link
                             className="group flex items-center gap-2 stroke-primary text-xl"
-                            href={chapter.link}
+                            href={path + chapter.slug}
                           >
-                            <Star active={asPath.includes(chapter.link)} />
+                            <Star active={asPath.includes(chapter.slug)} />
                             <span className="mt-1.5">{chapter.title}</span>
                           </Link>
                           <Accordion.Trigger className="group">
@@ -255,14 +265,15 @@ export default function TOC() {
                           </Accordion.Trigger>
                         </div>
                       </Accordion.Header>
-                      <Accordion.Content className="ml-10 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
+                      <Accordion.Content className="ml-12 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
                         {chapter.subChapters.map((subChapter) => (
                           <ol key={subChapter.title} className="mb-2.5">
                             <li>
                               <Link
                                 className="text-base"
                                 href={
-                                  chapter.link +
+                                  path +
+                                  chapter.slug +
                                   "#" +
                                   slugger.slug(subChapter.title)
                                 }
@@ -273,17 +284,18 @@ export default function TOC() {
                             {subChapter.subChapters && (
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
-                                  <li key={subSubChapter.title}>
+                                  <li key={subSubChapter}>
                                     <Link
-                                      key={subSubChapter.title}
+                                      key={subSubChapter}
                                       className="text-base"
                                       href={
-                                        chapter.link +
+                                        path +
+                                        chapter.slug +
                                         "#" +
-                                        slugger.slug(subSubChapter.title)
+                                        slugger.slug(subSubChapter)
                                       }
                                     >
-                                      {subSubChapter.title}
+                                      {subSubChapter}
                                     </Link>
                                   </li>
                                 ))}
@@ -296,9 +308,9 @@ export default function TOC() {
                   ) : (
                     <Link
                       className="group flex items-center gap-2 stroke-primary text-xl"
-                      href={chapter.link}
+                      href={path + chapter.slug}
                     >
-                      <Star active={asPath.includes(chapter.link)} />
+                      <Star active={asPath.includes(chapter.slug)} />
                       <span className="mt-1.5">{chapter.title}</span>
                     </Link>
                   )}

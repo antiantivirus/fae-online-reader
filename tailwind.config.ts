@@ -16,6 +16,7 @@ const config: Config = {
       xs: '0.9rem',
       base: '1.2rem',
       large: '1.4rem',
+      homepage: '1.5rem',
       xl: '2.1rem',
       '2xl': '3.6rem'
     },
@@ -37,6 +38,7 @@ const config: Config = {
       },
       boxShadow: {
         DEFAULT: '0 0px 6px 0 rgb(var(--colour-shadow) / .19)',
+        'home': '0 0px 6px 0 rgba(77, 0, 18, .19)',
         hover: '0 0px 10px 0 rgb(var(--colour-shadow) / .19)'
       },
       borderRadius: {
