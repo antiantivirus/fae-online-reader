@@ -18,26 +18,43 @@ export default function ChapterImage({ video }: { video: string }) {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.set("#chapter-image", {
-      transformPerspective: 2000,
-      transformOrigin: "top 50px",
-    });
-
     gsap.to("#chapter-image", {
-      currentTime: 10,
+      currentTime: 4,
       ease: "power3.out",
       scrollTrigger: {
         trigger: "main",
         start: "top +80",
         end: "+=600",
-        scrub: true,
+        scrub: 1,
       },
     });
     gsap.to("#chapter-image", {
-      // yPercent: -150,
+      yPercent: -150,
       opacity: 0.5,
       // scale: 0.4,
-      rotateX: -180,
+      ease: "power2.in",
+      scrollTrigger: {
+        trigger: "main",
+        start: "top +80",
+        end: "+300",
+        scrub: 1,
+      },
+    });
+
+    gsap.to("#chapter-image-mobile", {
+      currentTime: 4,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "main",
+        start: "top +80",
+        end: "+=600",
+        scrub: 1,
+      },
+    });
+    gsap.to("#chapter-image-mobile", {
+      yPercent: -150,
+      opacity: 0.5,
+      // scale: 0.4,
       ease: "power2.in",
       scrollTrigger: {
         trigger: "main",
@@ -48,15 +65,25 @@ export default function ChapterImage({ video }: { video: string }) {
     });
   });
   return (
-    <video
-      id="chapter-image"
-      className="absolute left-1/2 top-[150px] z-10 max-h-[70vh] w-full max-w-6xl -translate-x-1/2 transform md:top-[55%] md:w-auto md:-translate-y-1/2"
-      muted
-      playsInline
-      autoPlay={!isDesktop}
-      ref={videoRef}
-    >
-      <source src={video} type="video/mp4" />
-    </video>
+    <>
+      <video
+        id="chapter-image"
+        className="absolute left-1/2 top-[150px] z-10 hidden max-h-[70vh] w-full max-w-6xl -translate-x-1/2 transform md:top-[55%] md:w-auto md:-translate-y-1/2 lg:block"
+        muted
+        playsInline
+        ref={videoRef}
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+      <video
+        id="chapter-image-mobile"
+        className="absolute left-1/2 top-[100%] z-10 w-[93.66%] -translate-x-1/2 transform lg:top-[calc(100%+50px)] lg:hidden"
+        muted
+        playsInline
+        ref={videoRef}
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+    </>
   );
 }

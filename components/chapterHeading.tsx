@@ -41,7 +41,10 @@ export default function ChapterHeading({
     });
   });
   return (
-    <div id="chapter-heading" className="mx-auto md:max-w-3xl">
+    <div
+      id="chapter-heading"
+      className="relative mx-auto md:max-w-3xl lg:static"
+    >
       <div
         id="chapter-sticky-heading"
         className="sticky-chapter-header invisible fixed left-11 top-12 z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-full bg-burgundy px-4 py-2 shadow md:left-auto md:w-full md:max-w-3xl"
