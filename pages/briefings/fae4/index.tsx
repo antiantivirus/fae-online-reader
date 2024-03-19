@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/chapter-3"
+              href="/briefings/fae4/ecosystem"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/chapter-2"
+              href="/briefings/fae4/artist"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-12 peer-hover:-translate-y-12">
             <Link
-              href="/briefings/fae4/chapter-1"
+              href="/briefings/fae4/organisation"
               className="flex h-full w-full justify-between"
             >
               <div>
