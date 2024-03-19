@@ -10,10 +10,14 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
+import Model from "@/components/model";
+import Image, { ImageProps } from "next/image";
 
 export default function PostPage({
   source,
+  slug,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const title = source.frontmatter.title as string;
   return (
     <div>
       <Head>
@@ -21,23 +25,28 @@ export default function PostPage({
       </Head>
       <ChapterHeading
         no={source.frontmatter.chapter_no as string}
-        title={source.frontmatter.title as string}
+        title={title}
         video={source.frontmatter.video as string}
       />
-      <article id="chapter-contents" className="prose space-y-12">
+      <article
+        id="chapter-contents"
+        className={`prose space-y-[12.5px] ${slug}`}
+      >
         <MDXRemote
           {...source}
           // specifying the custom MDX components
           components={{
+            Model,
             Footnote,
             Box,
             h1: heading("h1"),
-            h2: boxedHeading("h2"),
-            h3: boxedHeading("h3"),
+            h2: heading("h2"),
+            h3: heading("h3"),
             h4: heading("h4"),
             h5: heading("h5"),
             h6: heading("h6"),
             sup: (props) => <Footnote info={props.children} />,
+            Image,
           }}
         />
       </article>
@@ -80,6 +89,7 @@ export async function getStaticProps(
   return {
     props: {
       source: mdxSource,
+      slug: slug,
     },
     // enable ISR
     revalidate: 60,
@@ -93,11 +103,13 @@ type HeadingProps = {
 
 const boxedHeading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
   const Heading = ({ id, children }: HeadingProps) => (
-    <Box wide>
-      <Link href={`#${id}`} className="anchor group relative no-underline">
-        <As id={id}>{children}</As>
-      </Link>
-    </Box>
+    <div className="!mt-[50px]">
+      <Box wide>
+        <Link href={`#${id}`} className="anchor group relative no-underline">
+          <As id={id}>{children}</As>
+        </Link>
+      </Box>
+    </div>
   );
   Heading.displayName = As;
   return Heading;

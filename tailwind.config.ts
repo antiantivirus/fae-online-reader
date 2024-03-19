@@ -12,11 +12,11 @@ const config: Config = {
       sans: ['New Edge'],
     },
     fontSize: {
-      xxs: '0.7rem',
-      xs: '0.75rem',
-      base: '1rem',
-      xl: '1.75rem',
-      '2xl': '3rem'
+      xxs: '0.8rem',
+      xs: '0.9rem',
+      base: '1.2rem',
+      xl: '2.1rem',
+      '2xl': '3.6rem'
     },
     extend: {
       backgroundImage: {
@@ -57,6 +57,16 @@ const config: Config = {
         slideLeftOpen: 'slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         slideLeftClose: 'slideLeftOpen 300ms cubic-bezier(0.87, 0, 0.13, 1)'
       },
+      maxWidth: {
+        'boxWide': '57.6rem',
+        'box': '50.4rem',
+      },
+      width: {
+        'icon': '2.25rem'
+      },
+      height: {
+        'icon': '2.25rem'
+      }
     },
   },
   plugins: [],

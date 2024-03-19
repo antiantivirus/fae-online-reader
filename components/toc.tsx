@@ -11,6 +11,10 @@ import GithubSlugger from "github-slugger";
 
 const tableOfContents = [
   {
+    title: "Preface",
+    link: "/fae4/preface",
+  },
+  {
     title: "Introduction",
     link: "/fae4/introduction",
   },
@@ -77,19 +81,25 @@ const tableOfContents = [
         title: "MODEL: Culture Shaping Model Shaping Culture",
         subChapters: [
           {
-            title: "The Dawn of Organisational Self-Knowledge",
+            title: "Disambiguating Technical Opacity and Transparency",
           },
           {
-            title: "Latent Data Troves",
+            title: "Cultivating Trust and Verifiability",
           },
           {
-            title: "Data Is Relational",
+            title: "Models Offer a New Compression Technique",
           },
           {
-            title: "Trusted Data Stewards",
+            title: "New Public Mission Orgs for New Public Mechanisms",
           },
           {
-            title: "Soft Power Diplomacy",
+            title: "Alignment’s Shadow Negotiations",
+          },
+          {
+            title: "Ways of Seeing’ in the Latent Space",
+          },
+          {
+            title: "Minotaur vs Centaur Framework of AI Digital Transformation",
           },
         ],
       },
@@ -97,19 +107,17 @@ const tableOfContents = [
         title: "COMPUTE: High Barriers to Cultural Entry",
         subChapters: [
           {
-            title: "The Dawn of Organisational Self-Knowledge",
+            title: "Supply-chain Geopolitics",
           },
           {
-            title: "Latent Data Troves",
+            title: "IP Empire",
           },
           {
-            title: "Data Is Relational",
+            title: "State as a Broker of Compute Allocations",
           },
           {
-            title: "Trusted Data Stewards",
-          },
-          {
-            title: "Soft Power Diplomacy",
+            title:
+              "Experiments & Research for a Less Computationally Intensive AI Stack",
           },
         ],
       },
@@ -120,7 +128,7 @@ const tableOfContents = [
     link: "/fae4/chapter-2",
     subChapters: [
       {
-        title: "Sub chapter",
+        title: "To be added",
         subChapters: [
           {
             title: "Sub sub chapter",
@@ -134,7 +142,7 @@ const tableOfContents = [
     link: "/fae4/chapter-3",
     subChapters: [
       {
-        title: "Subchapter",
+        title: "To be added",
         subChapters: [
           {
             title: "Sub sub chapter",
@@ -177,24 +185,32 @@ export default function TOC() {
   return (
     <nav
       id="toc"
-      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-16 lg:h-[80vh] lg:translate-y-0 lg:transform-none"
+      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-[80px] lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
       <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
         {/* <Dialog.Trigger asChild> */}
         {/* <button aria-label="Open table of contents" className="h-full"> */}
-        <ol className="flex h-full flex-col gap-4 lg:justify-between">
+        <ol
+          onMouseEnter={() => {
+            setTocOpen(true);
+          }}
+          className="flex h-full flex-col gap-4 hover:cursor-pointer lg:justify-between"
+        >
           {tableOfContents.map((chapter) => (
             <li key={chapter.title} className="group">
               <Dialog.Trigger asChild>
                 <button
                   aria-hidden
-                  onClick={() => setAccordOpen(chapter.title)}
+                  // onMouseEnter={() => {
+                  //   setTocOpen(true);
+                  //   setAccordOpen(chapter.title);
+                  // }}
                   className={`group relative flex items-center stroke-primary `}
                 >
                   <Star active={asPath.includes(chapter.link)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`absolute left-6 top-1 hidden w-max rounded bg-background px-2 text-primary xl:group-hover:block ${asPath.includes(chapter.link) && "font-semibold xl:block"}`}
+                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -207,7 +223,10 @@ export default function TOC() {
         {/* </Dialog.Trigger> */}
 
         <Dialog.Portal>
-          <Dialog.Content className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-60px)] w-[400px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pl-2.5 text-primary shadow">
+          <Dialog.Content
+            onMouseLeave={() => [setTocOpen(false)]}
+            className="dialog-left fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100%-70px)] w-[480px] max-w-[90vw] flex-col rounded-tr bg-background px-2.5 pl-2.5 text-primary shadow"
+          >
             <Dialog.Title className="sr-only">Table of Contents</Dialog.Title>
             <Accordion.Root
               className="h-full overflow-auto"
@@ -285,6 +304,7 @@ export default function TOC() {
                 </div>
               ))}
             </Accordion.Root>
+            <Link href="/fae4/contributors">Contributors</Link>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
