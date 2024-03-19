@@ -83,7 +83,7 @@ export default function Home() {
                 alt=""
                 width={114}
                 height={64}
-                className="aspect-video h-16"
+                className="aspect-video h-16 bg-burgundy/20"
               />
             </Link>
           </div>
@@ -106,7 +106,7 @@ export default function Home() {
                 alt=""
                 width={114}
                 height={64}
-                className="aspect-video h-16"
+                className="aspect-video h-16 bg-burgundy/20"
               />
             </Link>
           </div>
@@ -129,7 +129,7 @@ export default function Home() {
                 alt=""
                 width={114}
                 height={64}
-                className="aspect-video h-16"
+                className="aspect-video h-16 bg-burgundy/20"
               />
             </Link>
           </div>
@@ -148,7 +148,7 @@ export default function Home() {
                 alt=""
                 width={114}
                 height={64}
-                className="aspect-video h-16"
+                className="aspect-video h-16 bg-burgundy/20"
               />
             </Link>
           </div>
@@ -167,7 +167,7 @@ export default function Home() {
                 alt=""
                 width={114}
                 height={64}
-                className="aspect-video h-16"
+                className="aspect-video h-16 bg-burgundy/20"
               />
             </Link>
           </div>
