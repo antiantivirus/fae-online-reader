@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-
+import Header from "@/components/header";
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -35,6 +35,8 @@ export default function App({ Component, pageProps }: AppProps) {
       themes={["light", "red", "dark"]}
       enableColorScheme
     >
+      {/* temp fix for search! */}
+      {router.pathname != "/briefing/fae4" && <Header />}
       <Component {...pageProps} />
     </ThemeProvider>
   );

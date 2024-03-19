@@ -28,7 +28,6 @@ export default function PostPage({
           Public AI
         </title>
       </Head>
-      <Header />
       <TOC />
       <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0">
         <ChapterHeading
