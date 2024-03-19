@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <div className="absolute left-1/2 top-[10vh] w-[80vw] max-w-lg -translate-x-1/2 transform md:top-0">
+      <div className="absolute left-1/2 top-[5vh] max-h-[70vh] w-[80vw] max-w-lg -translate-x-1/2 transform md:top-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -58,7 +58,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Postface</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Postface
+                </h3>
               </div>
             </Link>
           </div>
@@ -68,7 +70,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Chapter 3: Ecosystem</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Chapter 3: Ecosystem
+                </h3>
                 <p className="">
                   The final chapter points to the AxAT ecosystem as a lab for
                   public AI.
@@ -89,7 +93,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Chapter 2: Artist</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Chapter 2: Artist
+                </h3>
                 <p className="">
                   This chapter looks at artistic practices that work with
                   different elements of the AI stack.
@@ -110,7 +116,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Chapter 1: Organisation</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Chapter 1: Organisation
+                </h3>
                 <p className="">
                   This chapter considers how organisations are being transformed
                   by AI.
@@ -131,7 +139,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Defining Public AI</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Defining Public AI
+                </h3>
               </div>
               <Image
                 src="/images/HOMEPAGE_CH00.jpg"
@@ -148,7 +158,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Introduction</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Introduction
+                </h3>
               </div>
               <Image
                 src="/images/HOMEPAGE_INTRO.jpg"
@@ -165,7 +177,9 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3>Preface</h3>
+                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                  Preface
+                </h3>
               </div>
             </Link>
           </div>

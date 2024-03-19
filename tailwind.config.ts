@@ -15,6 +15,7 @@ const config: Config = {
       xxs: '0.8rem',
       xs: '0.9rem',
       base: '1.2rem',
+      homepage: '1.5rem',
       xl: '2.1rem',
       '2xl': '3.6rem'
     },
