@@ -9,18 +9,20 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import GithubSlugger from "github-slugger";
 
+const path = "/briefings/fae4/";
+
 const tableOfContents = [
   {
     title: "Preface",
-    link: "/fae4/preface",
+    slug: "preface",
   },
   {
     title: "Introduction",
-    link: "/fae4/introduction",
+    slug: "introduction",
   },
   {
     title: "Defining Public AI",
-    link: "/fae4/defining-public-ai",
+    slug: "defining-public-ai",
     subChapters: [
       {
         title: "A Framework for Public Claims on Resources",
@@ -55,7 +57,7 @@ const tableOfContents = [
   },
   {
     title: "Chapter 1: Organisation",
-    link: "/fae4/chapter-1",
+    slug: "chapter-1",
     subChapters: [
       {
         title: "DATA: Civic Orgs as Dormant Data Keepers",
@@ -125,7 +127,7 @@ const tableOfContents = [
   },
   {
     title: "Chapter 2: Artist",
-    link: "/fae4/chapter-2",
+    slug: "chapter-2",
     subChapters: [
       {
         title: "To be added",
@@ -139,7 +141,7 @@ const tableOfContents = [
   },
   {
     title: "Chapter 3: Ecosystem",
-    link: "/fae4/chapter-3",
+    slug: "chapter-3",
     subChapters: [
       {
         title: "To be added",
@@ -153,7 +155,7 @@ const tableOfContents = [
   },
   {
     title: "Postface",
-    link: "/fae4/postface",
+    slug: "postface",
   },
 ];
 
@@ -207,10 +209,10 @@ export default function TOC() {
                   // }}
                   className={`group relative flex items-center stroke-primary `}
                 >
-                  <Star active={asPath.includes(chapter.link)} />
+                  <Star active={asPath.includes(chapter.slug)} />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.link) && "font-bold xl:block"}`}
+                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.slug) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>
@@ -242,9 +244,9 @@ export default function TOC() {
                         <div className="flex items-center gap-2">
                           <Link
                             className="group flex items-center gap-2 stroke-primary text-xl"
-                            href={chapter.link}
+                            href={path + chapter.slug}
                           >
-                            <Star active={asPath.includes(chapter.link)} />
+                            <Star active={asPath.includes(chapter.slug)} />
                             <span className="mt-1.5">{chapter.title}</span>
                           </Link>
                           <Accordion.Trigger className="group">
@@ -261,7 +263,8 @@ export default function TOC() {
                               <Link
                                 className="text-base"
                                 href={
-                                  chapter.link +
+                                  path +
+                                  chapter.slug +
                                   "#" +
                                   slugger.slug(subChapter.title)
                                 }
@@ -277,7 +280,8 @@ export default function TOC() {
                                       key={subSubChapter.title}
                                       className="text-base"
                                       href={
-                                        chapter.link +
+                                        path +
+                                        chapter.slug +
                                         "#" +
                                         slugger.slug(subSubChapter.title)
                                       }
@@ -295,9 +299,9 @@ export default function TOC() {
                   ) : (
                     <Link
                       className="group flex items-center gap-2 stroke-primary text-xl"
-                      href={chapter.link}
+                      href={path + chapter.slug}
                     >
-                      <Star active={asPath.includes(chapter.link)} />
+                      <Star active={asPath.includes(chapter.slug)} />
                       <span className="mt-1.5">{chapter.title}</span>
                     </Link>
                   )}
