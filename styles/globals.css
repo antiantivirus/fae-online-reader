@@ -173,7 +173,7 @@
   }
 
   .search-dialog {
-    @apply -translate-x-full;
+    @apply -translate-x-full transition;
   }
 
   .dialog-left[data-state="open"],

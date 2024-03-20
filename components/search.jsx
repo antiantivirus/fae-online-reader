@@ -7,7 +7,7 @@ export default function Search() {
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ export default function Search() {
   }, []);
 
   useEffect(() => {
-    if (query !== "") setSearchOpen(true);
-    else setSearchOpen(false);
+    if (query !== "") setSearchOpen("search-open");
+    else setSearchOpen("search-closed");
   }, [query]);
 
   async function handleSearch(e) {
@@ -64,11 +64,11 @@ export default function Search() {
       />
       <div
         onPointerDownOutside={(e) => e.preventDefault()}
-        className={`${searchOpen ? "search-open" : "search-closed"} search-dialog fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none`}
+        className={`${searchOpen} search-dialog fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none`}
       >
         <div>
           <button
-            onClick={() => setSearchOpen(false)}
+            onClick={() => setSearchOpen("search-closed")}
             className="fixed right-2.5 top-5 bg-background"
           >
             <Back />
