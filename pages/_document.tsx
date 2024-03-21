@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -17,6 +18,11 @@ export default function Document() {
         <meta property="og:image" content="/social-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <Script
+          defer
+          src="/stats/script.js"
+          data-website-id="2dec2f47-4195-42c4-b7d6-6abce8db0dc7"
+        />
       </Head>
       <body>
         <Main />
