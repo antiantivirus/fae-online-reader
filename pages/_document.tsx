@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default function Document() {
   return (
@@ -22,11 +21,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script
-          defer
-          src="/stats/script.js"
-          data-website-id="2dec2f47-4195-42c4-b7d6-6abce8db0dc7"
-        />
       </body>
     </Html>
   );

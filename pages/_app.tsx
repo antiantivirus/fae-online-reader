@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Header from "@/components/header";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -43,6 +44,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Analytics />
       <SpeedInsights />
+      <Script
+        defer
+        src="/stats/script.js"
+        data-website-id="2dec2f47-4195-42c4-b7d6-6abce8db0dc7"
+      />
     </ThemeProvider>
   );
 }
