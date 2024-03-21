@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 import Link from "next/link";
 import Image from "next/image";
+import { trackEvent } from "fathom-client";
 const imagery = [
   "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0A_PRE_HD.mp4",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0B_INTRO_HD.mp4",
@@ -50,7 +51,11 @@ export default function DownloadsDialog() {
               >
                 {imagery.map((video) => (
                   <SplideSlide key="video">
-                    <Link href={video} target="_blank">
+                    <Link
+                      href={video}
+                      target="_blank"
+                      onClick={() => trackEvent("Crosslucid video downloaded")}
+                    >
                       <video
                         className="w-46 aspect-video h-full bg-burgundy/20 "
                         src={video}
@@ -81,7 +86,11 @@ export default function DownloadsDialog() {
               >
                 {diagrams.map((diagram) => (
                   <SplideSlide key={diagram}>
-                    <Link href={diagram} target="_blank">
+                    <Link
+                      href={diagram}
+                      target="_blank"
+                      onClick={() => trackEvent("Diagram downloaded")}
+                    >
                       <Image
                         className="w-46 aspect-video h-full bg-burgundy/20 object-cover"
                         src={diagram}
@@ -101,6 +110,7 @@ export default function DownloadsDialog() {
               <Link
                 href="https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_ArtxPublic-AI.pdf"
                 target="_blank"
+                onClick={() => trackEvent("PDF downloaded")}
               >
                 <Image
                   className="w-46 aspect-video h-full  object-cover"
