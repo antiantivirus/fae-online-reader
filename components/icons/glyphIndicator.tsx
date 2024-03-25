@@ -6,7 +6,7 @@ export default function GlyphIndicator({ active }: { active: boolean }) {
       x={0}
       y={0}
       viewBox="0 0 18.3 24.4"
-      height={28}
+      className="h-7 w-full overflow-visible"
     >
       <style>
         {".st6{fill:none;stroke:current;stroke-width:.4;stroke-miterlimit:10}"}

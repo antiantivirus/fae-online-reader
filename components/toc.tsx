@@ -244,6 +244,7 @@ export default function TOC() {
               type="single"
               value={accordOpen}
               onValueChange={setAccordOpen}
+              collapsible={true}
             >
               {tableOfContents.map((chapter) => (
                 <div key={chapter.title}>
