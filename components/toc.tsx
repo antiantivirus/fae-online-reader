@@ -259,7 +259,7 @@ export default function TOC() {
                             <span className="mt-1.5">{chapter.title}</span>
                           </Link>
                           <Accordion.Trigger className="group">
-                            <div className="transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
+                            <div className="shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
                               <AccordArrow />
                             </div>
                           </Accordion.Trigger>
