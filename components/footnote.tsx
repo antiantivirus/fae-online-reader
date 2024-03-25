@@ -36,7 +36,7 @@ export default function Footnote({ info }: { info: any }) {
             <Popover.Trigger asChild>
               <button
                 id={`footnote-button-${no}`}
-                className={`group absolute right-0 flex h-10 w-10 scale-100 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
+                className={`group absolute right-0 flex h-10 w-10 scale-100 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-5" : "-mt-12"} ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 <span>{no}</span>
@@ -53,7 +53,7 @@ export default function Footnote({ info }: { info: any }) {
             <Dialog.Trigger asChild>
               <button
                 id={`footnote-button-${no}`}
-                className={`group absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-2" : "-mt-8"} ${open ? "fill-primary text-background" : "fill-none"}`}
+                className={`group absolute right-3 -mt-5 flex h-5 w-5 items-center justify-center rounded-full stroke-primary text-xs ${adjustFootnote ? "-mt-4" : "-mt-12"} ${open ? "fill-primary text-background" : "fill-none"}`}
               >
                 <FootnoteIcon />
                 {no}
