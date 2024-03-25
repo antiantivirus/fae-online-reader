@@ -72,7 +72,7 @@ export default function ChapterVideo({
     <>
       <video
         id="chapter-image"
-        className="absolute left-1/2 top-[150px] z-10 hidden max-h-[70vh] w-full max-w-6xl -translate-x-1/2 transform md:top-[55%] md:w-auto md:-translate-y-1/2 lg:block"
+        className="mob-[150px] absolute left-1/2 z-10 hidden max-h-[70vh] w-full max-w-6xl -translate-x-1/2 transform md:top-[60%] md:w-auto md:-translate-y-1/2 lg:block"
         muted
         playsInline
         ref={videoRef}

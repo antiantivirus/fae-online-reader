@@ -65,7 +65,7 @@ export default function ChapterHeading({
         className="sticky-chapter-header invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 w-[calc(100vw-54px)] rounded-full bg-burgundy px-4 py-2 shadow md:left-auto md:w-full md:max-w-boxWide"
       >
         <span>
-          {no && <>{no}.</>}
+          {no && <>{no}. </>}
           {title}
         </span>
       </div>

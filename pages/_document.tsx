@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en" className="bg-background">
       <Head>
-        <title>Future Art Ecosystems 4: Art x Public AI</title>
         <meta
           name="description"
           content="Future Art Ecosystems 4: Art x Public AI provides analyses, concepts and strategies for responding to the transformations of AI systems on culture and society."
