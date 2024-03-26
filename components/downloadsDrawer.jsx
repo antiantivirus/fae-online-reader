@@ -54,6 +54,7 @@ export default function DownloadsDialog() {
                     <Link
                       href={video}
                       target="_blank"
+                      data-umami-event="Crosslucid video downloaded"
                       onClick={() => trackEvent("Crosslucid video downloaded")}
                     >
                       <video
@@ -89,6 +90,7 @@ export default function DownloadsDialog() {
                     <Link
                       href={diagram}
                       target="_blank"
+                      data-umami-event="Diagram downloaded"
                       onClick={() => trackEvent("Diagram downloaded")}
                     >
                       <Image
@@ -110,6 +112,7 @@ export default function DownloadsDialog() {
               <Link
                 href="https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_ArtxPublic-AI.pdf"
                 target="_blank"
+                data-umami-event="PDF downloaded"
                 onClick={() => trackEvent("PDF downloaded")}
               >
                 <Image
