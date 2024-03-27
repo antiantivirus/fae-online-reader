@@ -3,9 +3,6 @@ export default function Copyright() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
-      style={{
-        enableBackground: "new 0 0 30.4 9",
-      }}
       viewBox="0 0 30.4 9"
       className="h-6 fill-primary md:h-8"
     >
