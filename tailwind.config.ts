@@ -73,5 +73,8 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    'fill-white',
+  ]
 };
 export default config;
