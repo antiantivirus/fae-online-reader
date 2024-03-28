@@ -3,12 +3,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="h-screen bg-white">
-      <div className="absolute left-1/2 top-[5vh] max-h-[70vh] w-[80vw] max-w-lg -translate-x-1/2 transform md:top-0">
+      <h1 className="sr-only">Future Art Ecosystems 4: Art x Public AI</h1>
+      <div
+        aria-hidden
+        className="relative h-[calc(100vh-330px)] overflow-hidden"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
           viewBox="0 0 255.12 382.68"
-          className="h-full"
+          className="absolute left-1/2 top-[55%] max-h-[70vh] w-full -translate-x-1/2 -translate-y-1/2 transform lg:h-auto lg:max-h-none lg:w-[40vw] lg:max-w-lg 2xl:max-w-2xl"
         >
           <defs>
             <clipPath id="clippath">
@@ -52,25 +56,25 @@ export default function Home() {
       </div>
       <div className="fixed bottom-0 left-0 z-50 w-full text-burgundy">
         <div className="flex flex-col-reverse">
-          <div className="download-drawer-imagery shadow-home peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/postface"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   Postface
                 </h3>
               </div>
             </Link>
           </div>
-          <div className="download-drawer-imagery shadow-home peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/ecosystem"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   3: Ecosystem
                 </h3>
                 <p className="hidden md:block">
@@ -87,13 +91,13 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-imagery shadow-home peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/artist"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   2: Artist
                 </h3>
                 <p className="hidden md:block">
@@ -110,13 +114,13 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-imagery shadow-home peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/organisation"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   1: Organisation
                 </h3>
                 <p className="hidden md:block">
@@ -133,13 +137,13 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-diagrams shadow-home peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-diagrams peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/defining-public-ai"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   Defining Public AI
                 </h3>
               </div>
@@ -152,13 +156,13 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-pdf shadow-home peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/introduction"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   Introduction
                 </h3>
               </div>
@@ -171,13 +175,13 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="download-drawer-pdf shadow-home z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:hover:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae4/preface"
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="text-homepage my-1 md:my-0 md:text-xl">
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
                   Preface
                 </h3>
               </div>
