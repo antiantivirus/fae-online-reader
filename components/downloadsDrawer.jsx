@@ -5,19 +5,39 @@ import "@splidejs/react-splide/css/core";
 import Link from "next/link";
 import Image from "next/image";
 import { trackEvent } from "fathom-client";
+
 const imagery = [
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0A_PRE_HD.mp4",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0B_INTRO_HD.mp4",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH01_ORG_HD.mp4",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH02_ART_HD.mp4",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH03_NETWORK_HD.mp4",
+  {
+    video:
+      "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0A_PRE_HD.mp4",
+    poster: "/images/HOMEPAGE_CH00.jpg",
+  },
+  {
+    video:
+      "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH0B_INTRO_HD.mp4",
+    poster: "/images/HOMEPAGE_INTRO.jpg",
+  },
+  {
+    video:
+      "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH01_ORG_HD.mp4",
+    poster: "/images/HOMEPAGE_CH01.jpg",
+  },
+  {
+    video:
+      "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH02_ART_HD.mp4",
+    poster: "/images/HOMEPAGE_CH02.jpg",
+  },
+  {
+    video:
+      "https://futureartecosystems.org/wp-content/uploads/2024/03/CROSSLUCID_CH03_NETWORK_HD.mp4",
+    poster: "/images/HOMEPAGE_CH03.jpg",
+  },
 ];
 
 const diagrams = [
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-04.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-11.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-18.jpg",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-18.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-17-scaled.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-11.jpg",
 ];
@@ -50,16 +70,23 @@ export default function DownloadsDialog() {
                 aria-label="Imagery"
               >
                 {imagery.map((video) => (
-                  <SplideSlide key="video">
+                  <SplideSlide key={video.video}>
                     <Link
-                      href={video}
+                      className="relative"
+                      href={video.video}
                       target="_blank"
                       onClick={() => trackEvent("Crosslucid video downloaded")}
+                      download
                     >
-                      <video
-                        className="w-46 aspect-video h-full bg-burgundy/20 "
-                        src={video}
-                        preload="metadata"
+                      <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
+                        <Download colour="white" />
+                      </div>
+                      <Image
+                        className="aspect-video"
+                        width="224"
+                        height="100"
+                        src={video.poster}
+                        alt=""
                       />
                     </Link>
                   </SplideSlide>
@@ -90,7 +117,12 @@ export default function DownloadsDialog() {
                       href={diagram}
                       target="_blank"
                       onClick={() => trackEvent("Diagram downloaded")}
+                      className="relative"
+                      download
                     >
+                      <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
+                        <Download colour="white" />
+                      </div>
                       <Image
                         className="w-46 aspect-video h-full bg-burgundy/20 object-cover"
                         src={diagram}
@@ -111,7 +143,12 @@ export default function DownloadsDialog() {
                 href="https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_ArtxPublic-AI.pdf"
                 target="_blank"
                 onClick={() => trackEvent("PDF downloaded")}
+                className="relative"
+                download
               >
+                <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
+                  <Download colour="white" />
+                </div>
                 <Image
                   className="w-46 aspect-video h-full  object-cover"
                   src="https://futureartecosystems.org/wp-content/uploads/2024/03/fae4-gif-compressed.gif"

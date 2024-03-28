@@ -29,7 +29,7 @@ export default function ChapterHeading({
         trigger: "#chapter-contents",
         start: "top -50",
         end: "top -150",
-        scrub: true,
+        scrub: 1,
       },
       translateY: 0,
       duration: 0.5,
@@ -44,15 +44,6 @@ export default function ChapterHeading({
       },
       opacity: 0,
       duration: 0.5,
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "main",
-        start: "top top",
-        end: "+=550",
-        scrub: true,
-      },
     });
   });
   return (

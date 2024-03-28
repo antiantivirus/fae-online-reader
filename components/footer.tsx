@@ -4,32 +4,32 @@ import Copyright from "./icons/copyright";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.set("#footer", {
-      y: 100,
-    });
-
-    gsap.to("#footer", {
-      y: 0,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: "main",
-        start: "bottom +100",
-        end: "bottom",
-        scrub: 1,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.fromTo(
+  //     "#footer",
+  //     { y: 150 },
+  //     {
+  //       y: 0,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: "main",
+  //         start: "bottom bottom-=50px",
+  //         end: "bottom bottom-=100px",
+  //         scrub: 1,
+  //         markers: true,
+  //       },
+  //     },
+  //   );
+  // });
   const date = new Date();
   const year = date.getFullYear();
   return (
     <footer
       id="footer"
-      className="ml-[3rem] mr-2.5 mt-10 flex flex-wrap items-center justify-between gap-y-4 rounded-t bg-background p-5 text-xs shadow lg:mx-auto lg:max-w-box xl:max-w-boxWide"
+      className="ml-[3rem] mr-2.5 flex w-full flex-wrap items-center justify-between gap-y-4 rounded-t bg-background p-5 text-xs shadow lg:mx-auto lg:max-w-box xl:max-w-boxWide"
     >
       <Link
         className="w-8/12 md:w-4/12"

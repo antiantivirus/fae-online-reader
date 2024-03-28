@@ -181,14 +181,14 @@ export default function TOC() {
   //   gsap.set("#toc", {
   //     translateX: -300,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //   });
   //   gsap.to("#toc", {
   //     translateX: 0,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //     duration: 1,
-  //     delay: 0.5,
+  //     delay: 1,
   //   });
   // });
 
