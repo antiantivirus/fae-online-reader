@@ -5,6 +5,7 @@ import "@splidejs/react-splide/css/core";
 import Link from "next/link";
 import Image from "next/image";
 import { trackEvent } from "fathom-client";
+import { saveAs } from "file-saver";
 
 const imagery = [
   {
@@ -35,11 +36,12 @@ const imagery = [
 ];
 
 const diagrams = [
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-04.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-11.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-18.jpg",
+  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagrams-final-04.jpg",
+  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-18.jpg",
   "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-17-scaled.jpg",
-  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_Diagram-11.jpg",
+  "https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4-Diagrams-CH2-2-1.jpg",
 ];
 
 export default function DownloadsDialog() {
@@ -114,11 +116,14 @@ export default function DownloadsDialog() {
               >
                 {diagrams.map((diagram) => (
                   <SplideSlide key={diagram}>
-                    <Link
-                      href={diagram}
-                      target="_blank"
+                    <button
+                      // href={diagram}
+                      // target="_blank"
                       data-umami-event="Diagram downloaded"
-                      onClick={() => trackEvent("Diagram downloaded")}
+                      onClick={() => {
+                        saveAs(diagram);
+                        trackEvent("Diagram downloaded");
+                      }}
                       className="relative"
                       download
                     >
@@ -132,7 +137,7 @@ export default function DownloadsDialog() {
                         height="100"
                         alt=""
                       />
-                    </Link>
+                    </button>
                   </SplideSlide>
                 ))}
               </Splide>
