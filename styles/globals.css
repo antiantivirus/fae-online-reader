@@ -75,6 +75,17 @@
     @apply outline-primary;
   }
 
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: var(--colour-primary);
+    background: var(--colour-primary);
+  }
+
+  ::selection {
+    color: var(--colour-background);
+    background: var(--colour-primary);
+  }
+
   /* h2,
   h3,
   h4,

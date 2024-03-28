@@ -32,7 +32,7 @@ const config: Config = {
         typography: 'var(--colour-typography)',
         black: '#000000',
         white: '#ffffff',
-        red: '#ff8e8e',
+        red: '#FF0000',
         burgundy: '#421629',
         grey: '#e5e5e5'
       },
