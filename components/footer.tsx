@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="ml-[3rem] mr-2.5 flex w-full flex-wrap items-center justify-between gap-y-4 rounded-t bg-background p-5 text-xs shadow lg:mx-auto lg:max-w-box xl:max-w-boxWide"
+      className="ml-[3rem] mr-2.5 flex flex-wrap items-center justify-between gap-y-4 rounded-t bg-background p-5 text-xs shadow lg:mx-auto lg:max-w-box xl:max-w-boxWide"
     >
       <Link
         className="w-8/12 md:w-4/12"
