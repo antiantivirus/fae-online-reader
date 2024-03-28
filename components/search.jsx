@@ -58,7 +58,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search"
-        className={`fixed right-2.5 h-9 w-[calc(100vw-55px)] rounded-full bg-background px-3 text-base text-typography shadow md:static md:block md:w-full ${searchOpenMobile ? "block" : "hidden"}`}
+        className={`search fixed right-2.5 h-9 w-[calc(100vw-55px)] rounded-full bg-background px-3 text-base text-primary shadow outline-primary md:static md:block md:w-full ${searchOpenMobile ? "block" : "hidden"}`}
         onChange={(e) => setQuery(e.target.value)}
         onInput={handleSearch}
       />

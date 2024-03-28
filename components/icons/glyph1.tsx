@@ -1,7 +1,7 @@
 export default function Glyph1() {
   return (
     <svg
-      className="h-full w-full stroke-primary"
+      className="h-full w-full stroke-primary stroke-[0.6px]"
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
       id="Ebene_1"
@@ -10,11 +10,6 @@ export default function Glyph1() {
       viewBox="0 0 706.7 738.3"
       preserveAspectRatio="none"
     >
-      <style>
-        {
-          ".st0,.st1{fill:none;stroke:current;stroke-miterlimit:10}.st1{stroke:current}"
-        }
-      </style>
       <path
         d="M530.9 378.5c-5.9 0-11.7.4-17.4 1.2-53.6 6.8-88.3-55.1-54.5-97.4 17.9-22.3 28.6-50.6 28.6-81.4 0-72-58.3-130.3-130.3-130.3S227 128.9 227 200.9c0 30 10.1 57.6 27.1 79.6 32.8 42.5-2.9 103.1-55.7 95.4-6.7-1.1-13.5-1.6-20.5-1.6-72 0-130.3 58.3-130.3 130.3s58.3 130.3 130.3 130.3c54.7 0 101.4-33.6 120.8-81.4 21.1-48.6 90.4-47.7 110.3 1.3 18.6 49.3 66.2 84.3 122 84.3 72 0 130.3-58.3 130.3-130.3s-58.5-130.3-130.4-130.3zm-231.2 80.1c-4.6-12.2-11-23.5-18.8-33.6-32.8-42.5 2.9-103.1 55.7-95.4 6.7 1.1 13.5 1.6 20.5 1.6 5.9 0 11.7-.4 17.4-1.2 53.6-6.8 88.3 55.1 54.5 97.4-7.8 9.8-14.3 20.7-19.1 32.5-20.9 48.5-90.3 47.7-110.2-1.3z"
         className="st0"

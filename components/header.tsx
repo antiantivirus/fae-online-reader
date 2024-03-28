@@ -47,19 +47,19 @@ export default function Header() {
   //   gsap.set("#top-nav", {
   //     translateY: -100,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //   });
 
   //   gsap.set("#bottom-nav", {
   //     translateY: 100,
   //     autoAlpha: 0,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //   });
 
   //   gsap.to("#top-nav", {
   //     translateY: 0,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //     duration: 1,
   //     delay: 0.5,
   //   });
@@ -67,7 +67,7 @@ export default function Header() {
   //   gsap.to("#bottom-nav", {
   //     translateY: 0,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //     duration: 1,
   //     delay: 0.5,
   //   });

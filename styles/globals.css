@@ -67,6 +67,25 @@
     line-height: 1.2;
   }
 
+  a:focus {
+    @apply outline-primary;
+  }
+
+  button:focus {
+    @apply outline-primary;
+  }
+
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: var(--colour-primary);
+    background: var(--colour-primary);
+  }
+
+  ::selection {
+    color: var(--colour-background);
+    background: var(--colour-primary);
+  }
+
   /* h2,
   h3,
   h4,
@@ -123,6 +142,12 @@
   /* .prose h2 {
     @apply relative mx-auto rounded-lg bg-background p-5 text-typography shadow md:max-w-3xl md:p-6 md:pr-12;
   } */
+
+  /* center placeholder text  */
+  .search::placeholder {
+    @apply text-primary opacity-50;
+    transform: translateY(1.5px);
+  }
 
   .prose h3,
   .prose h4 {

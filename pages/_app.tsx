@@ -6,8 +6,8 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/header";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -39,10 +39,12 @@ export default function App({ Component, pageProps }: AppProps) {
       themes={["light", "red", "dark"]}
       enableColorScheme
     >
+      <Head>
+        <title>Future Art Ecosystems 4: Art x Public AI</title>
+      </Head>
       {/* temp fix for search! */}
       {router.pathname != "/briefing/fae4" && <Header />}
       <Component {...pageProps} />
-      <Analytics />
       <SpeedInsights />
       <Script
         defer

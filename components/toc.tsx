@@ -181,14 +181,14 @@ export default function TOC() {
   //   gsap.set("#toc", {
   //     translateX: -300,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //   });
   //   gsap.to("#toc", {
   //     translateX: 0,
   //     autoAlpha: 1,
-  //     ease: "power4.out",
+  //     ease: "power3.out",
   //     duration: 1,
-  //     delay: 0.5,
+  //     delay: 1,
   //   });
   // });
 
@@ -244,6 +244,7 @@ export default function TOC() {
               type="single"
               value={accordOpen}
               onValueChange={setAccordOpen}
+              collapsible={true}
             >
               {tableOfContents.map((chapter) => (
                 <div key={chapter.title}>
@@ -259,7 +260,7 @@ export default function TOC() {
                             <span className="mt-1.5">{chapter.title}</span>
                           </Link>
                           <Accordion.Trigger className="group">
-                            <div className="transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
+                            <div className="shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180">
                               <AccordArrow />
                             </div>
                           </Accordion.Trigger>

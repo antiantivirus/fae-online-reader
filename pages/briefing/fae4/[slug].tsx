@@ -13,7 +13,7 @@ import { ReactNode } from "react";
 import Model from "@/components/model";
 import Image, { ImageProps } from "next/image";
 import TOC from "@/components/toc";
-import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function PostPage({
   source,
@@ -61,6 +61,7 @@ export default function PostPage({
           />
         </article>
       </main>
+      <Footer />
     </div>
   );
 }
