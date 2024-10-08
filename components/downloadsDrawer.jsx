@@ -147,7 +147,7 @@ export default function DownloadsDialog() {
                 <h3 className="text-xl">PDF</h3>
               </div>
               <Link
-                href="https://futureartecosystems.org/wp-content/uploads/2024/03/FAE4_ArtxPublic-AI.pdf"
+                href="https://futureartecosystems.org/wp-content/uploads/2024/10/FAE4_ArtxPublic-AI.pdf"
                 target="_blank"
                 data-umami-event="PDF downloaded"
                 onClick={() => trackEvent("PDF downloaded")}
