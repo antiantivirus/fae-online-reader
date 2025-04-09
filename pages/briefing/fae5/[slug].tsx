@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
 import Footnote from "@/components/footnote";
 import Box from "@/components/box";
-import ChapterHeading from "@/components/chapterHeading";
+import ChapterHeading from "@/components/FAE5/chapterHeading";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -33,8 +33,7 @@ export default function PostPage({
           key={source.frontmatter.title as string}
           no={source.frontmatter.chapter_no as string}
           title={title}
-          video={source.frontmatter.video as string}
-          videoMobile={source.frontmatter.video_mobile as string}
+          image={source.frontmatter.image as string}
           credit={source.frontmatter.video_credit as string}
         />
         <article
