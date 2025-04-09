@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  @page {
+    size: A4;
+    margin-top: 6mm;
+    margin-bottom: 6mm;
+    margin-left: 10mm;
+    margin-right: 10mm;
+    bleed: 6mm;
+    marks: crop;
+    @bottom-center {
+      content: counter(page);
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .chapter {
+    break-before: always;
+  }
+
+  @font-face {
+    font-family: "New Edge";
+    font-weight: 300;
+    font-style: normal;
+    src: url("/fonts/NewEdge666-LightRounded.woff2") format("woff2");
+  }
+
+  html,
+  body {
+    @apply font-sans;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 2.1em;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}

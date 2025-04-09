@@ -1,3 +1,4 @@
+import styles from './pdf.module.css'
 import fs, { readdirSync } from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
@@ -13,12 +14,14 @@ import Model from "@/components/model";
 import Image, { ImageProps } from "next/image";
 import TOC from "@/components/toc";
 import Footer from "@/components/footer";
+import Script from 'next/script'
 
 export default function PostPage({
   chapters,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="fae5">
+      <Script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" />
       <Head>
         <title>
           Future Art Ecosystems 5: R&D
@@ -39,7 +42,6 @@ export default function PostPage({
                 // specifying the custom MDX components
                 components={{
                   Model,
-                  Footnote,
                   Box,
                   h1: heading("h1"),
                   h2: heading("h2"),
@@ -47,7 +49,6 @@ export default function PostPage({
                   h4: heading("h4"),
                   h5: heading("h5"),
                   h6: heading("h6"),
-                  sup: (props) => <Footnote info={props.children} />,
                   Image,
                 }}
               />
@@ -55,7 +56,6 @@ export default function PostPage({
           ))}
         </article>
       </main>
-      <Footer />
     </div >
   );
 }
