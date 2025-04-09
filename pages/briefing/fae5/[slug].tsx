@@ -44,8 +44,6 @@ export default function PostPage({
             {...source}
             // specifying the custom MDX components
             components={{
-              Model,
-              Footnote,
               Box,
               h1: heading("h1"),
               h2: heading("h2"),
@@ -53,7 +51,6 @@ export default function PostPage({
               h4: heading("h4"),
               h5: heading("h5"),
               h6: heading("h6"),
-              sup: (props) => <Footnote info={props.children} />,
               Image,
             }}
           />
