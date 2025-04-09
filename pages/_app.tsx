@@ -40,10 +40,10 @@ export default function App({ Component, pageProps }: AppProps) {
       enableColorScheme
     >
       <Head>
-        <title>Future Art Ecosystems 4: Art x Public AI</title>
+        <title>Future Art Ecosystems</title>
       </Head>
       {/* temp fix for search! */}
-      {router.pathname != "/briefing/fae4" && <Header />}
+      {(router.pathname != "/briefing/fae4" || router.pathname != "/briefing/fae5") && <Header />}
       <Component {...pageProps} />
       <SpeedInsights />
       <Script

@@ -11,10 +11,13 @@ import Back from "./icons/back";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [fontSize, setFontSize] = useState(1);
   const { theme, setTheme } = useTheme();
+  const [isFAE5, setIsFAE5] = useState(false);
+  const router = useRouter();
 
   const increaseFontSize = () => {
     if (fontSize < 1.5) {
@@ -42,6 +45,12 @@ export default function Header() {
       article.style.fontSize = `calc(1rem * ${fontSize})`;
     }
   }, [fontSize]);
+
+  useEffect(() => {
+    if (router.pathname.includes('fae5')) {
+      setIsFAE5(true)
+    }
+  }, [router])
 
   // useGSAP(() => {
   //   gsap.set("#top-nav", {
@@ -81,26 +90,44 @@ export default function Header() {
       >
         <Search />
         <div className="flex items-center gap-4">
-          <GlyphBackground />
+          {!isFAE5 && <GlyphBackground />}
           <div className="flex items-center gap-2">
-            <button
-              className="icon aspect-square rounded-full bg-white shadow"
-              onClick={() => setTheme("light")}
-            >
-              <span className="sr-only">Light</span>
-            </button>
-            <button
-              className="icon aspect-square rounded-full bg-grey shadow"
-              onClick={() => setTheme("grey")}
-            >
-              <span className="sr-only">Grey</span>
-            </button>
-            <button
-              className="icon aspect-square rounded-full border-white bg-burgundy shadow"
-              onClick={() => setTheme("dark")}
-            >
-              <span className="sr-only">Dark</span>
-            </button>
+            {isFAE5 ? <>
+              <button
+                className="icon aspect-square rounded-full bg-white shadow"
+                onClick={() => setTheme("light")}
+              >
+                <span className="sr-only">Light</span>
+              </button>
+              <button
+                className="icon aspect-square rounded-full border-white bg-black shadow"
+                onClick={() => setTheme("dark")}
+              >
+                <span className="sr-only">Dark</span>
+              </button>
+            </> :
+              <>
+                <button
+                  className="icon aspect-square rounded-full bg-white shadow"
+                  onClick={() => setTheme("light")}
+                >
+                  <span className="sr-only">Light</span>
+                </button>
+                <button
+                  className="icon aspect-square rounded-full bg-grey shadow"
+                  onClick={() => setTheme("grey")}
+                >
+                  <span className="sr-only">Grey</span>
+                </button>
+                <button
+                  className="icon aspect-square rounded-full border-white bg-burgundy shadow"
+                  onClick={() => setTheme("dark")}
+                >
+                  <span className="sr-only">Dark</span>
+                </button>
+              </>
+            }
+
           </div>
 
           <div className="hidden items-center gap-2 md:flex">
@@ -127,6 +154,6 @@ export default function Header() {
         </button> */}
         <DownloadsDrawer />
       </nav>
-    </header>
+    </header >
   );
 }

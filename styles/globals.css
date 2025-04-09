@@ -4,17 +4,19 @@
 
 @layer base {
   :root {
-    --colour-background: #ffffff;
-    --colour-primary: #421629;
+    --colour-background: #9d9d9d;
+    --colour-primary: #ffffff;
     --colour-typography: #000000;
     --colour-shadow: 77 0 18;
   }
+
   html[data-theme="dark"] {
     --colour-background: #421629;
     --colour-primary: #ffffff;
     --colour-typography: #ffffff;
     --colour-shadow: 255 255 255;
   }
+
   html[data-theme="grey"] {
     --colour-background: #e5e5e5;
     --colour-primary: #421629;
