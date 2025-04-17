@@ -50,6 +50,13 @@
     src: url("/fonts/NewEdge666-LightRounded.woff2") format("woff2");
   }
 
+  @font-face {
+    font-family: "Slack Light";
+    font-weight: 300;
+    font-style: normal;
+    src: url("/fonts/SlackLight.woff2") format("woff2");
+  }
+
   h1 {
     font-size: 3rem;
     line-height: 1;

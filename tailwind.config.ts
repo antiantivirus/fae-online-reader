@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['New Edge'],
+      slackLight: ['Slack Light']
     },
     fontSize: {
       xxs: '0.8rem',

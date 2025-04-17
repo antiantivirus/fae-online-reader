@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Home() {
   return (
-    <main className="h-screen bg-white fae5">
+    <main className="h-screen bg-white fae5 font-slackLight">
       <h1 className="sr-only">Future Art Ecosystems 5: R&D</h1>
       <div
         aria-hidden

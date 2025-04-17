@@ -20,7 +20,7 @@ export default function PostPage({
   chapters,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="fae5">
+    <div className="fae5 font-slackLight">
       <Script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" />
       <Head>
         <title>
