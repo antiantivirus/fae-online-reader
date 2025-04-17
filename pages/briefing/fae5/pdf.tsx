@@ -29,6 +29,7 @@ export default function PostPage({
       </Head>
       <TOC />
       <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0">
+        <img src="/images/fae4-cover.svg" className='w-full' />
         <article
           id="chapter-contents"
           className={`prose space-y-[12.5px]`}
@@ -43,12 +44,6 @@ export default function PostPage({
                 components={{
                   Model,
                   Box,
-                  h1: heading("h1"),
-                  h2: heading("h2"),
-                  h3: heading("h3"),
-                  h4: heading("h4"),
-                  h5: heading("h5"),
-                  h6: heading("h6"),
                   Image,
                 }}
               />

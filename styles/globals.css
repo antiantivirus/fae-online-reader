@@ -58,7 +58,8 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  .next-chapter {
     font-size: 2.1em;
     line-height: 1.2;
   }
@@ -158,13 +159,29 @@
 
   .prose h3::before,
   .defining-public-ai h4::before,
-  .chapter-3 h4::before {
+  .chapter-3 h4::before,
+  .next-chapter::after {
     display: inline-block;
     content: url("data:image/svg+xml,%3Csvg viewBox='0 0 33 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_236_63)'%3E%3Cpath d='M0.460953 7.2L14.461 7.2C21.561 8.4 15.861 13.8 15.861 13.8C22.961 7.1 32.261 6.9 32.261 6.9C32.261 6.9 22.961 6.7 15.861 1.42729e-06C15.861 1.42729e-06 21.661 5.4 14.461 6.7L0.460953 6.7C0.360953 6.7 0.260953 6.8 0.260953 6.9C0.260953 7 0.260953 7.2 0.460953 7.2Z' fill='%23421629'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_236_63'%3E%3Crect width='32.1' height='13.8' fill='white' transform='translate(32.261 13.8) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     height: auto;
     width: 55.2px;
     /* margin-top: 10px; */
     margin-right: 10px;
+  }
+
+  .next-chapter::after {
+    margin-left: 10px;
+    transition: all 300ms ease;
+  }
+
+  .next-chapter:hover::after {
+    transform: translateX(5px);
+    transition: all 300ms ease;
+  }
+
+  .next-chapter:hover {
+    @apply shadow-hover;
+    transition: all 300ms cubic-bezier(0.87, 0, 0.13, 1);
   }
 
   html[data-theme="dark"] .prose h3::before,

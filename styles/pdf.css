@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @media print {
+  /* set page sizes, bleed and margin content */
   @page {
     size: A4;
     margin-top: 6mm;
@@ -11,8 +12,41 @@
     margin-right: 10mm;
     bleed: 6mm;
     marks: crop;
-    @bottom-center {
+    @right-bottom {
       content: counter(page);
+      font-size: 2rem;
+      width: 120mm;
+      height: 10mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      bottom: 20mm;
+      text-align: start;
+    }
+    @right-middle {
+      content: string(title);
+      font-size: 2rem;
+      width: 120mm;
+      height: 10mm;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      position: relative;
+      top: 0mm;
+      text-align: end;
+    }
+  }
+
+  /* remove page number for a blank page */
+  @page: blank {
+    @right-bottom {
+      content: none;
+    }
+  }
+
+  /* remove page number on first page */
+  @page :first {
+    @right-bottom {
+      content: none;
     }
   }
 
@@ -20,9 +54,18 @@
     max-width: 100%;
   }
 
-  .chapter {
-    break-before: always;
+  /* break content to a new page on start of chapter or heading */
+  .chapter,
+  .footnotes,
+  h2,
+  h3 {
+    break-before: page;
   }
+
+  /* start all new chapters on the right hand page */
+  /* .chapter {
+    break-before: right;
+  } */
 
   @font-face {
     font-family: "New Edge";
@@ -42,6 +85,10 @@
     font-size: 3rem;
     line-height: 1;
     margin-bottom: 40px;
+  }
+
+  h1 {
+    string-set: title content(text);
   }
 
   h2,

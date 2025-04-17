@@ -58,7 +58,7 @@ export default function Home() {
         <div className="flex flex-col-reverse">
           <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/postface"
+              href="/briefing/fae5/06-postface"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/ecosystem"
+              href="/briefing/fae5/05-ecosystem"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/artist"
+              href="/briefing/fae5/04-artist"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/organisation"
+              href="/briefing/fae5/03-organisation"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -139,7 +139,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-diagrams peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/defining-public-ai"
+              href="/briefing/fae5/02-defining-public-ai"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -158,7 +158,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/introduction"
+              href="/briefing/fae5/01-introduction"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/preface"
+              href="/briefing/fae5/0-preface"
               className="flex h-full w-full justify-between"
             >
               <div>
