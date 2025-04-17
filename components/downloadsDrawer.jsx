@@ -52,6 +52,10 @@ export default function DownloadsDialog() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Content className="dialog-bottom fixed bottom-0 right-0 z-50 w-full text-primary">
+          <Dialog.Title className="sr-only">Downloads drawer</Dialog.Title>
+          <Dialog.Description className="sr-only">
+            Download PDF, diagrams and imagery
+          </Dialog.Description>
           <div className="flex flex-col-reverse">
             <div className="download-Dialog-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-background p-2 shadow transition-all hover:-translate-y-24 peer-hover:-translate-y-24">
               <div className="w-46 aspect-video h-full ">
@@ -73,13 +77,15 @@ export default function DownloadsDialog() {
               >
                 {imagery.map((video) => (
                   <SplideSlide key={video.video}>
-                    <Link
+                    <button
                       className="relative"
                       href={video.video}
                       target="_blank"
                       data-umami-event="Crosslucid video downloaded"
-                      onClick={() => trackEvent("Crosslucid video downloaded")}
-                      download
+                      onClick={() => {
+                        saveAs(video.video); // Use FileSaver to download the video
+                        trackEvent("Crosslucid video downloaded");
+                      }}
                     >
                       <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
                         <Download colour="white" />
@@ -91,7 +97,7 @@ export default function DownloadsDialog() {
                         src={video.poster}
                         alt=""
                       />
-                    </Link>
+                    </button>
                   </SplideSlide>
                 ))}
               </Splide>
@@ -117,15 +123,12 @@ export default function DownloadsDialog() {
                 {diagrams.map((diagram) => (
                   <SplideSlide key={diagram}>
                     <button
-                      // href={diagram}
-                      // target="_blank"
                       data-umami-event="Diagram downloaded"
                       onClick={() => {
                         saveAs(diagram);
                         trackEvent("Diagram downloaded");
                       }}
                       className="relative"
-                      download
                     >
                       <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
                         <Download colour="white" />
