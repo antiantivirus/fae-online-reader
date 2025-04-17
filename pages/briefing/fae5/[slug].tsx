@@ -11,9 +11,10 @@ import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
 import Model from "@/components/model";
-import Image, { ImageProps } from "next/image";
+import Diagram from "@/components/diagram";
 import TOC from "@/components/toc";
 import Footer from "@/components/footer";
+import Image from "next/image";
 
 export default function PostPage({
   source,
@@ -52,6 +53,8 @@ export default function PostPage({
               h5: heading("h5"),
               h6: heading("h6"),
               Image,
+              Diagram,
+              Model
             }}
           />
         </article>
