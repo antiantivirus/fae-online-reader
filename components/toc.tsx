@@ -249,8 +249,12 @@ export default function TOC() {
               {tableOfContents.map((chapter) => (
                 <div key={chapter.title}>
                   {chapter.subChapters ? (
-                    <Accordion.Item value={chapter.title}>
+                    <Accordion.Item
+                      value={chapter.title}
+                      onMouseEnter={() => setAccordOpen(chapter.title)}
+                      onMouseLeave={() => setAccordOpen("")}>
                       <Accordion.Header asChild>
+
                         <div className="flex items-center gap-2">
                           <Link
                             className="group flex items-center gap-2 stroke-primary text-xl"
@@ -285,7 +289,8 @@ export default function TOC() {
                             {subChapter.subChapters && (
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
-                                  <li key={subSubChapter}>
+                                  <li key={subSubChapter} className="relative group overflow-visible">
+                                    <Star className="absolute -left-0 transition group-hover:opacity-100 opacity-0" />
                                     <Link
                                       key={subSubChapter}
                                       className="text-base"

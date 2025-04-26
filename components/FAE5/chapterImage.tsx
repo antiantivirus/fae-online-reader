@@ -60,6 +60,17 @@ export default function ChapterImage({
         scrub: 1,
       },
     });
+
+    gsap.to("sheen", {
+      xPercent: 100,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: "main",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
   });
   return (
     <>
@@ -73,11 +84,16 @@ export default function ChapterImage({
       />
       <Portal.Root>
         <Image
-          className="absolute left-0 top-0 w-screen h-screen -z-10"
+          className="absolute left-0 top-0 w-full h-full -z-10 opacity-50"
           src={image}
           alt=""
           width={850}
           height={400}
+        />
+        {/* Sheen overlay */}
+        <div
+          id="sheen"
+          className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 pointer-events-none"
         />
       </Portal.Root>
     </>

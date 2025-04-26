@@ -59,11 +59,12 @@ export default function PostPage({
           />
         </article>
         {source.frontmatter.next_chapter &&
-          <Link className="next-chapter mx-auto block rounded bg-background p-3 shadow md:p-5 w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
-            Next Chapter
-          </Link>
+          <div className="max-w-box mx-auto">
+            <Link className="next-chapter ml-auto mr-0 block rounded bg-background p-3 shadow md:p-5 w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
+              Next Chapter
+            </Link>
+          </div>
         }
-
       </main>
       <Footer />
     </div>
