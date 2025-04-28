@@ -177,21 +177,6 @@ export default function TOC() {
     setTocOpen(false);
   }, [asPath]);
 
-  // useGSAP(() => {
-  //   gsap.set("#toc", {
-  //     translateX: -300,
-  //     autoAlpha: 1,
-  //     ease: "power3.out",
-  //   });
-  //   gsap.to("#toc", {
-  //     translateX: 0,
-  //     autoAlpha: 1,
-  //     ease: "power3.out",
-  //     duration: 1,
-  //     delay: 1,
-  //   });
-  // });
-
   return (
     <nav
       data-pagefind-ignore="all"
@@ -252,7 +237,8 @@ export default function TOC() {
                     <Accordion.Item
                       value={chapter.title}
                       onMouseEnter={() => setAccordOpen(chapter.title)}
-                      onMouseLeave={() => setAccordOpen("")}>
+                      onMouseLeave={() => setAccordOpen("")}
+                    >
                       <Accordion.Header asChild>
 
                         <div className="flex items-center gap-2">
@@ -270,10 +256,11 @@ export default function TOC() {
                           </Accordion.Trigger>
                         </div>
                       </Accordion.Header>
-                      <Accordion.Content className="ml-12 overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
+                      <Accordion.Content className="ml-12 overflow-hidden hover:overflow-visible data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
                         {chapter.subChapters.map((subChapter) => (
-                          <ol key={subChapter.title} className="mb-2.5">
-                            <li>
+                          <ol key={subChapter.title} className="mb-2.5 ">
+                            <li className="relative group">
+                              <Star className="absolute -left-5 top-[1.5px] transition group-hover:opacity-100 opacity-0 w-5 h-5 stroke-primary" />
                               <Link
                                 className="text-base"
                                 href={
@@ -289,8 +276,8 @@ export default function TOC() {
                             {subChapter.subChapters && (
                               <ol className="ml-5">
                                 {subChapter.subChapters.map((subSubChapter) => (
-                                  <li key={subSubChapter} className="relative group overflow-visible">
-                                    <Star className="absolute -left-0 transition group-hover:opacity-100 opacity-0" />
+                                  <li key={subSubChapter} className="relative group stroke-primary">
+                                    <Star className="absolute -left-5 top-[1.5px] transition group-hover:opacity-100 opacity-0 w-5 h-5 stroke-primary" />
                                     <Link
                                       key={subSubChapter}
                                       className="text-base"
@@ -326,6 +313,6 @@ export default function TOC() {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
-    </nav>
+    </nav >
   );
 }

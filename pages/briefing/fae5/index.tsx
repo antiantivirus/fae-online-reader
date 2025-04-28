@@ -58,7 +58,7 @@ export default function Home() {
         <div className="flex flex-col-reverse">
           <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/06-postface"
+              href="/briefing/fae5/08-postface"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -70,7 +70,29 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/05-ecosystem"
+              href="/briefing/fae5/06-recommendations"
+              className="flex h-full w-full justify-between"
+            >
+              <div>
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                  Recommendations
+                </h3>
+                <p className="hidden md:block">
+                  Lorem ipsum, its a nice day : )
+                </p>
+              </div>
+              <Image
+                src="/images/HOMEPAGE_CH03.jpg"
+                alt=""
+                width={114}
+                height={64}
+                className="aspect-video h-16 bg-burgundy/20"
+              />
+            </Link>
+          </div>
+          <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
+            <Link
+              href="/briefing/fae5/06-ecosystem"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -93,12 +115,12 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/04-artist"
+              href="/briefing/fae5/05-organisation"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-homepage md:my-0 md:text-xl">
-                  2: Artist
+                  2: Organisation
                 </h3>
                 <p className="hidden md:block">
                   This chapter looks at artistic practices that work with
@@ -116,12 +138,12 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/03-organisation"
+              href="/briefing/fae5/04-artist"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-homepage md:my-0 md:text-xl">
-                  1: Organisation
+                  1: Artist
                 </h3>
                 <p className="hidden md:block">
                   This chapter considers how organisations are being transformed
@@ -139,12 +161,12 @@ export default function Home() {
           </div>
           <div className="download-drawer-diagrams peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/02-defining-public-ai"
+              href="/briefing/fae5/03-creative-rd"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-homepage md:my-0 md:text-xl">
-                  Defining Public AI
+                  Creative R&D
                 </h3>
               </div>
               <Image
@@ -158,7 +180,7 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/01-introduction"
+              href="/briefing/fae5/02-introduction"
               className="flex h-full w-full justify-between"
             >
               <div>
@@ -173,6 +195,18 @@ export default function Home() {
                 height={64}
                 className="aspect-video h-16 bg-burgundy/20"
               />
+            </Link>
+          </div>
+          <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
+            <Link
+              href="/briefing/fae5/01-executive-summary"
+              className="flex h-full w-full justify-between"
+            >
+              <div>
+                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                  Executive Summary
+                </h3>
+              </div>
             </Link>
           </div>
           <div className="download-drawer-pdf z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
