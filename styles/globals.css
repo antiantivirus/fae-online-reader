@@ -6,6 +6,7 @@
   :root {
     --colour-background: #ffffff;
     --colour-primary: #421629;
+    --colour-secondary: #421629;
     --colour-typography: #421629;
     --colour-shadow: 77 0 18;
   }
@@ -28,6 +29,7 @@
     --colour-background: #ffffff;
     --colour-primary: #7c7c81;
     --colour-typography: #7c7c81;
+    --colour-secondary: #7c7c81;
     --colour-shadow: 124 124 129;
   }
 

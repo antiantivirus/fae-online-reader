@@ -29,6 +29,7 @@ const config: Config = {
       },
       colors: {
         primary: 'var(--colour-primary)',
+        secondary: 'var(--colour-secondary)',
         background: 'var(--colour-background)',
         typography: 'var(--colour-typography)',
         silver: '#7c7c81',

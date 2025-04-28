@@ -47,7 +47,6 @@ export default function PostPage({
             // specifying the custom MDX components
             components={{
               Model,
-              Footnote,
               Box,
               h1: heading("h1"),
               h2: heading("h2"),
@@ -57,6 +56,14 @@ export default function PostPage({
               h6: heading("h6"),
               sup: (props) => <Footnote info={props.children} />,
               Image,
+              // Don't include footnotes in search
+              section: (props) => {
+                // @ts-expect-error Ignore TypeScript error for custom attribute
+                if (props['data-footnotes']) {
+                  return <section data-pagefind-ignore {...props} />; // Prevent rendering
+                }
+                return <section {...props} />;
+              },
             }}
           />
         </article>

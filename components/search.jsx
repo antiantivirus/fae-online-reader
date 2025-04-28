@@ -45,10 +45,15 @@ export default function Search() {
 
     if (window.pagefind) {
       setLoading(true);
-      const search = await window.pagefind.debouncedSearch(query, {
-        filters: { tag: briefing },
-      });
+      const search = await window.pagefind.debouncedSearch(
+        query,
+        {
+          filters: { tag: briefing },
+        },
+        300,
+      );
       setLoading(false);
+
       setResults(search.results);
     }
   }
