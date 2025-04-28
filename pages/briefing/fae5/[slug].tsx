@@ -22,7 +22,7 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <div data-pagefind-body className="fae5 font-slackLight">
+    <div data-pagefind-body className="font-slackLight">
       <Head>
         <title>
           {source.frontmatter.title as string} - Future Art Ecosystems 5: R&D

@@ -31,6 +31,7 @@ const config: Config = {
         primary: 'var(--colour-primary)',
         background: 'var(--colour-background)',
         typography: 'var(--colour-typography)',
+        silver: '#7c7c81',
         black: '#000000',
         white: '#ffffff',
         red: '#FF0000',
