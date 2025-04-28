@@ -22,7 +22,7 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <div data-pagefind-body className="font-slackLight">
+    <div data-pagefind-body data-pagefind-filter="tag:fae5" className="font-slackLight">
       <Head>
         <title>
           {source.frontmatter.title as string} - Future Art Ecosystems 5: R&D
@@ -58,7 +58,7 @@ export default function PostPage({
             }}
           />
         </article>
-        {source.frontmatter.next_chapter &&
+        {source.frontmatter.next_chapter! &&
           <div className="max-w-box mx-auto">
             <Link className="next-chapter ml-auto mr-0 block rounded bg-background p-3 shadow md:p-5 w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
               Next Chapter
@@ -73,6 +73,7 @@ export default function PostPage({
 
 export async function getStaticPaths() {
   const paths = readdirSync("content/fae5")
+    .filter((path) => path.endsWith(".mdx") || path.endsWith(".md")) // Only include .mdx or .md files
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }));
 

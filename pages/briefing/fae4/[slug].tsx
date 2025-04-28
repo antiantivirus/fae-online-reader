@@ -21,7 +21,7 @@ export default function PostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = source.frontmatter.title as string;
   return (
-    <div data-pagefind-body>
+    <div data-pagefind-body data-pagefind-filter="tag:fae4">
       <Head>
         <title>
           {source.frontmatter.title as string} - Future Art Ecosystems 4: Art x
@@ -68,6 +68,7 @@ export default function PostPage({
 
 export async function getStaticPaths() {
   const paths = readdirSync("content/fae4")
+    .filter((path) => path.endsWith(".mdx") || path.endsWith(".md")) // Only include .mdx or .md files
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }));
 

@@ -14,7 +14,8 @@ import Model from "@/components/model";
 import Image, { ImageProps } from "next/image";
 import TOC from "@/components/toc";
 import Footer from "@/components/footer";
-import Script from 'next/script'
+import Script from 'next/script';
+import Diagram from '@/components/diagram';
 
 export default function PostPage({
   chapters,
@@ -36,6 +37,7 @@ export default function PostPage({
         >
           {chapters.map((chapter, index) => (
             <div className="chapter" key={index}>
+              {/* @ts-expect-error Ignore type error for now */}
               <h1>{chapter.frontmatter.title}</h1>
               <MDXRemote
                 key={index}
@@ -44,6 +46,7 @@ export default function PostPage({
                 components={{
                   Model,
                   Box,
+                  Diagram,
                   Image,
                 }}
               />

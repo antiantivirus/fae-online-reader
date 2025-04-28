@@ -2,6 +2,7 @@ import SearchIcon from "./icons/search";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Back from "./icons/back";
+import { useRouter } from "next/router";
 
 export default function Search() {
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
@@ -9,6 +10,8 @@ export default function Search() {
   const [results, setResults] = useState([]);
   const [searchOpen, setSearchOpen] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [briefing, setBriefing] = useState("fae4");
 
   useEffect(() => {
     async function loadPagefind() {
@@ -31,12 +34,20 @@ export default function Search() {
     else setSearchOpen("search-closed");
   }, [query]);
 
+  useEffect(() => {
+    if (router.pathname.includes("fae5")) {
+      setBriefing("fae5");
+    }
+  }, [router]);
+
   async function handleSearch(e) {
     e.preventDefault();
 
     if (window.pagefind) {
       setLoading(true);
-      const search = await window.pagefind.debouncedSearch(query);
+      const search = await window.pagefind.debouncedSearch(query, {
+        filters: { tag: briefing },
+      });
       setLoading(false);
       setResults(search.results);
     }
@@ -80,7 +91,7 @@ export default function Search() {
             {/* {loading && <p className="animate-pulse">Loading...</p>} */}
             {results &&
               results.map((result, index) => (
-                <Result key={result.id} result={result} />
+                <Result key={result.id} result={result} briefing={briefing} />
               ))}
           </div>
         </div>
@@ -89,7 +100,7 @@ export default function Search() {
   );
 }
 
-function Result({ result }) {
+function Result({ result, briefing }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -105,7 +116,7 @@ function Result({ result }) {
 
   const parseURL = (url) => {
     const path = url.replace(".html", "").split("/").at(-1);
-    const correctUrl = "/briefing/fae4/" + path;
+    const correctUrl = `/briefing/${briefing}/${path}`;
     return correctUrl;
   };
 
