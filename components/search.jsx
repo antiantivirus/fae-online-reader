@@ -63,7 +63,6 @@ export default function Search() {
         onInput={handleSearch}
       />
       <div
-        onPointerDownOutside={(e) => e.preventDefault()}
         className={`${searchOpen} search-dialog fixed bottom-0 left-0 z-50 mt-24 flex h-[calc(100vh-120px)] w-[300px] max-w-[85vw] flex-col overflow-auto rounded-tr bg-background p-5 text-primary shadow motion-reduce:transition-none`}
       >
         <div>
