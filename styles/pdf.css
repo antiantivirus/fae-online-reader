@@ -6,33 +6,31 @@
   /* set page sizes, bleed and margin content */
   @page {
     size: A4;
-    margin-top: 6mm;
-    margin-bottom: 6mm;
-    margin-left: 10mm;
-    margin-right: 10mm;
-    bleed: 6mm;
+    margin-top: 16.577px;
+    margin-bottom: 22px;
+    margin-left: 42.763px;
+    margin-bottom: 42.763px;
+    bleed: 3mm;
     marks: crop;
     @right-bottom {
       content: counter(page);
-      font-size: 2rem;
-      width: 120mm;
-      height: 10mm;
-      transform: rotate(-90deg);
-      transform-origin: top left;
-      position: relative;
-      bottom: 20mm;
-      text-align: start;
+      font-size: 2.1rem;
+      padding-bottom: 40mm;
+      text-align: center;
     }
     @right-middle {
       content: string(title);
-      font-size: 2rem;
+      font-size: 1.5rem;
       width: 120mm;
-      height: 10mm;
+      height: 24mm;
       transform: rotate(-90deg);
       transform-origin: top left;
       position: relative;
       top: 0mm;
-      text-align: end;
+      text-align: start;
+    }
+    @footnote {
+      float: bottom;
     }
   }
 
@@ -58,8 +56,15 @@
   .chapter,
   .footnotes,
   h2,
-  h3 {
+  h3,
+  h4 {
     break-before: page;
+  }
+
+  /* avoid breaking certain headings. when a h4 directly follows an h3 */
+  .avoid-break h4,
+  .avoid-break h3 {
+    break-before: avoid-page;
   }
 
   /* start all new chapters on the right hand page */
@@ -67,16 +72,17 @@
     break-before: right;
   } */
 
+  /* typography */
   @font-face {
-    font-family: "New Edge";
+    font-family: "Slack Light";
     font-weight: 300;
     font-style: normal;
-    src: url("/fonts/NewEdge666-LightRounded.woff2") format("woff2");
+    src: url("/fonts/SlackLight.woff2") format("woff2");
   }
 
   html,
   body {
-    @apply font-sans;
+    @apply font-slackLight;
     padding: 0;
     margin: 0;
   }
@@ -84,7 +90,7 @@
   h1 {
     font-size: 3rem;
     line-height: 1;
-    margin-bottom: 40px;
+    margin-bottom: 30mm;
   }
 
   h1 {
@@ -95,11 +101,64 @@
   h3,
   h4,
   h5 {
-    font-size: 2.1em;
+    font-size: 2.1rem;
     line-height: 1.2;
+    margin-bottom: 15mm;
   }
 
-  p {
+  /* add arrow to some headings */
+  h4::before {
+    display: inline-block;
+    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 33 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_236_63)'%3E%3Cpath d='M0.460953 7.2L14.461 7.2C21.561 8.4 15.861 13.8 15.861 13.8C22.961 7.1 32.261 6.9 32.261 6.9C32.261 6.9 22.961 6.7 15.861 1.42729e-06C15.861 1.42729e-06 21.661 5.4 14.461 6.7L0.460953 6.7C0.360953 6.7 0.260953 6.8 0.260953 6.9C0.260953 7 0.260953 7.2 0.460953 7.2Z' fill='%23421629'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_236_63'%3E%3Crect width='32.1' height='13.8' fill='white' transform='translate(32.261 13.8) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    height: auto;
+    width: 55.2px;
+    /* margin-top: 10px; */
+    margin-right: 10px;
+  }
+
+  p,
+  cite {
     font-size: 1.5rem;
   }
+
+  /* space paragraphs out */
+  p {
+    margin-bottom: 16px;
+  }
+
+  /* quotes */
+  blockquote {
+    margin-bottom: 15mm;
+    margin-top: 15mm;
+  }
+
+  /* define what are the footnotes elements */
+  /* sup {
+    float: footnote;
+  } */
+
+  /* footnotes */
+  #footnote-label {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    margin-bottom: 15mm;
+    text-align: center;
+  }
+
+  .footnotes p {
+    font-size: 1.2rem;
+  }
+
+  .footnotes ol {
+    @apply space-y-3;
+  }
+
+  /* .pagedjs_page {
+    border: 1mm solid yellowgreen;
+  } */
 }

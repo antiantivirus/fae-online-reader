@@ -1,4 +1,5 @@
-import "@/styles/globals.css";
+// import "@/styles/globals.css";
+import "@/styles/pdf.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
@@ -52,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Future Art Ecosystems</title>
       </Head>
       {/* temp fix for search! */}
-      {(router.pathname != "/briefing/fae4" && router.pathname != "/briefing/fae5") && <Header />}
+      {/* {(router.pathname != "/briefing/fae4" && router.pathname != "/briefing/fae5") && <Header />} */}
       <Component {...pageProps} />
       <SpeedInsights />
       <Script
