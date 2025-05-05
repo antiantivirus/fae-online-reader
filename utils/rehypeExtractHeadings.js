@@ -17,7 +17,8 @@ export default function rehypeExtractHeadings({
       if (
         headingRank(node) === rank &&
         node.properties &&
-        hasProperty(node, "id")
+        hasProperty(node, "id") &&
+        toString(node) != "Footnotes"
       ) {
         headings.push({
           title: toString(node),

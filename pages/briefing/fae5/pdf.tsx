@@ -141,12 +141,12 @@ const TableOfContents = ({ chapters }) => {
       <ul>
         {chapters.map((chapter) => (
           <>
-            <li>
+            <li className='h1'>
               <a href={`#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}`}>{chapter.mdxSource.frontmatter.title}</a>
             </li>
             <ul>
               {chapter.headings.map((heading, index) => (
-                <li key={index}>
+                <li className='' key={index}>
                   <a href={`#${heading.id}`}>
                     {heading.title}
                   </a>

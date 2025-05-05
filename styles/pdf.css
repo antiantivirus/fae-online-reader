@@ -93,7 +93,8 @@
     margin-bottom: 30mm;
   }
 
-  h1 {
+  h1,
+  .h1 {
     string-set: title content(text);
   }
 
