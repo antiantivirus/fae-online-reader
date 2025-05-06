@@ -170,6 +170,8 @@
   }
 
   .footnotes ol {
+    list-style: decimal;
+    padding-left: 35px;
     @apply space-y-3;
   }
 

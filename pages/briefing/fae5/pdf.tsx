@@ -7,6 +7,7 @@ import Head from "next/head";
 import Footnote from "@/components/pdf/footnote";
 import Box from "@/components/box";
 import rehypeSlug from "rehype-slug";
+import remarkNumberedFootnotes from "remark-numbered-footnotes"
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";

@@ -32,6 +32,7 @@
     "react-dom": "^18",
     "react-innertext": "^1.1.5",
     "remark-extract-toc": "^1.1.0",
+    "remark-numbered-footnotes": "^3.1.1",
     "vaul": "^0.9.0"
   },
   "devDependencies": {
