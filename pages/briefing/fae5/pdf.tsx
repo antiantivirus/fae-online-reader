@@ -7,7 +7,6 @@ import Head from "next/head";
 import Footnote from "@/components/pdf/footnote";
 import Box from "@/components/box";
 import rehypeSlug from "rehype-slug";
-import remarkNumberedFootnotes from "remark-numbered-footnotes"
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -72,7 +71,7 @@ export async function getStaticProps() {
   const chapters = await Promise.all(
     filenames.map(async (filename) => {
       const content = fs.readFileSync(`content/fae5/${filename}`, "utf-8");
-      const headings = []
+      const headings: { id: string, title: string }[] = []
       const mdxSource = await serialize(content, {
         mdxOptions: {
           rehypePlugins: [rehypeSlug, [rehypeExtractHeadings, { rank: 2, headings }]],
@@ -102,14 +101,14 @@ type HeadingProps = {
   children?: ReactNode;
 };
 
-const chapterTitle = (chapter) => {
+const chapterTitle = (chapter: Chapter["mdxSource"]) => {
   if (chapter.frontmatter.chapter_no) {
-    return <div id={chapter.frontmatter.title.replace(" ", "-")} className="break-after-page">
+    return <div id={chapter.frontmatter.title!.replace(" ", "-")} className="break-after-page">
       <span className="text-[20rem]">{chapter.frontmatter.chapter_no}</span>
       <h1>{chapter.frontmatter.title}</h1>
     </div>
   }
-  return <h1 id={chapter.frontmatter.title.replace(" ", "-")} className='text-center'>{chapter.frontmatter.title}</h1>
+  return <h1 id={chapter.frontmatter.title!.replace(" ", "-")} className='text-center'>{chapter.frontmatter.title}</h1>
 }
 
 const boxedHeading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
@@ -137,7 +136,7 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
 };
 
 
-const TableOfContents = ({ chapters }) => {
+const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
   const [tocWithPages, setTocWithPages] = useState([]);
 
   useEffect(() => {
@@ -145,17 +144,12 @@ const TableOfContents = ({ chapters }) => {
 
       chapters.forEach((chapter) => {
         // Find the chapter element and add the page number
-        const chapterElement = document.getElementById(
-          chapter.mdxSource.frontmatter.title.replace(" ", "-")
-        );
+        const chapterElement = document.getElementById(chapter.mdxSource.frontmatter.title!.replace(" ", "-"));
         if (chapterElement) {
           const chapterPage = chapterElement?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
-          const chapterLink = document.querySelector(`a[href="#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}"]`);
+          const chapterLink = document.querySelector(`a[href="#${chapter.mdxSource.frontmatter.title!.replace(" ", "-")}"]`);
           const chapterLinkNumber = chapterLink?.querySelector('.page-number')
-          console.log(chapterLink)
-          console.log(chapterLinkNumber)
           if (chapterLinkNumber) {
-            console.log('yayyy')
             chapterLinkNumber.innerHTML = chapterPage
           }
         }
@@ -183,7 +177,7 @@ const TableOfContents = ({ chapters }) => {
         {chapters.map((chapter, chapterIndex) => (
           <li key={chapterIndex}>
             <h3 className='mb-6'>
-              <a className='flex gap-2' href={`#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}`}>
+              <a className='flex gap-2' href={`#${chapter.mdxSource.frontmatter.title!.replace(" ", "-")}`}>
                 <span>{chapter.mdxSource.frontmatter.title}</span>
                 <span className='border-b border-primary grow mb-1.5'>
                 </span>
