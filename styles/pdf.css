@@ -10,7 +10,7 @@
     margin-bottom: 22px;
     margin-left: 42.763px;
     margin-bottom: 42.763px;
-    bleed: 3mm;
+    bleed: 0;
     marks: crop;
     @right-bottom {
       content: counter(page);
@@ -43,6 +43,16 @@
 
   /* remove page number on first page */
   @page :first {
+    @right-bottom {
+      content: none;
+    }
+  }
+
+  /* remove page number from toc */
+  .toc {
+    page: toc;
+  }
+  @page toc {
     @right-bottom {
       content: none;
     }
@@ -120,6 +130,10 @@
   p,
   cite {
     font-size: 1.5rem;
+  }
+
+  sup {
+    font-size: 0.9rem;
   }
 
   /* space paragraphs out */

@@ -17,6 +17,7 @@ import Footer from "@/components/footer";
 import Script from 'next/script';
 import Diagram from '@/components/diagram';
 import rehypeExtractHeadings from "@/utils/rehypeExtractHeadings"
+import { useEffect, useState } from 'react';
 
 export default function PostPage({
   chapters,
@@ -136,26 +137,72 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
 
 
 const TableOfContents = ({ chapters }) => {
+  const [tocWithPages, setTocWithPages] = useState([]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+
+      chapters.forEach((chapter) => {
+        // Find the chapter element and add the page number
+        const chapterElement = document.getElementById(
+          chapter.mdxSource.frontmatter.title.replace(" ", "-")
+        );
+        if (chapterElement) {
+          const chapterPage = chapterElement?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
+          const chapterLink = document.querySelector(`a[href="#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}"]`);
+          const chapterLinkNumber = chapterLink?.querySelector('.page-number')
+          console.log(chapterLink)
+          console.log(chapterLinkNumber)
+          if (chapterLinkNumber) {
+            console.log('yayyy')
+            chapterLinkNumber.innerHTML = chapterPage
+          }
+        }
+
+        // Find each heading and add the page number
+        chapter.headings.forEach((heading) => {
+          const element = document.getElementById(heading.id);
+          if (element) {
+            const page = element?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
+            const headingLink = document.querySelector(`a[href="#${heading.id}"]`);
+            const headingLinkNumber = headingLink?.querySelector('.page-number');
+
+            if (headingLinkNumber) {
+              headingLinkNumber.innerHTML = page;
+            }
+          }
+        });
+      });
+    }, 2000)
+  }, [chapters]);
+
   return (
-    <nav className="toc break-before-page">
+    <nav className="toc break-before-page ml-12">
       <ul>
-        {chapters.map((chapter) => (
-          <>
-            <li className='h1'>
-              <a href={`#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}`}>{chapter.mdxSource.frontmatter.title}</a>
-            </li>
-            <ul>
+        {chapters.map((chapter, chapterIndex) => (
+          <li key={chapterIndex}>
+            <h3 className='mb-6'>
+              <a className='flex gap-2' href={`#${chapter.mdxSource.frontmatter.title.replace(" ", "-")}`}>
+                <span>{chapter.mdxSource.frontmatter.title}</span>
+                <span className='border-b border-primary grow mb-1.5'>
+                </span>
+                <span className='page-number'></span>
+              </a>
+            </h3>
+            <ul className="ml-12 mb-6">
               {chapter.headings.map((heading, index) => (
-                <li className='' key={index}>
-                  <a href={`#${heading.id}`}>
-                    {heading.title}
+                <li key={index}>
+                  <a href={`#${heading.id}`} className='flex gap-2'>
+                    <span>{heading.title}</span>
+                    <span className='border-b border-primary grow mb-1.5'>
+                    </span>
+                    <span className='page-number'></span>
                   </a>
                 </li>
               ))}
             </ul>
-          </>
-        )
-        )}
+          </li>
+        ))}
       </ul>
     </nav >
   );
