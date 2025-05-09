@@ -83,18 +83,18 @@ export default function ChapterImage({
         height={400}
       />
       <Portal.Root>
-        <Image
+        {/* <Image
           className="absolute left-0 top-0 w-full h-full -z-10 opacity-50"
           src={image}
           alt=""
           width={850}
           height={400}
-        />
+        /> */}
         {/* Sheen overlay */}
-        <div
+        {/* <div
           id="sheen"
-          className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 pointer-events-none"
-        />
+          className="absolute  left-0 top-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 pointer-events-none"
+        /> */}
       </Portal.Root>
     </>
   );

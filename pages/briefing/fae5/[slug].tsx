@@ -15,6 +15,7 @@ import Diagram from "@/components/diagram";
 import TOC from "@/components/toc";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import Background from "@/components/FAE5/background";
 
 export default function PostPage({
   source,
@@ -23,6 +24,7 @@ export default function PostPage({
   const title = source.frontmatter.title as string;
   return (
     <div data-pagefind-body data-pagefind-filter="tag:fae5" className="font-slackLight">
+      <Background />
       <Head>
         <title>
           {source.frontmatter.title as string} - Future Art Ecosystems 5: R&D

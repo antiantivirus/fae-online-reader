@@ -1,5 +1,5 @@
-// import "@/styles/globals.css";
-import "@/styles/pdf.css";
+import "@/styles/globals.css";
+// import "@/styles/pdf.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
@@ -12,6 +12,7 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const isPdfPage = router.pathname === '/briefing/fae5/pdf';
 
   useEffect(() => {
     // Initialize Fathom when the app loads
