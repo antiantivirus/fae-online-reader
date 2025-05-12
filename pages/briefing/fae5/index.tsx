@@ -1,9 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
+
+      // Calculate the background position based on mouse position
+      const xPercent = (clientX / innerWidth) * 100;
+      const yPercent = (clientY / innerHeight) * 100;
+
+      // Animate the background position using GSAP
+      gsap.to("#sheen", {
+        backgroundPosition: `${xPercent}% ${yPercent}%`,
+        ease: "power1.out",
+        duration: 0.3, // Smooth transition
+      });
+    };
+
+    // Add mousemove event listener
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
-    <main className="h-screen bg-white font-slackLight">
+    <main id="sheen" className="h-screen bg-gradient-silver font-slackLight">
       <h1 className="sr-only">Future Art Ecosystems 5: R&D</h1>
       <div
         aria-hidden

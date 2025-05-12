@@ -16,6 +16,7 @@ import TOC from "@/components/toc";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Background from "@/components/FAE5/background";
+import LoadingSheen from "@/components/FAE5/loading";
 
 export default function PostPage({
   source,
@@ -24,6 +25,7 @@ export default function PostPage({
   const title = source.frontmatter.title as string;
   return (
     <div data-pagefind-body data-pagefind-filter="tag:fae5" className="font-slackLight">
+      <LoadingSheen />
       <Background />
       <Head>
         <title>
@@ -31,7 +33,7 @@ export default function PostPage({
         </title>
       </Head>
       <TOC />
-      <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0">
+      <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0 relative">
         <ChapterHeading
           key={source.frontmatter.title as string}
           no={source.frontmatter.chapter_no as string}

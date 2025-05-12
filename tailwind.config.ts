@@ -33,7 +33,7 @@ const config: Config = {
         secondary: 'var(--colour-secondary)',
         background: 'var(--colour-background)',
         typography: 'var(--colour-typography)',
-        silver: '#7c7c81',
+        silver: '#525258',
         black: '#000000',
         white: '#ffffff',
         red: '#FF0000',
