@@ -7,7 +7,7 @@ export default function Minus() {
       viewBox="0 0 19 20"
       fill="current"
       stroke="current"
-      className="fill-primary transition"
+      className="transition"
       id="minus"
     >
       <path d="M18.5 9.35H0v.6h18.5v-.6Z" />

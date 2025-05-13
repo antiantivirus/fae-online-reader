@@ -17,7 +17,7 @@ const config: Config = {
       xs: '0.9rem',
       base: '1.2rem',
       large: '1.4rem',
-      homepage: '1.5rem',
+      medium: '1.5rem',
       xl: '2.1rem',
       '2xl': '3.6rem'
     },
@@ -33,7 +33,10 @@ const config: Config = {
         secondary: 'var(--colour-secondary)',
         background: 'var(--colour-background)',
         typography: 'var(--colour-typography)',
-        silver: '#525258',
+        silver: {
+          DEFAULT: '#525258',
+          light: '#ededee'
+        },
         black: '#000000',
         white: '#ffffff',
         red: '#FF0000',

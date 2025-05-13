@@ -27,14 +27,14 @@
 
   html.fae5 {
     --colour-background: #ffffff;
-    --colour-primary: #7c7c81;
-    --colour-typography: #7c7c81;
-    --colour-secondary: #7c7c81;
+    --colour-primary: #525258;
+    --colour-typography: #525258;
+    --colour-secondary: #525258;
     --colour-shadow: 124 124 129;
   }
 
   html.fae5[data-theme="dark"] {
-    --colour-background: #7c7c81;
+    --colour-background: #525258;
     --colour-primary: #ffffff;
     --colour-typography: #ffffff;
     --colour-shadow: 255 255 255;
@@ -90,12 +90,6 @@
     font-size: 1.5625rem;
   }
 
-  blockquote p {
-    @apply !mb-1.5;
-    font-size: 2.1em;
-    line-height: 1.2;
-  }
-
   a:focus {
     @apply outline-primary;
   }
@@ -130,12 +124,17 @@
   }
 
   blockquote {
-    @apply box my-[25px] w-full rounded bg-background p-2.5 pr-7 italic text-typography shadow md:p-5 md:pr-12;
+    @apply box my-[25px] w-full rounded bg-background p-2.5 pr-7 text-base italic text-typography shadow md:p-5 md:pr-12 md:text-large md:text-xl;
   }
 
-  /* blockquote:last-of-type {
-    @apply mb-0;
-  } */
+  blockquote p,
+  blockquote cite {
+    @apply text-medium md:text-xl;
+  }
+
+  blockquote p {
+    line-height: 1.2;
+  }
 
   cite {
     font-style: normal;

@@ -8,7 +8,7 @@ export default function Plus() {
       fill="current"
       stroke="current"
       id="plus"
-      className="fill-primary transition"
+      className="transition"
     >
       <path d="M9.6.85H9v18.5h.6V.85Z" />
       <path d="M18.5 9.35H0v.6h18.5v-.6Z" />

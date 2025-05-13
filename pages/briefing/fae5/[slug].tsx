@@ -5,18 +5,18 @@ import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
 import Footnote from "@/components/footnote";
 import Box from "@/components/box";
-import ChapterHeading from "@/components/FAE5/chapterHeading";
+import ChapterHeading from "@/components/fae5/chapterHeading";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ReactNode } from "react";
 import Model from "@/components/model";
 import Diagram from "@/components/diagram";
-import TOC from "@/components/toc";
+import TOC from "@/components/fae5/toc";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import Background from "@/components/FAE5/background";
-import LoadingSheen from "@/components/FAE5/loading";
+import Background from "@/components/fae5/background";
+import LoadingSheen from "@/components/fae5/loading";
 import rehypeGlyphs from "@/utils/rehypeGlyphs"
 
 export default function PostPage({
@@ -26,7 +26,7 @@ export default function PostPage({
   const title = source.frontmatter.title as string;
   return (
     <div data-pagefind-body data-pagefind-filter="tag:fae5" className="font-slackLight">
-      <LoadingSheen />
+      {/* <LoadingSheen /> */}
       <Background />
       <Head>
         <title>

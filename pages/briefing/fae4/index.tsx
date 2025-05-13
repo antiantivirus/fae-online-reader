@@ -63,7 +63,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   Postface
                 </h3>
               </div>
@@ -75,7 +75,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   3: Ecosystem
                 </h3>
                 <p className="hidden md:block">
@@ -98,7 +98,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   2: Artist
                 </h3>
                 <p className="hidden md:block">
@@ -121,7 +121,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   1: Organisation
                 </h3>
                 <p className="hidden md:block">
@@ -144,7 +144,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   Defining Public AI
                 </h3>
               </div>
@@ -163,7 +163,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   Introduction
                 </h3>
               </div>
@@ -182,7 +182,7 @@ export default function Home() {
               className="flex h-full w-full justify-between"
             >
               <div>
-                <h3 className="my-1 text-homepage md:my-0 md:text-xl">
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
                   Preface
                 </h3>
               </div>
