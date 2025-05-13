@@ -74,8 +74,10 @@ export default function PostPage({
         </article>
         {source.frontmatter.next_chapter! &&
           <div className="max-w-box mx-auto">
-            <Link className="next-chapter ml-auto mr-0 block rounded bg-background p-3 shadow md:p-5 w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
-              Next Chapter
+            <Link className=" ml-auto mr-0 block overflow-hidden text-white rounded bg-background shadow w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
+              <div className="bg-silver next-chapter hover-shine p-3 md:p-5">
+                Next Chapter
+              </div>
             </Link>
           </div>
         }

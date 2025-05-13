@@ -196,7 +196,7 @@
 
   .next-chapter::before {
     display: inline-block;
-    content: url('data:image/svg+xml,<svg width="40" height="17" viewBox="0 0 40 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_11_423)"><path d="M0.125001 8.62319L16.75 8.62319C27.125 9.85507 19.375 17 19.375 17C28.375 8.74638 40 8.5 40 8.5C40 8.5 28.375 8.25362 19.5 -1.79217e-06C19.5 -1.79217e-06 27.125 7.14493 16.875 8.37681L0.125001 8.37681C7.53863e-07 8.37681 7.53863e-07 8.37681 7.43094e-07 8.5C7.32324e-07 8.62319 7.32324e-07 8.62319 0.125001 8.62319Z" fill="%237C7C81"/></g><defs><clipPath id="clip0_11_423"><rect width="40" height="17" fill="white" transform="translate(40 17) rotate(-180)"/></clipPath></defs></svg>');
+    content: url('data:image/svg+xml,<svg width="40" height="17" viewBox="0 0 40 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_11_423)"><path d="M0.125001 8.62319L16.75 8.62319C27.125 9.85507 19.375 17 19.375 17C28.375 8.74638 40 8.5 40 8.5C40 8.5 28.375 8.25362 19.5 -1.79217e-06C19.5 -1.79217e-06 27.125 7.14493 16.875 8.37681L0.125001 8.37681C7.53863e-07 8.37681 7.53863e-07 8.37681 7.43094e-07 8.5C7.32324e-07 8.62319 7.32324e-07 8.62319 0.125001 8.62319Z" fill="white"/></g><defs><clipPath id="clip0_11_423"><rect width="40" height="17" fill="white" transform="translate(40 17) rotate(-180)"/></clipPath></defs></svg>');
     height: auto;
     width: 40px;
     /* margin-top: 10px; */
@@ -401,6 +401,37 @@
 
 .glyphs {
   @apply block text-center text-[4rem] tracking-[0.4rem];
+}
+
+/* hover shine effect */
+
+.hover-shine {
+  position: relative;
+}
+
+.hover-shine {
+  background-repeat: no-repeat;
+  background-position:
+    0px 120px,
+    0 0;
+  background-image: linear-gradient(
+    30deg,
+    #525258,
+    #525258 10%,
+    #b1b1be 20%,
+    #525258 30%
+  );
+  background-size:
+    250% 250%,
+    200% 200%;
+  transition: background-position 0s ease;
+}
+
+.hover-shine:hover {
+  background-position:
+    0 200%,
+    0 0;
+  transition: all 0.5s ease-out;
 }
 
 @keyframes slideLeftOpen {
