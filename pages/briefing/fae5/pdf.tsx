@@ -17,6 +17,7 @@ import Footer from "@/components/footer";
 import Script from 'next/script';
 import Diagram from '@/components/diagram';
 import rehypeExtractHeadings from "@/utils/rehypeExtractHeadings"
+import rehypeGlyphs from '@/utils/rehypeGlyphs';
 import { useEffect, useState } from 'react';
 
 export default function PostPage({
@@ -74,7 +75,7 @@ export async function getStaticProps() {
       const headings: { id: string, title: string }[] = []
       const mdxSource = await serialize(content, {
         mdxOptions: {
-          rehypePlugins: [rehypeSlug, [rehypeExtractHeadings, { rank: 2, headings }]],
+          rehypePlugins: [rehypeSlug, [rehypeExtractHeadings, { rank: 2, headings }], rehypeGlyphs],
           remarkPlugins: [remarkGfm],
           format: "mdx",
         },

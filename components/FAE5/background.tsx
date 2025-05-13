@@ -4,20 +4,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Background() {
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to("#background-sheeny", {
-      backgroundPosition: "0% 100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.body, // Trigger the animation based on the entire page scroll
-        start: "top top", // Start when the top of the page reaches the top of the viewport
-        end: "bottom bottom", // End when the bottom of the page reaches the bottom of the viewport
-        scrub: 2, // Smoothly link the animation to the scroll position
-      },
-    });
-  });
+  //   gsap.to("#background-sheeny", {
+  //     backgroundPosition: "0% 100%",
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: document.body, // Trigger the animation based on the entire page scroll
+  //       start: "top top", // Start when the top of the page reaches the top of the viewport
+  //       end: "bottom bottom", // End when the bottom of the page reaches the bottom of the viewport
+  //       scrub: 2, // Smoothly link the animation to the scroll position
+  //     },
+  //   });
+  // });
   return (
     <div
       id="background-sheeny"

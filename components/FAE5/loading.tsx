@@ -2,33 +2,50 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function LoadingSheen() {
-  const pathname = usePathname();
+  const router = useRouter()
   const [isAnimating, setIsAnimating] = useState(false)
 
+
   useEffect(() => {
-    setIsAnimating(true);
+    const beforeHistoryChange = () => {
+      setIsAnimating(true);
 
-    const tl = gsap.timeline({
-      onComplete: () => setIsAnimating(false), // Hide the element after animation
-    });
+      const tl = gsap.timeline({
+        onComplete: () => setIsAnimating(false), // Hide the element after animation
+      });
 
-    gsap.set("#sheeny-loading",
-      { backgroundPosition: "100% 0%", opacity: 0 })
+      gsap.set("#sheeny-loading",
+        { backgroundPosition: "100% 0%", opacity: 0 })
 
-    tl.to("#sheeny-loading", {
-      backgroundPosition: "0% 25%",
-      opacity: 0.95,
-      duration: 0.5, // Duration of the animation
-    })
-    tl.to("#sheeny-loading", {
-      backgroundPosition: "0% 100%",
-      opacity: 0,
-      duration: 0.5, // Duration of the animation
-    })
+      tl.to("main", {
+        opacity: 0.25,
+        duration: 0.25, // Duration of the animation
+      }, "start")
+      tl.to("#sheeny-loading", {
+        backgroundPosition: "0% 25%",
+        opacity: 0.95,
+        duration: 0.5, // Duration of the animation
+      }, "start")
+      tl.to("#sheeny-loading", {
+        backgroundPosition: "0% 100%",
+        opacity: 0,
+        duration: 0.5, // Duration of the animation
+      }, "end")
+      tl.to("main", {
+        opacity: 1,
+        duration: 0.1, // Duration of the animation
+      }, "end")
+    };
+    router.events.on('routeChangeStart', beforeHistoryChange);
 
-  }, [pathname]);
+    return () => {
+      router.events.off('routeChangeStart', beforeHistoryChange);
+    };
+
+  }, []);
 
   return (
     <div

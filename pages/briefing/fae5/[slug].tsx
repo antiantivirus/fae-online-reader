@@ -17,6 +17,7 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Background from "@/components/FAE5/background";
 import LoadingSheen from "@/components/FAE5/loading";
+import rehypeGlyphs from "@/utils/rehypeGlyphs"
 
 export default function PostPage({
   source,
@@ -111,7 +112,7 @@ export async function getStaticProps(
   // from the .mdx blog post file
   const mdxSource = await serialize(chapterFile, {
     mdxOptions: {
-      rehypePlugins: [rehypeSlug],
+      rehypePlugins: [rehypeSlug, rehypeGlyphs],
       remarkPlugins: [remarkGfm],
       format: "mdx",
     },

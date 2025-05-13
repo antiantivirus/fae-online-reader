@@ -70,7 +70,7 @@
     font-family: "Slack Light";
     font-weight: 300;
     font-style: normal;
-    src: url("/fonts/SlackLight.woff2") format("woff2");
+    src: url("/fonts/NewEdge-LightRounded-FAE.woff") format("woff");
   }
 
   h1 {
@@ -397,6 +397,10 @@
 /* This keeps child nodes hidden while the element loads */
 :not(:defined) > * {
   display: none;
+}
+
+.glyphs {
+  @apply block text-center text-[4rem] tracking-[0.4rem];
 }
 
 @keyframes slideLeftOpen {

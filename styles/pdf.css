@@ -179,3 +179,7 @@
     border: 1mm solid yellowgreen;
   } */
 }
+
+.glyphs {
+  @apply block text-center text-[4rem] tracking-[0.4rem];
+}
