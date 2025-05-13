@@ -8,12 +8,12 @@ export default function Home() {
 
   return (
     <main id="sheen" className="h-screen font-slackLight">
-      <a href="/" className=" bg-silver text-white absolute top-4 right-4 rounded-full z-10 overflow-hidden text-[1.25rem]">
+      <Link href="/" className=" bg-silver text-white absolute top-4 right-4 rounded-full z-10 overflow-hidden text-[1.25rem]">
         <div className="flex gap-2 items-center hover-shine px-4 py-1">
           <Download colour="white" />
           <span>Download FAE5</span>
         </div>
-      </a>
+      </Link>
       <h1 className="sr-only">Future Art Ecosystems 5: R&D</h1>
       <div
         aria-hidden

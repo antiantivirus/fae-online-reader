@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { usePathname } from "next/navigation";
 export default function Background() {
+  const pathname = usePathname();
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -17,7 +18,9 @@ export default function Background() {
         scrub: 2, // Smoothly link the animation to the scroll position
       },
     });
+
   });
+
   return (
     <div
       id="background-sheeny"

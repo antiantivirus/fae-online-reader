@@ -24,6 +24,19 @@ export default function PostPage({
   chapters,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     // Wait for the entire page to load, including images/fonts
+  //     window.addEventListener("load", () => {
+  //       if (window.PagedPolyfill) {
+  //         // window.PagedPolyfill.preview();
+  //       } else {
+  //         console.warn("PagedPolyfill not found.");
+  //       }
+  //     });
+  //   }
+  // }, []);
+
   return (
     <div className="font-slackLight">
       <Script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" />
@@ -142,37 +155,61 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
 const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
   const [tocWithPages, setTocWithPages] = useState([]);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
+  const getPageNumbers = () => {
+    chapters.forEach((chapter) => {
+      // Find the chapter element and add the page number
+      const chapterElement = document.getElementById(chapter.mdxSource.frontmatter.title!.replace(" ", "-"));
+      if (chapterElement) {
+        const chapterPage = chapterElement?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
+        const chapterLink = document.querySelector(`a[href="#${chapter.mdxSource.frontmatter.title!.replace(" ", "-")}"]`);
+        const chapterLinkNumber = chapterLink?.querySelector('.page-number')
+        if (chapterLinkNumber) {
+          chapterLinkNumber.innerHTML = chapterPage
+        }
+      }
 
-      chapters.forEach((chapter) => {
-        // Find the chapter element and add the page number
-        const chapterElement = document.getElementById(chapter.mdxSource.frontmatter.title!.replace(" ", "-"));
-        if (chapterElement) {
-          const chapterPage = chapterElement?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
-          const chapterLink = document.querySelector(`a[href="#${chapter.mdxSource.frontmatter.title!.replace(" ", "-")}"]`);
-          const chapterLinkNumber = chapterLink?.querySelector('.page-number')
-          if (chapterLinkNumber) {
-            chapterLinkNumber.innerHTML = chapterPage
+      // Find each heading and add the page number
+      chapter.headings.forEach((heading) => {
+        const element = document.getElementById(heading.id);
+        if (element) {
+          const page = element?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
+          const headingLink = document.querySelector(`a[href="#${heading.id}"]`);
+          const headingLinkNumber = headingLink?.querySelector('.page-number');
+
+          if (headingLinkNumber) {
+            headingLinkNumber.innerHTML = page;
           }
         }
-
-        // Find each heading and add the page number
-        chapter.headings.forEach((heading) => {
-          const element = document.getElementById(heading.id);
-          if (element) {
-            const page = element?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
-            const headingLink = document.querySelector(`a[href="#${heading.id}"]`);
-            const headingLinkNumber = headingLink?.querySelector('.page-number');
-
-            if (headingLinkNumber) {
-              headingLinkNumber.innerHTML = page;
-            }
-          }
-        });
       });
-    }, 2000)
-  }, [chapters]);
+    });
+  }
+
+  useEffect(() => {
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === "t") {
+        getPageNumbers(); // Run the script when "T" is pressed
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown); // Cleanup event listener
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Wait for the entire page to load, including images/fonts
+      window.addEventListener("load", () => {
+        if (window.PagedPolyfill) {
+          window.PagedPolyfill.preview();
+        } else {
+          console.warn("PagedPolyfill not found.");
+        }
+      });
+    }
+  }, []);
 
   return (
     <nav className="toc break-before-page ml-12">

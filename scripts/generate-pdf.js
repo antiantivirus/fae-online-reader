@@ -6,7 +6,7 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   // Adjust URL to match your locally served Next.js app
-  await page.goto('http://localhost:3000/briefings/fae5/pdf', { waitUntil: 'networkidle0' });
+  await page.goto('http://localhost:3000/briefing/fae5/pdf', { waitUntil: 'networkidle2' });
 
   // Optional: scroll to bottom to load lazy-loaded content
   await page.evaluate(async () => {
@@ -24,6 +24,10 @@ const puppeteer = require('puppeteer');
       }, 100);
     });
   });
+
+  // await page.evaluate(() => {
+  //   getPagedNumbers();
+  // });
 
   await page.pdf({
     path: 'Future Art Ecosystems 5 - R&D.pdf',

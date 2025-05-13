@@ -12,6 +12,7 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [briefing, setBriefing] = useState("fae4");
+  const [searched, setSearched] = useState(false);
 
   useEffect(() => {
     async function loadPagefind() {
@@ -30,8 +31,10 @@ export default function Search() {
   }, []);
 
   useEffect(() => {
-    if (query !== "") setSearchOpen("search-open");
-    else setSearchOpen("search-closed");
+    if (query !== "") {
+      setSearchOpen("search-open");
+      setSearched(true);
+    } else if (searched) setSearchOpen("search-closed");
   }, [query]);
 
   useEffect(() => {
