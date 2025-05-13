@@ -1,0 +1,36 @@
+name: Export Site as PDF
+
+on:
+  workflow_dispatch: # or use push, etc.
+
+jobs:
+  build-and-export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js project
+        run: npm run build
+
+      - name: Start Next.js server
+        run: |
+          npm run start &
+          sleep 10 # wait for server to boot
+
+      - name: Generate PDF
+        run: npm run generate-pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Future Art Ecosystems 5 - R&D
+          path: Future Art Ecosystems 5 - R&D.pdf

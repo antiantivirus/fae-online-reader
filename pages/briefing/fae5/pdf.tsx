@@ -33,7 +33,9 @@ export default function PostPage({
         </title>
       </Head>
 
-      <img src="/images/fae4-cover.svg" className='w-full' />
+      <div className='full-page' style={{ background: "linear-gradient(61.29deg, #525258 13.21%, #B1B1BE 85.04%);", backgroundSize: "100%" }}>
+        <img src="/images/fae4-cover.svg" className='w-full' />
+      </div>
       <TableOfContents chapters={chapters} />
       <article
         id="chapter-contents"

@@ -6,10 +6,10 @@
   /* set page sizes, bleed and margin content */
   @page {
     size: A4;
-    margin-top: 16.577px;
+    margin-top: 22px;
     margin-bottom: 22px;
     margin-left: 42.763px;
-    margin-bottom: 42.763px;
+    margin-right: 42.763px;
     bleed: 0;
     marks: crop;
     @right-bottom {
@@ -87,7 +87,7 @@
     font-family: "Slack Light";
     font-weight: 300;
     font-style: normal;
-    src: url("/fonts/SlackLight.woff2") format("woff2");
+    src: url("/fonts/NewEdge-LightRounded-FAE.woff") format("woff");
   }
 
   html,
@@ -178,6 +178,32 @@
   /* .pagedjs_page {
     border: 1mm solid yellowgreen;
   } */
+
+  .full-page {
+    height: 11.7in;
+    width: 8.3in;
+    float: top;
+    float-reference: page;
+    position: relative;
+    top: -22px;
+    left: -42.763px;
+    /* padding-top: 16.577px;
+    padding-bottom: 22px;
+    padding-left: 42.763px;
+    padding-right: 42.763px; */
+  }
+
+  .full-page img {
+    padding-top: 22px;
+    padding-bottom: 42.763px;
+    padding-left: 42.763px;
+    padding-right: 42.763px;
+  }
+
+  /* make links work on firefox pdf export */
+  a[href]::after {
+    content: !important;
+  }
 }
 
 .glyphs {
