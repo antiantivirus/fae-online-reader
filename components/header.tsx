@@ -18,6 +18,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [isFAE5, setIsFAE5] = useState(false);
   const router = useRouter();
+  const [canShare, setCanShare] = useState(false);
 
   const increaseFontSize = () => {
     if (fontSize < 1.5) {
@@ -39,6 +40,22 @@ export default function Header() {
     }, 200);
   };
 
+  const share = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          url: window.location.href,
+        });
+        console.log("Content shared successfully!");
+      } catch (error) {
+        console.error("Error sharing content:", error);
+      }
+    } else {
+      console.error("Web Share API is not supported in this browser.");
+    }
+  };
+
   useEffect(() => {
     const article = document.getElementById("chapter-contents");
     if (article) {
@@ -51,6 +68,14 @@ export default function Header() {
       setIsFAE5(true)
     }
   }, [router])
+
+  useEffect(() => {
+    // check if we can access share features in the users browser
+    if (typeof navigator.share === "function") {
+      setCanShare(true)
+    }
+  }, [])
+
 
   // useGSAP(() => {
   //   gsap.set("#top-nav", {
@@ -92,6 +117,9 @@ export default function Header() {
         <div className="flex items-center gap-4">
           {!isFAE5 && <GlyphBackground />}
           <div className="flex items-center gap-2">
+            {canShare && <button onClick={() => share()}>
+              Share
+            </button>}
             {isFAE5 ? <>
               <button
                 className="icon aspect-square rounded-full bg-white shadow"
