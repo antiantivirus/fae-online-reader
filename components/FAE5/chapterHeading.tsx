@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChapterImage from "./chapterImage";
 import Box from "../box";
+import Image from "next/image";
 
 export default function ChapterHeading({
   no,
@@ -30,17 +31,6 @@ export default function ChapterHeading({
         scrub: 1,
       },
       translateY: 0,
-      duration: 0.5,
-    });
-
-    gsap.to("#image-credit", {
-      scrollTrigger: {
-        trigger: "#chapter-contents",
-        start: "top +25",
-        end: "top -50",
-        scrub: 1,
-      },
-      opacity: 0,
       duration: 0.5,
     });
   });
@@ -72,7 +62,7 @@ export default function ChapterHeading({
       {credit && (
         <p
           id="image-credit"
-          className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-white xl:block"
+          className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-white bg-silver px-2 py-1 rounded xl:block"
         >
           {credit}
         </p>

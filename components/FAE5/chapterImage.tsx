@@ -61,15 +61,15 @@ export default function ChapterImage({
       },
     });
 
-    gsap.to("sheen", {
-      xPercent: 100,
-      ease: "power2.inOut",
+    gsap.to("#image-credit, #chapter-image-bg", {
       scrollTrigger: {
         trigger: "main",
-        start: "top top",
-        end: "bottom bottom",
+        start: "top +80",
+        end: "+400",
         scrub: 1,
       },
+      opacity: 0,
+      duration: 0.5,
     });
   });
   return (
@@ -82,20 +82,14 @@ export default function ChapterImage({
         width={850}
         height={400}
       />
-      <Portal.Root>
-        {/* <Image
-          className="absolute left-0 top-0 w-full h-full -z-10 opacity-50"
-          src={image}
-          alt=""
-          width={850}
-          height={400}
-        /> */}
-        {/* Sheen overlay */}
-        {/* <div
-          id="sheen"
-          className="absolute  left-0 top-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 pointer-events-none"
-        /> */}
-      </Portal.Root>
+      <Image
+        id="chapter-image-bg"
+        className="fixed left-0 top-0 w-full h-full"
+        src="/images/fae5-test-bg.png"
+        alt=""
+        width={850}
+        height={400}
+      />
     </>
   );
 }
