@@ -202,7 +202,9 @@ const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
     if (typeof window !== "undefined") {
       // Wait for the entire page to load, including images/fonts
       window.addEventListener("load", () => {
+        // @ts-expect-error
         if (window.PagedPolyfill) {
+          // @ts-expect-error
           window.PagedPolyfill.preview();
         } else {
           console.warn("PagedPolyfill not found.");
