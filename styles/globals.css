@@ -420,7 +420,7 @@
     #b1b1be 20%,
     #525258 30%
   );
-  background-size: 400% 400%;
+  background-size: 800% 800%;
   transition: background-position 0s ease;
 }
 
@@ -428,7 +428,7 @@
   background-position:
     0 200%,
     0 0;
-  transition: all 0.5s ease-out;
+  transition: all 1.5s ease-out;
 }
 
 @keyframes slideLeftOpen {
