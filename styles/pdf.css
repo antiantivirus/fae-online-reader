@@ -6,27 +6,27 @@
   /* set page sizes, bleed and margin content */
   @page {
     size: A4;
-    margin-top: 22px;
-    margin-bottom: 22px;
-    margin-left: 42.763px;
-    margin-right: 42.763px;
-    bleed: 0;
+    margin-top: 12.6819mm;
+    margin-bottom: 12.6819mm;
+    margin-left: 26.46mm;
+    margin-right: 33.87mm;
+    bleed: 0mm;
     marks: crop;
     @right-bottom {
       content: counter(page);
       font-size: 2.1rem;
-      padding-bottom: 40mm;
+      padding-bottom: 60mm;
       text-align: center;
     }
     @right-middle {
       content: string(title);
       font-size: 1.5rem;
       width: 120mm;
-      height: 24mm;
+      height: 33.87mm;
       transform: rotate(-90deg);
       transform-origin: top left;
       position: relative;
-      top: 0mm;
+      top: 60mm;
       text-align: start;
     }
     @footnote {
@@ -185,8 +185,8 @@
     float: top;
     float-reference: page;
     position: relative;
-    top: -22px;
-    left: -42.763px;
+    top: -12.6819mm;
+    left: -26.46mm;
     /* padding-top: 16.577px;
     padding-bottom: 22px;
     padding-left: 42.763px;
@@ -194,10 +194,10 @@
   }
 
   .full-page img {
-    padding-top: 22px;
-    padding-bottom: 42.763px;
-    padding-left: 42.763px;
-    padding-right: 42.763px;
+    padding-top: 12.6819mm;
+    padding-bottom: 12.6819mm;
+    padding-left: 26.46mm;
+    padding-right: 33.87mm;
   }
 
   /* make links work on firefox pdf export */
