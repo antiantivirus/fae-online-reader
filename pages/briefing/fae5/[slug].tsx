@@ -17,7 +17,8 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Background from "@/components/fae_five/background";
 import LoadingSheen from "@/components/fae_five/loading";
-import rehypeGlyphs from "@/utils/rehypeGlyphs"
+import rehypeGlyphs from "@/utils/rehypeGlyphs";
+import Picture from "@/components/fae_five/picture";
 
 export default function PostPage({
   source,
@@ -52,6 +53,7 @@ export default function PostPage({
             components={{
               Model,
               Box,
+              Picture,
               h1: heading("h1"),
               h2: heading("h2"),
               h3: heading("h3"),

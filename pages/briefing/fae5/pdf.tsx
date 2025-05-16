@@ -19,6 +19,7 @@ import Diagram from '@/components/diagram';
 import rehypeExtractHeadings from "@/utils/rehypeExtractHeadings"
 import rehypeGlyphs from '@/utils/rehypeGlyphs';
 import { useEffect, useState } from 'react';
+import Picture from '@/components/pdf/picture';
 
 export default function PostPage({
   chapters,
@@ -46,7 +47,7 @@ export default function PostPage({
         </title>
       </Head>
 
-      <div className='full-page' style={{ background: "linear-gradient(61.29deg, #525258 13.21%, #B1B1BE 85.04%);", backgroundSize: "100%" }}>
+      <div className='full-page bg-gradient-pdf' style={{ backgroundSize: "100%" }}>
         <img src="/images/fae4-cover.svg" className='w-full' />
       </div>
       <TableOfContents chapters={chapters} />
@@ -65,6 +66,7 @@ export default function PostPage({
                 Model,
                 Diagram,
                 Image,
+                Picture,
                 Box: (props) => {
                   return <div {...props} />;
                 },
