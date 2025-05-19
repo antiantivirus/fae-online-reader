@@ -5,7 +5,7 @@
 @media print {
   /* set page sizes, bleed and margin content */
   @page {
-    size: A4;
+    size: 210mm 297mm;
     margin-top: 12.6819mm;
     margin-bottom: 12.6819mm;
     margin-left: 26.46mm;
@@ -15,7 +15,7 @@
     @right-bottom {
       content: counter(page);
       font-size: 2.1rem;
-      padding-bottom: 60mm;
+      padding-bottom: 40mm;
       text-align: center;
     }
     @right-middle {
@@ -26,11 +26,8 @@
       transform: rotate(-90deg);
       transform-origin: top left;
       position: relative;
-      top: 60mm;
+      top: 40mm;
       text-align: start;
-    }
-    @footnote {
-      float: bottom;
     }
   }
 
@@ -182,13 +179,14 @@
   } */
 
   .full-page {
-    height: 11.7in;
-    width: 8.3in;
-    float: top;
-    float-reference: page;
+    height: 297mm;
+    width: 210mm;
+    /* float: top;
+    float-reference: page; */
     position: relative;
     top: -12.6819mm;
     left: -26.46mm;
+    box-sizing: content-box;
     /* padding-top: 16.577px;
     padding-bottom: 22px;
     padding-left: 42.763px;
@@ -202,17 +200,19 @@
     padding-right: 5mm;
   }
 
-  /* .full-page img {
+  .full-page .cover {
+    height: 297mm;
+    width: 210mm;
     padding-top: 12.6819mm;
     padding-bottom: 12.6819mm;
     padding-left: 26.46mm;
     padding-right: 33.87mm;
-  } */
+  }
 
   /* make links work on firefox pdf export */
-  a[href]::after {
+  /* a[href]::after {
     content: !important;
-  }
+  } */
 }
 
 .glyphs {

@@ -41,14 +41,15 @@ export default function PostPage({
   return (
     <div className="font-slackLight">
       <Script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" />
+      {/* <Script src="/scripts/full-page.js" /> */}
       <Head>
         <title>
           Future Art Ecosystems 5: R&D
         </title>
       </Head>
 
-      <div className='full-page bg-gradient-pdf' style={{ backgroundSize: "100%" }}>
-        <img src="/images/fae4-cover.svg" className='w-full' />
+      <div className='full-page bg-gradient-pdf relative' style={{ backgroundSize: "100%" }}>
+        <img src="/images/cover.png" className='cover w-full h-auto' />
       </div>
       <TableOfContents chapters={chapters} />
       <article
