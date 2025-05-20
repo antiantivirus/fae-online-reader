@@ -16,7 +16,6 @@ import TOC from "@/components/fae_five/toc";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Background from "@/components/fae_five/background";
-import LoadingSheen from "@/components/fae_five/loading";
 import rehypeGlyphs from "@/utils/rehypeGlyphs";
 import Picture from "@/components/fae_five/picture";
 
@@ -27,7 +26,6 @@ export default function PostPage({
   const title = source.frontmatter.title as string;
   return (
     <div data-pagefind-body data-pagefind-filter="tag:fae5" className="font-slackLight">
-      {/* <LoadingSheen /> */}
       <Background />
       <Head>
         <title>
@@ -63,7 +61,6 @@ export default function PostPage({
               sup: (props) => <Footnote info={props.children} />,
               Image,
               Diagram,
-              // Don't include footnotes section in search
               section: (props) => {
                 // @ts-expect-error Ignore TypeScript error for custom attribute
                 if (props['data-footnotes']) {

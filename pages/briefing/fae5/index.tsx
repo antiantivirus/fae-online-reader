@@ -10,7 +10,7 @@ export default function Home() {
     <main id="sheen" className="h-screen font-slackLight">
       <Link href="/" className=" bg-silver text-white absolute top-4 right-4 rounded-full z-10 overflow-hidden text-[1.25rem]">
         <div className="flex gap-2 items-center hover-shine px-4 py-1">
-          <Download colour="white" />
+          <Download className="h-[20px] lg:h-[24px]" colour="white" />
           <span>Download FAE5</span>
         </div>
       </Link>

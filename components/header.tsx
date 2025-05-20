@@ -117,8 +117,8 @@ export default function Header() {
         <div className="flex items-center gap-4">
           {!isFAE5 && <GlyphBackground />}
           <div className="flex items-center gap-2">
-            {canShare && <button onClick={() => share()}>
-              Share
+            {(canShare && isFAE5) && <button className="icon aspect-square rounded-full border-white bg-background shadow flex justify-center pr-1 items-center" onClick={() => share()}>
+              <Share />
             </button>}
             {isFAE5 ? <>
               <button
