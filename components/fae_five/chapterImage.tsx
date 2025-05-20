@@ -84,7 +84,7 @@ export default function ChapterImage({
       />
       <Image
         id="chapter-image-bg"
-        className="fixed left-0 top-0 w-full h-full"
+        className="fixed left-0 top-0 w-full h-full object-cover object-center"
         src="/images/fae5-test-bg.png"
         alt=""
         width={850}

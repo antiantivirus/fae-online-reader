@@ -33,7 +33,7 @@ export default function Picture({ main, bg, alt }: {
           <Image width={880} height={300} id="main-image" src={main} alt={alt} />
         </Box>
       </div>
-      <Image width={880} height={300} id="bg-image" src={bg} alt="" className="fixed top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none" />
+      <Image width={880} height={300} id="bg-image" src={bg} alt="" className="fixed top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none object-center" />
     </div>
   );
 }
