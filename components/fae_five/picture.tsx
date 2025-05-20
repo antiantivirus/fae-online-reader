@@ -27,11 +27,13 @@ export default function Picture({ main, bg, alt }: {
   });
 
   return (
-    <Box wide>
-      <div className="diagram">
-        <Image width={880} height={300} id="main-image" className="z-50 relative" src={main} alt={alt} />
-        <Image width={880} height={300} id="bg-image" src={bg} alt="" className="fixed top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none" />
+    <div>
+      <div className="relative z-50">
+        <Box wide>
+          <Image width={880} height={300} id="main-image" src={main} alt={alt} />
+        </Box>
       </div>
-    </Box>
+      <Image width={880} height={300} id="bg-image" src={bg} alt="" className="fixed top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none" />
+    </div>
   );
 }
