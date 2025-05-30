@@ -86,7 +86,7 @@
     font-family: "Slack Light";
     font-weight: 300;
     font-style: normal;
-    src: url("/fonts/NewEdge-LightRounded-FAE.woff") format("woff");
+    src: url("/fonts/SelfModernRegularFAE5-Regular.woff2") format("woff2");
   }
 
   html,
@@ -142,8 +142,25 @@
 
   /* quotes */
   blockquote {
-    margin-bottom: 15mm;
-    margin-top: 15mm;
+    background: linear-gradient(61.29deg, #525258 13.21%, #b1b1be 85.04%);
+    padding-top: 4mm;
+    padding-bottom: 5mm;
+    padding-left: 8mm;
+    margin-left: -8mm;
+    padding-right: 14mm;
+    color: white;
+    border-radius: 18px;
+    margin-bottom: 14mm;
+    margin-top: 14mm;
+  }
+
+  blockquote p {
+    margin-bottom: 0;
+  }
+
+  .glyphs {
+    margin-bottom: 14mm;
+    margin-top: 14mm;
   }
 
   /* define what are the footnotes elements */

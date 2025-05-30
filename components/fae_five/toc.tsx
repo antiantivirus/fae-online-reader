@@ -206,7 +206,7 @@ export default function TOC() {
                   <Star active={asPath.includes(chapter.slug)} className="stroke-white fill-white" />
                   {/* {asPath == chapter.link && <p>Active</p>} */}
                   <span
-                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded bg-background px-2 text-primary ${asPath.includes(chapter.slug) && "font-bold xl:block"}`}
+                    className={`pointer-events-none absolute left-[30px] top-[7px] hidden w-max rounded px-2 text-white ${asPath.includes(chapter.slug) && "font-bold xl:block"}`}
                   >
                     {chapter.title}
                   </span>

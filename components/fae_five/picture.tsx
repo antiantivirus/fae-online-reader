@@ -29,9 +29,7 @@ export default function Picture({ main, bg, alt }: {
   return (
     <div>
       <div className="relative z-50">
-        <Box wide>
-          <Image width={880} height={300} id="main-image" src={main} alt={alt} />
-        </Box>
+        <Image width={880} height={300} id="main-image" className="mx-auto mt-[50px]" src={main} alt={alt} />
       </div>
       <Image width={880} height={300} id="bg-image" src={bg} alt="" className="fixed top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none object-center" />
     </div>

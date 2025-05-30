@@ -62,7 +62,7 @@ export default function ChapterHeading({
       {credit && (
         <p
           id="image-credit"
-          className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-white bg-silver px-2 py-1 rounded xl:block"
+          className="fixed bottom-2.5 right-2.5 z-50 hidden text-xs text-white px-2 py-1 rounded xl:block"
         >
           {credit}
         </p>
