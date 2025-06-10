@@ -13,126 +13,143 @@ const path = "/briefing/fae5/";
 
 const tableOfContents = [
   {
-    title: "Preface",
-    slug: "0-preface",
+    title: "Credits",
+    slug: "01-credits",
   },
   {
-    title: "Executive Summary",
-    slug: "01-executive-summary",
+    title: "Preface",
+    slug: "02-preface",
   },
   {
     title: "Introduction",
-    slug: "02-introduction",
-  },
-  {
-    title: "Creative R&D",
-    slug: "03-creative-rd",
+    slug: "03-introduction",
     subChapters: [
       {
-        title: "A Framework for Public Claims on Resources",
+        title: "Art and Advanced Technologies Lens on Creative R&D",
       },
       {
-        title: "AI Tech Stack",
-        subChapters: [
-          "Application layer",
-          "Network protocols layer",
-          "Model layer",
-          "Data layer",
-          "Compute layer",
-          "Server networks layer",
-          "Natural resources layer",
-        ],
+        title: "The Metrics Gap"
       },
+      {
+        title: "Navigating this Briefing"
+      },
+      {
+        title: "Methodology"
+      }
     ],
   },
   {
-    title: "1: Artist",
-    slug: "04-artist",
+    title: "1: Creative R&D",
+    slug: "04-creative-rd",
     subChapters: [
       {
-        title: "DATA: Civic Orgs as Dormant Data Keepers",
-        subChapters: [
-          "The Dawn of Organisational Self-Knowledge",
-          "Latent Data Troves",
-          "Data Is Relational",
-          "Trusted Data Stewards",
-          "Soft Power Diplomacy",
-        ],
+        title: "Creative R&D and the Creative Industries",
       },
       {
-        title: "MODEL: Culture Shaping Model Shaping Culture",
-        subChapters: [
-          "Disambiguating Technical Opacity and Transparency",
-          "Cultivating Trust and Verifiability",
-          "Models Offer a New Compression Technique",
-          "New Public Mission Orgs for New Public Mechanisms",
-          "Alignment’s Shadow Negotiations",
-          "Ways of Seeing in the Latent Space",
-          "Minotaur vs Centaur Framework of AI Digital Transformation",
-        ],
+        title: "Recalibrating the Scope of Creative R&D",
       },
-      {
-        title: "COMPUTE: High Barriers to Cultural Entry",
-        subChapters: [
-          "Supply-chain Geopolitics",
-          "IP Empire",
-          "State as a Broker of Compute Allocations",
-          "Experiments & Research for a Less Computationally Intensive AI Stack",
-        ],
-      },
+
     ],
   },
   {
-    title: "2: Organisation",
-    slug: "05-organisation",
+    title: "2: Artist",
+    slug: "05-artist",
     subChapters: [
       {
-        title: "Training Data as Shadow Labour",
+        title: "Who is an AxAT Artist, and what is an AxAT Practice?",
         subChapters: [
-          "Leverage IP for Opt In Returns",
-          "Leverage Spawning for Opt Out Bargaining Power",
-          "Data Brokerage for a Networked Commons",
-          "Emerging Accountability Mechanisms",
-          "Synthetic Crafting",
-          "Iteration at the Core of Synthetic Crafting",
-          "Edging into Unchartered Territory",
-          "From Deskilling to Reskilling",
-          "From Model Querying to Seamless Intermediation",
+          "A Forum for Public Interest",
+          "New Strategic Visions",
+          "Innovative Tools and Infrastructures"
+        ]
+      },
+      {
+        title: "In focus: Lauren Lee McCarthy"
+      },
+      {
+        title: "In focus: Ian Cheng"
+      },
+      {
+        title: "In foucs: Natsai Audrey Chieza & Faber Futures"
+      },
+      {
+        title: "Claiming Art's Rightful Role in Innovation",
+        subChapters: [
+          "Basic Research",
+          "Applied Research",
+          "Experimental Development"
+        ]
+      },
+      {
+        title: "Artists as Cross-Pollinators of Skills and Ideas",
+        subChapters: [
+          "Engineers and Technologists",
+          "Consultants and Cross-Disciplinary Researchers",
+          "Advanced Users and Beta Testers",
+          "Auditors and Red Teams",
+          "Educators and Knowledge Disseminators"
+        ]
+      },
+      {
+        title: " Barriers to Recognition and Impact",
+        subChapters: [
+          "Identity Problems: Misaligned Economic Structures",
+          "Institutional Misclassifications: Lagging Organisational Practice and the 'Public Engagement' Trap",
+          "Intellectual Property Challenges: Between Open Culture and Value Capture",
+          "The Data Problem: Value Recognition and Measurement"
+        ]
+      }
+    ]
+  },
+  {
+    title: "3: Infrastructure",
+    slug: "06-infrastructure",
+    subChapters: [
+      {
+        title: "How Cultural Organisations Host and Advance Creative R&D",
+        subChapters: [
+          "Types of AxAT Creative R&D Organisational Models",
         ],
       },
       {
-        title: "Semi-Autonomous Aesthetics",
+        title: "Cross-Sector Currents",
         subChapters: [
-          "Convergence Engines",
-          "Style Capture",
-          "Recombinant Aesthetics in the New Weird",
-          "Cross-Pollinating Systems",
-          "Modalities for AI Tool Deployment",
-          "Model-Making as Meaning-Making",
-          "Systems Builders",
-        ],
+          "Cultural-Civic Partnerships: Building Alternative Infrastructure",
+          "Technology-Industry Partnerships: In-Between Paradigms",
+          "Beyond Marketing Logic: Seeds of Co-Development",
+          "Academic Coalitions: Where AxAT and Academia Meet",
+          "Exhibition as Research Platform",
+          "Educational Collaborations and Skills Development",
+          "Shared Technical Infrastructure",
+          "Research Partnerships and Knowledge Exchange"
+        ]
       },
       {
-        title: "From Systems-Building to Worldbuilding",
-        subChapters: [
-          "Recombinant Bubble Worlds",
-          "Agent-training Arenas",
-          "Complex System Choreography",
-        ],
-      },
-      {
-        title: "A New Era of (Art) Tech Development",
-        subChapters: [
-          "Exploratory Use-Case Space",
-          "Artist as Influencer",
-          "Case for Institutional Brokerage and Intermediation",
-        ],
-      },
+        title: "Where to Next?"
+      }
     ],
   },
   {
-    title: "3: Ecosystem",
-    slug: "06-ecosystem",
+    title: "4: Innovation",
+    slug: "07-innovation",
+    subChapters: [
+      {
+        title: "Proposal 1: Establish a Cross-Departmental Entity for the Advancement of Creative R&D",
+      },
+      {
+        title: "Proposal 2: Broaden DSIT\'s Definition of R&D to Encompass Creative R&D"
+      },
+      {
+        title: "Proposal 3: Adopt Ecosystem Measurement Models"
+      },
+      {
+        title: "Proposal 4: Diversify Funding Mechanisms and Approaches to Account for the Full Spectrum of Creative R&D Activity"
+      }
+    ],
+  },
+  {
+    title: "Postface",
+    slug: "08-postface",
     subChapters: [
       {
         title:
@@ -158,12 +175,8 @@ const tableOfContents = [
     ],
   },
   {
-    title: "Recommendations",
-    slug: "07-recommendations",
-  },
-  {
-    title: "Postface",
-    slug: "08-postface",
+    title: "Contributors",
+    slug: "09-contributors",
   },
 ];
 
@@ -181,7 +194,7 @@ export default function TOC() {
     <nav
       data-pagefind-ignore="all"
       id="toc"
-      className="fixed left-1.5 top-1/2 z-30 -translate-y-1/2 transform lg:left-2.5 lg:top-[80px] lg:h-[80vh] lg:translate-y-0 lg:transform-none"
+      className="fixed left-1.5 top-1/2 z-50 -translate-y-1/2 transform lg:left-2.5 lg:top-[80px] lg:h-[80vh] lg:translate-y-0 lg:transform-none"
     >
       <Dialog.Root open={tocOpen} onOpenChange={setTocOpen}>
         {/* <Dialog.Trigger asChild> */}

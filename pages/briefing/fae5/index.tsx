@@ -67,7 +67,19 @@ export default function Home() {
       </div>
       <div className="fixed bottom-0 left-0 z-50 w-full text-silver">
         <div className="flex flex-col-reverse">
-          <div className="download-drawer-imagery peer z-[60] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
+          <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
+            <Link
+              href="/briefing/fae5/09-contributors"
+              className="flex h-full w-full justify-between"
+            >
+              <div>
+                <h3 className="my-1 text-medium md:my-0 md:text-xl">
+                  Recommendations
+                </h3>
+              </div>
+            </Link>
+          </div>
+          <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
               href="/briefing/fae5/08-postface"
               className="flex h-full w-full justify-between"
@@ -79,67 +91,22 @@ export default function Home() {
               </div>
             </Link>
           </div>
-          <div className="download-drawer-imagery peer z-50 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
-            <Link
-              href="/briefing/fae5/06-recommendations"
-              className="flex h-full w-full justify-between"
-            >
-              <div>
-                <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  Recommendations
-                </h3>
-                <p className="hidden md:block">
-                  Lorem ipsum, its a nice day : )
-                </p>
-              </div>
-              <Image
-                src="/images/HOMEPAGE_CH03.jpg"
-                alt=""
-                width={114}
-                height={64}
-                className="aspect-video h-16 bg-silver/20"
-              />
-            </Link>
-          </div>
-          <div className="download-drawer-imagery peer z-40 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
-            <Link
-              href="/briefing/fae5/06-ecosystem"
-              className="flex h-full w-full justify-between"
-            >
-              <div>
-                <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  3: Ecosystem
-                </h3>
-                <p className="hidden md:block">
-                  The final chapter points to the AxAT ecosystem as a lab for
-                  public AI.
-                </p>
-              </div>
-              <Image
-                src="/images/HOMEPAGE_CH03.jpg"
-                alt=""
-                width={114}
-                height={64}
-                className="aspect-video h-16 bg-silver/20"
-              />
-            </Link>
-          </div>
           <div className="download-drawer-imagery peer z-30 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/05-organisation"
+              href="/briefing/fae5/07-innovation"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  2: Organisation
+                  4: Innovation
                 </h3>
-                <p className="hidden md:block">
+                {/* <p className="hidden md:block">
                   This chapter looks at artistic practices that work with
                   different elements of the AI stack.
-                </p>
+                </p> */}
               </div>
               <Image
-                src="/images/HOMEPAGE_CH02.jpg"
+                src="/images/fae5/innovation-thumb.jpg"
                 alt=""
                 width={114}
                 height={64}
@@ -149,20 +116,20 @@ export default function Home() {
           </div>
           <div className="download-drawer-imagery peer z-20 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/04-artist"
+              href="/briefing/fae5/06-infrastructure"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  1: Artist
+                  3: Infrastructure
                 </h3>
-                <p className="hidden md:block">
+                {/* <p className="hidden md:block">
                   This chapter considers how organisations are being transformed
                   by AI.
-                </p>
+                </p> */}
               </div>
               <Image
-                src="/images/HOMEPAGE_CH01.jpg"
+                src="/images/fae5/core-infra-thumb.jpg"
                 alt=""
                 width={114}
                 height={64}
@@ -172,16 +139,16 @@ export default function Home() {
           </div>
           <div className="download-drawer-diagrams peer z-10 -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/03-creative-rd"
+              href="/briefing/fae5/05-artist"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  Creative R&D
+                  2: Artist
                 </h3>
               </div>
               <Image
-                src="/images/HOMEPAGE_CH00.jpg"
+                src="/images/fae5/innovation-thumb.jpg"
                 alt=""
                 width={114}
                 height={64}
@@ -191,16 +158,16 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf peer z-[9] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/02-introduction"
+              href="/briefing/fae5/04-creative-rd"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  Introduction
+                  1: Creative R&D
                 </h3>
               </div>
               <Image
-                src="/images/HOMEPAGE_INTRO.jpg"
+                src="/images/fae5/new-perspective-thumb.jpg"
                 alt=""
                 width={114}
                 height={64}
@@ -210,19 +177,27 @@ export default function Home() {
           </div>
           <div className="download-drawer-pdf peer z-[8] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/01-executive-summary"
+              href="/briefing/fae5/03-introduction"
               className="flex h-full w-full justify-between"
             >
               <div>
                 <h3 className="my-1 text-medium md:my-0 md:text-xl">
-                  Executive Summary
+                  Introduction
                 </h3>
+
               </div>
+              <Image
+                src="/images/fae5/intro-thumb.jpg"
+                alt=""
+                width={114}
+                height={64}
+                className="aspect-video h-16 bg-silver/20"
+              />
             </Link>
           </div>
           <div className="download-drawer-pdf z-[7] -mb-24 flex h-36 w-full gap-4 overflow-hidden rounded-lg bg-white p-2 shadow-home transition-all md:focus-within:-translate-y-12 md:hover:-translate-y-12 md:peer-focus-within:-translate-y-12 md:peer-hover:-translate-y-12">
             <Link
-              href="/briefing/fae5/0-preface"
+              href="/briefing/fae5/02-preface"
               className="flex h-full w-full justify-between"
             >
               <div>

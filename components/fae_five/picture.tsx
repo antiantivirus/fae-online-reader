@@ -20,7 +20,7 @@ export default function Picture({ main, bg, alt }: {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: mainRef.current,
-        start: "top bottom",
+        start: "top 60%",
         end: "bottom top",
         scrub: 1,
       },
