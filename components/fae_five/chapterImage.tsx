@@ -7,8 +7,10 @@ import { Portal } from "radix-ui";
 
 export default function ChapterImage({
   image,
+  background
 }: {
   image: string;
+  background: string;
 }) {
 
   useGSAP(() => {
@@ -85,7 +87,7 @@ export default function ChapterImage({
       <Image
         id="chapter-image-bg"
         className="fixed left-0 top-0 w-full h-full object-cover object-center"
-        src="/images/fae5-test-bg.png"
+        src={background}
         alt=""
         width={850}
         height={400}

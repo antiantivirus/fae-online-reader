@@ -39,6 +39,7 @@ export default function PostPage({
           no={source.frontmatter.chapter_no as string}
           title={title}
           image={source.frontmatter.image as string}
+          background={source.frontmatter.background_image as string}
           credit={source.frontmatter.video_credit as string}
         />
         <article

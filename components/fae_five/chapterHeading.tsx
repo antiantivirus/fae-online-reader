@@ -9,11 +9,13 @@ export default function ChapterHeading({
   no,
   title,
   image,
+  background,
   credit,
 }: {
   no: string;
   title: string;
   image?: string;
+  background?: string;
   credit?: string;
 }) {
   useGSAP(() => {
@@ -38,7 +40,7 @@ export default function ChapterHeading({
     <div id="chapter-heading" className="relative mx-auto md:max-w-boxWide">
       <div
         id="chapter-sticky-heading"
-        className="sticky-chapter-header invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 flex w-[calc(100vw-54px)] items-center rounded-full bg-secondary p-2 px-4 pt-2.5 shadow md:left-auto md:w-full md:max-w-boxWide"
+        className="sticky-chapter-header invisible fixed left-11 top-[3.5rem] z-10 mb-0 mr-2.5 flex w-[calc(100vw-54px)] items-center rounded-full bg-secondary p-2 px-4 pt-2.5 shadow md:left-auto md:w-full md:max-w-boxWide z-50"
       >
         <span>
           {no && <>{no}. </>}
@@ -58,7 +60,7 @@ export default function ChapterHeading({
           <span className="col-span-5 md:col-span-4">{title}</span>
         </h1>
       </div>
-      {image && <ChapterImage image={image} />}
+      {image && <ChapterImage image={image} background={background} />}
       {credit && (
         <p
           id="image-credit"
