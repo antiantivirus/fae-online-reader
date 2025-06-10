@@ -150,29 +150,6 @@ const tableOfContents = [
   {
     title: "Postface",
     slug: "08-postface",
-    subChapters: [
-      {
-        title:
-          "Investing into the Foundations of the AxAT Ecosystem with a Public Mission",
-        subChapters: [
-          "Advanced Production Capabilities",
-          "Protocols for Organisational Interoperability",
-          "New Ownership and Distribution Models",
-          "New Systems of Measurement",
-        ],
-      },
-      {
-        title:
-          "Recommendations for a Proactive AxAT Participation in Public AI",
-        subChapters: [
-          "Sandboxing of New Organisational Practices and Forms",
-          "Public Data Market Mechanisms",
-          "New IP Paradigms",
-          "Early cross-technological use-cases",
-          "Lobbying for deeper AI systems access and compute quotas on behalf of the cultural sector",
-        ],
-      },
-    ],
   },
   {
     title: "Contributors",
