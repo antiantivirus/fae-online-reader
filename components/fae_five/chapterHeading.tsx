@@ -60,7 +60,7 @@ export default function ChapterHeading({
           <span className="col-span-5 md:col-span-4">{title}</span>
         </h1>
       </div>
-      {image && <ChapterImage image={image} background={background} />}
+      {image && background && <ChapterImage image={image} background={background} />}
       {credit && (
         <p
           id="image-credit"
