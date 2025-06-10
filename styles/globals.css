@@ -308,6 +308,10 @@
   html[data-theme="dark"] .prose .diagram {
     filter: invert(1) saturate(0);
   }
+
+  .fae5 .prose .diagram {
+    filter: none !important;
+  }
 }
 
 /* fix h3 heading on chapter 0 */
