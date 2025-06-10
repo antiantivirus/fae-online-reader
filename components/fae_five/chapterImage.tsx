@@ -78,7 +78,7 @@ export default function ChapterImage({
     <>
       <Image
         id="chapter-image"
-        className="absolute left-1/2 top-[calc(100%-10px)] z-10 hidden max-w-6xl -translate-x-1/2 transform lg:block 2xl:max-w-7xl"
+        className="absolute left-1/2 top-[calc(100%-10px)] z-10 lg:max-w-6xl max-w-full -translate-x-1/2 transform 2xl:max-w-7xl"
         src={image}
         alt=""
         width={850}

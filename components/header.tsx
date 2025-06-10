@@ -6,6 +6,7 @@ import Share from "./icons/share";
 import DownloadsDrawer from "./downloadsDrawer";
 import Plus from "./icons/plus";
 import Minus from "./icons/minus";
+import A5 from "./icons/a5";
 import A from "./icons/a";
 import Back from "./icons/back";
 import Link from "next/link";
@@ -159,7 +160,7 @@ export default function Header() {
           </div>
 
           <div className={`hidden items-center gap-2 md:flex ${isFAE5 ? 'fill-white' : 'fill-primary'}`}>
-            <A />
+            {isFAE5 ? <A5 /> : <A />}
             <button onClick={increaseFontSize}>
               <Plus />
             </button>
