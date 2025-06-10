@@ -76,6 +76,8 @@ export default function PostPage({
           <div className="max-w-box mx-auto">
             <Link className=" ml-auto mr-0 block overflow-hidden text-white rounded bg-background shadow w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
               <div className="bg-silver next-chapter hover-shine p-3 md:p-5">
+                {/* 
+                // @ts-ignore */}
                 {source.frontmatter.next_chapter_title}
               </div>
             </Link>
