@@ -62,24 +62,45 @@
 
   /* break content to a new page on start of chapter or heading */
   .chapter,
+  .chapter-container,
   .footnotes,
   .picture,
+  h1,
   h2,
   h3,
   h4 {
     break-before: page;
+    page-break-before: always;
+  }
+
+  /* Make sure H1 always starts on a new page, with emphasis */
+  h1 {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* Prevent page breaks right after headings */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   /* avoid breaking certain headings. when a h4 directly follows an h3 */
   .avoid-break h4,
   .avoid-break h3 {
     break-before: avoid-page;
+    page-break-before: avoid;
   }
 
   /* start all new chapters on the right hand page */
   /* .chapter {
     break-before: right;
   } */
+
+  /* Add spacing for chapter titles */
+  .chapter-container {
+    margin-top: 2rem;
+  }
 
   /* typography */
   @font-face {
@@ -230,8 +251,33 @@
   /* a[href]::after {
     content: !important;
   } */
+
+  /* Disable ligatures */
+  html, body, p, h1, h2, h3, h4, h5, h6, div, span, a {
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* More specific selector for text elements */
+  .prose p, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6,
+  .prose li, .prose a, .prose span, .toc, .chapter {
+    font-variant-ligatures: none !important;
+    -webkit-font-variant-ligatures: none !important;
+    font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
+    -webkit-font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  }
 }
 
 .glyphs {
   @apply block text-center text-[4rem] tracking-[0.4rem];
+}
+
+/* Also add this outside the @media print to ensure it applies everywhere */
+.font-slackLight, body, p, h1, h2, h3, h4, h5, h6, div, span, a {
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  -webkit-font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  text-rendering: optimizeSpeed;
 }
