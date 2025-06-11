@@ -25,23 +25,29 @@ export default function PostPage({
   chapters,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     // Wait for the entire page to load, including images/fonts
-  //     window.addEventListener("load", () => {
-  //       if (window.PagedPolyfill) {
-  //         // window.PagedPolyfill.preview();
-  //       } else {
-  //         console.warn("PagedPolyfill not found.");
-  //       }
-  //     });
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Wait for the entire page to load, including images/fonts
+      window.addEventListener("load", () => {
+        // @ts-expect-error
+        if (window.PagedPolyfill) {
+          // @ts-expect-error
+          window.PagedPolyfill.preview().then(() => {
+            // Now run the page numbers generation
+            getPageNumbers();
+          }).catch(err => {
+            console.error("Paged.js error:", err);
+          });
+        } else {
+          console.warn("PagedPolyfill not found.");
+        }
+      });
+    }
+  }, []);
 
   return (
     <div className="font-slackLight">
       <Script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" />
-      {/* <Script src="/scripts/full-page.js" /> */}
       <Head>
         <title>
           Future Art Ecosystems 5: R&D
@@ -49,7 +55,7 @@ export default function PostPage({
       </Head>
 
       <div className='full-page bg-gradient-pdf relative' style={{ backgroundSize: "100%" }}>
-        <img src="/images/cover.png" className='cover w-full h-auto' />
+        <img src="/images/cover.png" className='cover w-full h-auto' alt="Cover" />
       </div>
       <TableOfContents chapters={chapters} />
       <article
@@ -82,9 +88,8 @@ export default function PostPage({
 }
 
 export async function getStaticProps() {
-
   // Retrieve all MDX files for FAE5
-  const filenames = readdirSync("content/fae5/");
+  const filenames = readdirSync("content/fae5/").sort();
 
   // Use Promise.all to handle asynchronous file reading and serialization
   const chapters = await Promise.all(
@@ -122,12 +127,12 @@ type HeadingProps = {
 
 const chapterTitle = (chapter: Chapter["mdxSource"]) => {
   if (chapter.frontmatter.chapter_no) {
-    return <div id={chapter.frontmatter.title!.replace(" ", "-")} className="break-after-page">
+    return <div id={chapter.frontmatter.title!.replace(" ", "-")} className="break-before-page break-after-page">
       <span className="text-[20rem]">{chapter.frontmatter.chapter_no}</span>
       <h1>{chapter.frontmatter.title}</h1>
     </div>
   }
-  return <h1 id={chapter.frontmatter.title!.replace(" ", "-")} className='text-center'>{chapter.frontmatter.title}</h1>
+  return <h1 id={chapter.frontmatter.title!.replace(" ", "-")} className='text-center break-before-page'>{chapter.frontmatter.title}</h1>
 }
 
 const boxedHeading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
@@ -153,7 +158,6 @@ const heading = (As: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") => {
   Heading.displayName = As;
   return Heading;
 };
-
 
 const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
   const [tocWithPages, setTocWithPages] = useState([]);
@@ -199,21 +203,6 @@ const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
     return () => {
       window.removeEventListener("keydown", handleKeydown); // Cleanup event listener
     };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Wait for the entire page to load, including images/fonts
-      window.addEventListener("load", () => {
-        // @ts-expect-error
-        if (window.PagedPolyfill) {
-          // @ts-expect-error
-          window.PagedPolyfill.preview();
-        } else {
-          console.warn("PagedPolyfill not found.");
-        }
-      });
-    }
   }, []);
 
   return (
