@@ -2,11 +2,11 @@ import { visit } from "unist-util-visit";
 
 // Map of glyphs to their replacements
 const glyphMap = {
-  "𝕰": "𝖊", // Emergence
-  "𝕴": "𝖎", // Interconnection
-  "𝕽": "𝖗", // Resilience
-  "𝕸": "𝖒", // Multipliers
-  "𝖁": "𝖛", // Value
+  "𝖊": "𝕰", // Emergence (swapped)
+  "𝖎": "𝕴", // Interconnection (swapped)
+  "𝖗": "𝕽", // Resilience (swapped)
+  "𝖒": "𝕸", // Multipliers (swapped)
+  "𝖛": "𝖁", // Value (swapped)
 };
 
 // Glyph characters to search for in text
