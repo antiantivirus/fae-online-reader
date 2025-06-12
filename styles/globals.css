@@ -515,3 +515,7 @@
 .pdf-only {
   display: none;
 }
+
+hr {
+  display: none;
+}
