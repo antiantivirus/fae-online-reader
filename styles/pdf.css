@@ -29,6 +29,9 @@
       top: 40mm;
       text-align: start;
     }
+    @bottom-center {
+      content: element(footnotes);
+    }
   }
 
   /* remove page number for a blank page */
@@ -63,7 +66,6 @@
   /* break content to a new page on start of chapter or heading */
   .chapter,
   .chapter-container,
-  .footnotes,
   .picture,
   h1,
   h2,
@@ -92,11 +94,6 @@
     page-break-before: avoid;
   }
 
-  /* start all new chapters on the right hand page */
-  /* .chapter {
-    break-before: right;
-  } */
-
   /* Add spacing for chapter titles */
   .chapter-container {
     margin-top: 2rem;
@@ -118,9 +115,10 @@
   }
 
   h1 {
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 30mm;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 100mm;
+    margin-top: 20px;
   }
 
   h1,
@@ -130,9 +128,14 @@
 
   h2,
   h3,
-  h4,
   h5 {
     font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 15mm;
+  }
+
+  h4 {
+    font-size: 1.8rem;
     line-height: 1.2;
     margin-bottom: 15mm;
   }
@@ -143,13 +146,7 @@
     content: url("data:image/svg+xml,%3Csvg viewBox='0 0 33 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_236_63)'%3E%3Cpath d='M0.460953 7.2L14.461 7.2C21.561 8.4 15.861 13.8 15.861 13.8C22.961 7.1 32.261 6.9 32.261 6.9C32.261 6.9 22.961 6.7 15.861 1.42729e-06C15.861 1.42729e-06 21.661 5.4 14.461 6.7L0.460953 6.7C0.360953 6.7 0.260953 6.8 0.260953 6.9C0.260953 7 0.260953 7.2 0.460953 7.2Z' fill='%23421629'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_236_63'%3E%3Crect width='32.1' height='13.8' fill='white' transform='translate(32.261 13.8) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     height: auto;
     width: 55.2px;
-    /* margin-top: 10px; */
     margin-right: 10px;
-  }
-
-  p,
-  cite {
-    font-size: 1.5rem;
   }
 
   sup {
@@ -179,56 +176,30 @@
     margin-bottom: 0;
   }
 
-  .glyphs {
+  .box blockquote {
+    background: linear-gradient(61.29deg, #525258 13.21%, #b1b1be 85.04%);
+    padding-top: 4mm;
+    padding-bottom: 5mm;
+    padding-left: 8mm;
+    padding-right: 14mm;
+    color: white;
+    border-radius: 18px;
     margin-bottom: 14mm;
     margin-top: 14mm;
   }
 
-  /* define what are the footnotes elements */
-  /* sup {
-    float: footnote;
-  } */
-
-  /* footnotes */
-  #footnote-label {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 0;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    margin-bottom: 15mm;
-    text-align: center;
+  .box {
+    background: none !important;
+    box-shadow: none !important;
   }
-
-  .footnotes p {
-    font-size: 1.2rem;
-  }
-
-  .footnotes ol {
-    list-style: decimal;
-    padding-left: 35px;
-    @apply space-y-3;
-  }
-
-  /* .pagedjs_page {
-    border: 1mm solid yellowgreen;
-  } */
 
   .full-page {
     height: 297mm;
     width: 210mm;
-    /* float: top;
-    float-reference: page; */
     position: relative;
     top: -12.6819mm;
     left: -26.46mm;
     box-sizing: content-box;
-    /* padding-top: 16.577px;
-    padding-bottom: 22px;
-    padding-left: 42.763px;
-    padding-right: 42.763px; */
   }
 
   .full-page .main-picture {
@@ -247,11 +218,6 @@
     padding-right: 33.87mm;
   }
 
-  /* make links work on firefox pdf export */
-  /* a[href]::after {
-    content: !important;
-  } */
-
   /* Disable ligatures */
   html, body, p, h1, h2, h3, h4, h5, h6, div, span, a {
     font-variant-ligatures: none;
@@ -267,10 +233,51 @@
     font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
     -webkit-font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
   }
+
+  /* Estilos para las notas al pie en PDF */
+  .footnotes {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #421629;
+  }
+
+  .footnotes ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+  }
+
+  .footnotes li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ocultar solo el icono de la nota al pie */
+  .group.absolute {
+    display: none !important;
+  }
+
+  /* Estilo para el número de la nota al pie en el texto */
+  sup[id^="fnref"] {
+    font-size: 0.8rem;
+    vertical-align: super;
+    line-height: 0;
+  }
+
+  /* Asegurar que las notas al pie no se dividan entre páginas */
+  .footnotes li {
+    break-inside: avoid;
+  }
 }
 
 .glyphs {
   @apply block text-center text-[4rem] tracking-[0.4rem];
+}
+
+.glyphs {
+  margin-bottom: 14mm;
+  margin-top: 14mm;
 }
 
 /* Also add this outside the @media print to ensure it applies everywhere */
