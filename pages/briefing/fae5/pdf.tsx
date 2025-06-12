@@ -27,19 +27,11 @@ export default function PostPage({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Wait for the entire page to load, including images/fonts
       window.addEventListener("load", () => {
         // @ts-expect-error
         if (window.PagedPolyfill) {
           // @ts-expect-error
-          window.PagedPolyfill.preview().then(() => {
-            // Now run the page numbers generation
-            getPageNumbers();
-          }).catch(err => {
-            console.error("Paged.js error:", err);
-          });
-        } else {
-          console.warn("PagedPolyfill not found.");
+          window.PagedPolyfill.preview();
         }
       });
     }
@@ -68,22 +60,19 @@ export default function PostPage({
             <MDXRemote
               key={index}
               {...chapter.mdxSource}
-              // specifying the custom MDX components
               components={{
                 Model,
                 Diagram,
                 Image,
                 Picture,
-                Box: (props) => {
-                  return <div {...props} />;
-                },
+                Box,
                 sup: (props) => <Footnote info={props.children} />,
               }}
             />
           </div>
         ))}
       </article>
-    </div >
+    </div>
   );
 }
 

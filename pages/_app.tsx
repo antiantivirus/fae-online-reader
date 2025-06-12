@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-// import "@/styles/pdf.css";
+import "@/styles/pdf.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
