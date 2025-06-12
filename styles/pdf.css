@@ -46,22 +46,24 @@
   }
 
   /* remove page number on first page */
-  @page :first {
+  /* @page :first {
     @right-bottom {
       content: none;
     }
-  }
+  } */
 
-  /* remove page number from toc */
   .toc,
   .picture {
     page: toc;
   }
+  
+  /* remove page number from toc */
+  /* 
   @page toc {
     @right-bottom {
       content: none;
     }
-  }
+  } */
 
   img {
     max-width: 100%;
