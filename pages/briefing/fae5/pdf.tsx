@@ -47,7 +47,7 @@ export default function PostPage({
       </Head>
 
       <div className='full-page bg-gradient-pdf relative' style={{ backgroundSize: "100%" }}>
-        <img src="/images/cover.png" className='cover w-full h-auto' alt="Cover" />
+        <img src="/images/fae5/FAE5_Cover_PDF.jpg" className='cover w-full h-auto' alt="Cover" />
       </div>
       <TableOfContents chapters={chapters} />
       <article
