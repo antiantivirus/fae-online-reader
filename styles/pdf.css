@@ -4,6 +4,10 @@
 
 @media print {
   /* set page sizes, bleed and margin content */
+  .pdf-only {
+  display: block;
+  }
+  
   @page {
     size: 210mm 297mm;
     margin-top: 12.6819mm;
@@ -288,3 +292,5 @@
   -webkit-font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
   text-rendering: optimizeSpeed;
 }
+
+

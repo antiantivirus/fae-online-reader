@@ -20,6 +20,7 @@ import rehypeExtractHeadings from "@/utils/rehypeExtractHeadings"
 import rehypeGlyphs from '@/utils/rehypeGlyphs';
 import { useEffect, useState } from 'react';
 import Picture from '@/components/pdf/picture';
+import PDFOnly from '@/components/fae_five/pdfOnly';
 
 export default function PostPage({
   chapters,
@@ -66,6 +67,7 @@ export default function PostPage({
                 Image,
                 Picture,
                 Box,
+                PDFOnly,
                 sup: (props) => <Footnote info={props.children} />,
               }}
             />
@@ -77,10 +79,10 @@ export default function PostPage({
 }
 
 export async function getStaticProps() {
-  // Retrieve all MDX files for FAE5
+
   const filenames = readdirSync("content/fae5/").sort();
 
-  // Use Promise.all to handle asynchronous file reading and serialization
+
   const chapters = await Promise.all(
     filenames.map(async (filename) => {
       const content = fs.readFileSync(`content/fae5/${filename}`, "utf-8");
@@ -104,7 +106,7 @@ export async function getStaticProps() {
     props: {
       chapters,
     },
-    // enable ISR
+
     revalidate: 60,
   };
 }
@@ -153,7 +155,7 @@ const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
 
   const getPageNumbers = () => {
     chapters.forEach((chapter) => {
-      // Find the chapter element and add the page number
+
       const chapterElement = document.getElementById(chapter.mdxSource.frontmatter.title!.replace(" ", "-"));
       if (chapterElement) {
         const chapterPage = chapterElement?.closest('[data-page-number]')?.getAttribute('data-page-number') || 'N/A';
@@ -164,7 +166,7 @@ const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
         }
       }
 
-      // Find each heading and add the page number
+
       chapter.headings.forEach((heading) => {
         const element = document.getElementById(heading.id);
         if (element) {
@@ -183,14 +185,16 @@ const TableOfContents = ({ chapters }: { chapters: Chapter[] }) => {
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
       if (event.key.toLowerCase() === "t") {
-        getPageNumbers(); // Run the script when "T" is pressed
+
+        getPageNumbers();
       }
     };
 
     window.addEventListener("keydown", handleKeydown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeydown); // Cleanup event listener
+
+      window.removeEventListener("keydown", handleKeydown);
     };
   }, []);
 

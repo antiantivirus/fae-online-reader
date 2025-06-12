@@ -506,3 +506,8 @@
     transform: translateY(110%);
   }
 }
+
+/* Hide PDF-only content when not in print mode */
+.pdf-only {
+  display: none;
+}

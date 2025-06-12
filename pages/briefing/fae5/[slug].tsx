@@ -18,6 +18,7 @@ import Image from "next/image";
 import Background from "@/components/fae_five/background";
 import rehypeGlyphs from "@/utils/rehypeGlyphs";
 import Picture from "@/components/fae_five/picture";
+import PDFOnly from '@/components/fae_five/pdfOnly';
 
 export default function PostPage({
   source,
@@ -53,6 +54,7 @@ export default function PostPage({
               Model,
               Box,
               Picture,
+              PDFOnly,
               h1: heading("h1"),
               h2: heading("h2"),
               h3: heading("h3"),
