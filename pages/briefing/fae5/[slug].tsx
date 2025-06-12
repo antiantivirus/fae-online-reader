@@ -30,8 +30,36 @@ export default function PostPage({
       <Background />
       <Head>
         <title>
-          {source.frontmatter.title as string} - Future Art Ecosystems 5: R&D
+          {source.frontmatter.title as string} - Future Art Ecosystems 5: Art x Creative R&D
         </title>
+        {/* Google Scholar Metadata - formatted for better Zotero compatibility */}
+        <meta name="citation_title" content="Future Art Ecosystems 5: Art x Creative R&D"/>
+        <meta name="citation_authors" content="Victoria Ivanova; Kay Watson; Nick Houde; Tommie Introna"/>
+        <meta name="citation_date" content="2025-06-13"/>
+        <meta name="citation_year" content="2025"/>
+        <meta name="citation_publication_date" content="2025-06-13"/>
+        <meta name="citation_publisher" content="Serpentine Gallery"/>
+        <meta name="citation_abstract" content="The evolving landscape of art and advanced technologies (AxAT) has witnessed significant transformation over the past decade, with Creative R&amp;D emerging as a distinct domain integrating artistic experimentation, technological innovation, and cross-sector collaborations. The fifth volume of the Future Art Ecosystems briefing series—Art x Creative R&amp;D (FAE5)—examines this critical nexus and offers concrete recommendations for its development and impact."/>
+        <meta name="citation_keywords" content="art, advanced technologies, cultural policy, creative industries, cultural sector, R&D, innovation, research and development, artistic practice, technological innovation, digital art, media studies, cultural anthropology"/>
+        <meta name="citation_public_url" content="https://reader.futureartecosystems.org/briefing/fae5/"/>
+        <meta name="citation_fulltext_html_url" content="https://reader.futureartecosystems.org/briefing/fae5/"/>
+        <meta name="citation_pdf_url" content="https://reader.futureartecosystems.org/briefing/fae5/fae5.pdf"/>
+        <meta name="citation_language" content="en"/>
+
+        {/* Dublin Core Metadata */}
+
+        <meta name="DC.type" content="Book"/>
+        <meta name="DC.title" content="Future Art Ecosystems 5: Art x Creative R&D"/>
+        <meta name="DC.creator" content="Ivanova, Victoria;Watson, Kay;Houde, Nick;Introna, Tommie"/>
+        <meta name="DC.subject" content="Art; Digital Art; Advanced Technologies; Cultural Policy; Creative Industries; R&D; Innovation; Social Aspects of Computing; Cultural Anthropology; Media Studies"/>
+        <meta name="DC.description" content="The evolving landscape of art and advanced technologies (AxAT) has witnessed significant transformation over the past decade, with Creative R&amp;D emerging as a distinct domain integrating artistic experimentation, technological innovation, and cross-sector collaborations. The fifth volume of the Future Art Ecosystems briefing series—Art x Creative R&amp;D (FAE5)—examines this critical nexus and offers concrete recommendations for its development and impact."/>
+        <meta name="DC.publisher" content="Serpentine Gallery"/>
+        <meta name="DC.date" content="2025-06-13"/>
+        <meta name="DC.type" content="Book"/>
+        <meta name="DC.format" content="text/html"/>
+        <meta name="DC.identifier" content="https://reader.futureartecosystems.org/briefing/fae5/"/>
+        <meta name="DC.language" content="en"/>
+        <meta name="DC.rights" content="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"/>
       </Head>
       <TOC />
       <main className="mb-10 ml-[3rem] mr-2.5 mt-20 lg:mx-0 relative">
@@ -49,7 +77,6 @@ export default function PostPage({
         >
           <MDXRemote
             {...source}
-            // specifying the custom MDX components
             components={{
               Model,
               Box,
@@ -67,7 +94,7 @@ export default function PostPage({
               section: (props) => {
                 // @ts-expect-error Ignore TypeScript error for custom attribute
                 if (props['data-footnotes']) {
-                  return <section data-pagefind-ignore {...props} />; // Prevent rendering
+                  return <section data-pagefind-ignore {...props} />;
                 }
                 return <section {...props} />;
               },
@@ -78,8 +105,6 @@ export default function PostPage({
           <div className="max-w-box mx-auto">
             <Link className=" ml-auto mr-0 block overflow-hidden text-white rounded bg-background shadow w-fit max-w-box mt-10" href={source.frontmatter.next_chapter}>
               <div className="bg-silver next-chapter hover-shine p-3 md:p-5">
-                {/* 
-                // @ts-ignore */}
                 {source.frontmatter.next_chapter_title}
               </div>
             </Link>
@@ -93,7 +118,7 @@ export default function PostPage({
 
 export async function getStaticPaths() {
   const paths = readdirSync("content/fae5")
-    .filter((path) => path.endsWith(".mdx") || path.endsWith(".md")) // Only include .mdx or .md files
+    .filter((path) => path.endsWith(".mdx") || path.endsWith(".md"))
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }));
 
@@ -109,13 +134,7 @@ export async function getStaticProps(
   }>,
 ) {
   const { slug } = ctx.params!;
-
-  // retrieve the MDX blog post file associated
-  // with the specified slug parameter
   const chapterFile = fs.readFileSync(`content/fae5/${slug}.mdx`);
-
-  // read the MDX serialized content along with the frontmatter
-  // from the .mdx blog post file
   const mdxSource = await serialize(chapterFile, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug, rehypeGlyphs],
@@ -129,7 +148,6 @@ export async function getStaticProps(
       source: mdxSource,
       slug: slug,
     },
-    // enable ISR
     revalidate: 60,
   };
 }
