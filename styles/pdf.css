@@ -69,12 +69,7 @@
 
   /* break content to a new page on start of chapter or heading */
   .chapter,
-  .chapter-container,
-  .picture,
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1 {
     break-before: page;
     page-break-before: always;
   }
@@ -167,9 +162,10 @@
     background: linear-gradient(61.29deg, #525258 13.21%, #b1b1be 85.04%);
     padding-top: 4mm;
     padding-bottom: 5mm;
-    padding-left: 8mm;
-    margin-left: -8mm;
-    padding-right: 14mm;
+    padding-left: 11mm;
+    padding-right: 11mm;
+    margin-left: 0;
+    margin-right: 0;
     color: white;
     border-radius: 18px;
     margin-bottom: 14mm;
@@ -243,7 +239,6 @@
     display: block !important;
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #421629;
   }
 
   .footnotes ol {
@@ -291,6 +286,17 @@
   font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
   -webkit-font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0;
   text-rendering: optimizeSpeed;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 2rem 0 1rem 0;
+  height: 0;
+}
+
+#Credits {
+  margin-bottom: 8px;
 }
 
 
